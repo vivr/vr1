@@ -1,0 +1,36 @@
+.sidebar {
+  grid-column: full-width;
+  padding-inline: 1rem;
+
+  @include breakpoint(medium) {
+    grid-column: content-end / breakout-right;
+    justify-self: end;
+
+    text-align: right;
+  }
+
+  &__content {
+    @include breakpoint(medium) {
+      padding: 0;
+    }
+  }
+
+  h5 {
+    margin-top: 0;
+    margin-bottom: 2rem;
+  }
+
+  ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  a {
+    text-decoration: none;
+    border-bottom: 1px solid var(--clr-tertiary);
+    display: block;
+    padding-bottom: 0.5rem;
+    margin-bottom: 1rem;
+  }
+}

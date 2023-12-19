@@ -1,0 +1,49 @@
+.notes {
+  grid-column: full-width;
+  padding-inline: 1rem;
+
+  @include breakpoint(medium) {
+    grid-column: breakout-left;
+
+    display: grid;
+    grid-template-columns: fit-content(20ch) minmax(min(50vw, 30ch), 1fr);
+    gap: 1rem;
+  }
+
+  &__image {
+    min-width: 20vmin;
+    max-width: 30vmin;
+    margin-bottom: 1rem;
+
+    @include breakpoint(medium) {
+      height: 30vmin;
+      max-height: 40vmin;
+    }
+  }
+
+  &__content {
+    min-width: 0;
+  }
+  h4 :not(first-child) {
+    margin-top: 1.5em;
+    margin-bottom: 1rem;
+  }
+
+  h5 {
+    margin-bottom: 1em;
+  }
+  h3,
+  h4 {
+    margin-bottom: 0;
+  }
+  ul,
+  ol,
+  p {
+    margin-top: 0.75em;
+    margin-bottom: 2em;
+  }
+  ol li + li,
+  ul li + li {
+    margin-top: 0.75em;
+  }
+}

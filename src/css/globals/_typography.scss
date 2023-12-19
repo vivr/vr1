@@ -1,0 +1,96 @@
+$fs-body: 1.25rem;
+
+body,
+figure,
+ul,
+ol,
+h1,
+h2,
+h3,
+h4,
+h5,
+p {
+  margin: 0;
+}
+
+h1,
+h3,
+h4,
+h5,
+figure,
+ul,
+ol,
+p {
+  font-weight: 500;
+}
+
+h2 {
+  font-size: $fs-body;
+  margin: 0 0 1rem 0;
+  width: max-content;
+  padding: em(12) em(18) em(18) em(18);
+  color: var(--clr-primary);
+  background-color: var(--clr-tertiary);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  line-height: 1.3;
+
+  .post-date,
+  span {
+    font-size: 1rem;
+    font-weight: 500;
+    letter-spacing: 0.01em;
+  }
+  .post-date {
+    font-style: italic;
+    color: var(--clr-secondary);
+  }
+}
+h3 {
+  font-size: 3.0519rem;
+}
+h4 {
+  font-size: 1.9531rem;
+}
+h5 {
+  font-size: 1.5625rem;
+}
+h3,
+h4,
+h5 {
+  line-height: 1.1;
+}
+p,
+a,
+ul,
+ol {
+  font-size: $fs-body;
+}
+a {
+  text-underline-offset: 0.2em;
+  color: var(--clr-primary);
+  transition: color 250ms ease-in-out;
+}
+a:hover,
+a.active,
+.active a {
+  color: var(--clr-secondary);
+}
+strong {
+  font-weight: 800;
+}
+code {
+  color: var(--clr-primary);
+  background: var(--clr-tertiary);
+  font-family: Consolas, Monaco, "Andale Mono", "Ubuntu Mono", monospace;
+  font-size: 1rem;
+  padding: 0.2em;
+}
+.visually-hidden {
+  clip-path: inset(50%);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+}

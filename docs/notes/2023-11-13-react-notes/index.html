@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>
+React Todo List App   | Vivienne Reay
+
+</title>
+<meta name="description" content="A personal site for Vivienne Reay. This is where she keeps notes on front-end development and other interests."/>
+<link rel="icon" href="/assets/favicon.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Darker+Grotesque:wght@500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/css/style.css">
+  </head>
+<body>
+<a href="#main-content" class="visually-hidden">Skip to main content</a>
+  <main class="content-grid">
+    <header class="header">
+  <div class="header__info">
+    <h1><a href="/">Vivienne Reay</a></h1>
+    <p>vivreay[at]gmail.com</p>
+  </div>
+  <nav role="navigation" class="header__nav">
+  <ul role="list" class="nav-list">
+    <li><a href="/" class=" button">Index</a></li>
+    <li><a href="/explorations/" class=" button">AI Text-to-Image Explorations</a></li>
+    <li><a href="/notes/" class="active button">Notes</a></li>
+  </ul>
+</nav>
+</header><div class="post-title">
+
+<h2 id="main-content">
+  <span>Notes:</span> 
+  <br />React Todo List App 
+  <br /><span class="post-date">13 Nov 2023
+</span>
+</h2>
+
+</div>
+
+
+        <article class="notes">
+  <div class="notes__image">
+  <img class="invert-light" src="/assets/notes/code.webp" alt="code logo">
+  </div>
+
+  <div class="notes__content">
+    <h3>What is React?</h3>
+<p>React is a javascript library used for building user interfaces and web applications. It uses a component-based architecture allowing developers to create reusable UI components that can be combined to build complex interfaces.</p>
+<h3>Simple Todo List App</h3>
+<p>The tutorisl described in this post is from <a href="https://www.youtube.com/watch?v=Rh3tobg7hEo">Learn React With This One Project tutorial by WebDevSimplified</a>.</p>
+<h3>Install Vite</h3>
+<ol>
+<li>Run <code>npm create vite@latest .</code></li>
+<li>Type in <code>.</code> (period) for the project name and this will create the project inside whatever folder you are currently in.</li>
+<li>Use the arrow key to select the <em>React</em> framework.</li>
+<li>Choose <em>Javascript</em> language.</li>
+<li>Run <code>npm i</code> to install all of our dependencies.</li>
+<li>Next, run <code>npm run dev</code> to start our application.</li>
+</ol>
+<h3>Manage Directories</h3>
+<p>Delete the following directories:</p>
+<ul>
+<li><em>public</em></li>
+<li><em>src/assets</em></li>
+</ul>
+<h3>Manage Files</h3>
+<p>Delete the following files:</p>
+<ul>
+<li><em>src/index.css</em></li>
+<li><em>src/app.css</em></li>
+</ul>
+<p>Create the following files:</p>
+<ul>
+<li><em>src/NewTodoForm.jsx</em></li>
+<li><em>src/TodoList.jsx</em></li>
+<li><em>src/TodoItem.jsx</em></li>
+<li><em>src/styles.css</em></li>
+</ul>
+<h3>main.jsx</h3>
+<p>In the <em>src/main.jsx</em> file delete the <code>import './index.css'</code> line.</p>
+<h3>App.jsx</h3>
+<p>Delete everything in the <em>src/App.jsx</em> file and add the following:</p>
+<pre class="language-jsx"><code class="language-jsx"><span class="token keyword">import</span> <span class="token punctuation">{</span> useEffect<span class="token punctuation">,</span> useState <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">"react"</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token punctuation">{</span> NewTodoForm <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">"./NewTodoForm"</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token string">"./styles.css"</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token punctuation">{</span> TodoList <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">"./TodoList"</span><span class="token punctuation">;</span>
+
+<span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token keyword">function</span> <span class="token function">App</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">const</span> <span class="token punctuation">[</span>todos<span class="token punctuation">,</span> setTodos<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token function">useState</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">{</span>
+    <span class="token keyword">const</span> localValue <span class="token operator">=</span> localStorage<span class="token punctuation">.</span><span class="token function">getItem</span><span class="token punctuation">(</span><span class="token string">"ITEMS"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>localValue <span class="token operator">==</span> <span class="token keyword">null</span><span class="token punctuation">)</span> <span class="token keyword">return</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+
+    <span class="token keyword">return</span> <span class="token constant">JSON</span><span class="token punctuation">.</span><span class="token function">parse</span><span class="token punctuation">(</span>localValue<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+  <span class="token function">useEffect</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">{</span>
+    localStorage<span class="token punctuation">.</span><span class="token function">setItem</span><span class="token punctuation">(</span><span class="token string">"ITEMS"</span><span class="token punctuation">,</span> <span class="token constant">JSON</span><span class="token punctuation">.</span><span class="token function">stringify</span><span class="token punctuation">(</span>todos<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token punctuation">[</span>todos<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+  <span class="token keyword">function</span> <span class="token function">addTodo</span><span class="token punctuation">(</span><span class="token parameter">title</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token function">setTodos</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter">currentTodos</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">{</span>
+      <span class="token keyword">return</span> <span class="token punctuation">[</span>
+        <span class="token operator">...</span>currentTodos<span class="token punctuation">,</span>
+        <span class="token punctuation">{</span> <span class="token literal-property property">id</span><span class="token operator">:</span> crypto<span class="token punctuation">.</span><span class="token function">randomUUID</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> title<span class="token punctuation">,</span> <span class="token literal-property property">completed</span><span class="token operator">:</span> <span class="token boolean">false</span> <span class="token punctuation">}</span><span class="token punctuation">,</span>
+      <span class="token punctuation">]</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token keyword">function</span> <span class="token function">toggleTodo</span><span class="token punctuation">(</span><span class="token parameter">id<span class="token punctuation">,</span> completed</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token function">setTodos</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter">currentTodos</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">{</span>
+      <span class="token keyword">return</span> currentTodos<span class="token punctuation">.</span><span class="token function">map</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter">todo</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">{</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>todo<span class="token punctuation">.</span>id <span class="token operator">===</span> id<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+          <span class="token keyword">return</span> <span class="token punctuation">{</span> <span class="token operator">...</span>todo<span class="token punctuation">,</span> completed <span class="token punctuation">}</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+
+        <span class="token keyword">return</span> todo<span class="token punctuation">;</span>
+      <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token keyword">function</span> <span class="token function">deleteTodo</span><span class="token punctuation">(</span><span class="token parameter">id</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token function">setTodos</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter">currentTodos</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">{</span>
+      <span class="token keyword">return</span> currentTodos<span class="token punctuation">.</span><span class="token function">filter</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter">todo</span><span class="token punctuation">)</span> <span class="token operator">=></span> todo<span class="token punctuation">.</span>id <span class="token operator">!==</span> id<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token keyword">return</span> <span class="token punctuation">(</span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span></span><span class="token punctuation">></span></span><span class="token plain-text">
+      </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span><span class="token class-name">NewTodoForm</span></span> <span class="token attr-name">onSubmit</span><span class="token script language-javascript"><span class="token script-punctuation punctuation">=</span><span class="token punctuation">{</span>addTodo<span class="token punctuation">}</span></span> <span class="token punctuation">/></span></span><span class="token plain-text">
+      </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>h1</span> <span class="token attr-name">className</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>header<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token plain-text">Todo List</span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>h1</span><span class="token punctuation">></span></span><span class="token plain-text">
+      </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span><span class="token class-name">TodoList</span></span> <span class="token attr-name">todos</span><span class="token script language-javascript"><span class="token script-punctuation punctuation">=</span><span class="token punctuation">{</span>todos<span class="token punctuation">}</span></span> <span class="token attr-name">toggleTodo</span><span class="token script language-javascript"><span class="token script-punctuation punctuation">=</span><span class="token punctuation">{</span>toggleTodo<span class="token punctuation">}</span></span> <span class="token attr-name">deleteTodo</span><span class="token script language-javascript"><span class="token script-punctuation punctuation">=</span><span class="token punctuation">{</span>deleteTodo<span class="token punctuation">}</span></span> <span class="token punctuation">/></span></span><span class="token plain-text">
+    </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span></span><span class="token punctuation">></span></span>
+  <span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
+<p>This is a React functional component called <code>App</code> that represents a simple Todo list application. Let's break down the key parts of this file:</p>
+<h4>Imports</h4>
+<pre class="language-jsx"><code class="language-jsx"><span class="token keyword">import</span> <span class="token punctuation">{</span> useEffect<span class="token punctuation">,</span> useState <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">"react"</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token punctuation">{</span> NewTodoForm <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">"./NewTodoForm"</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token string">"./styles.css"</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token punctuation">{</span> TodoList <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">"./TodoList"</span><span class="token punctuation">;</span></code></pre>
+<ul>
+<li>The <code>useEffect</code> and <code>useState</code> are React hooks. <code>useEffect</code> is used for handling side effects in functional components, and <code>useState</code> is used for managing state.</li>
+<li>The component imports two other components: <code>NewTodoForm</code> and <code>TodoList</code>.</li>
+<li>The <code>styles.css</code> file is imported for styling purposes.</li>
+</ul>
+<h4>Component Functions</h4>
+<pre class="language-jsx"><code class="language-jsx"><span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token keyword">function</span> <span class="token function">App</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span></code></pre>
+<p>This declares a functional component named <code>App</code>.</p>
+<h4>State Management</h4>
+<pre class="language-jsx"><code class="language-jsx"><span class="token keyword">const</span> <span class="token punctuation">[</span>todos<span class="token punctuation">,</span> setTodos<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token function">useState</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">{</span>
+  <span class="token keyword">const</span> localValue <span class="token operator">=</span> localStorage<span class="token punctuation">.</span><span class="token function">getItem</span><span class="token punctuation">(</span><span class="token string">"ITEMS"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token keyword">if</span> <span class="token punctuation">(</span>localValue <span class="token operator">==</span> <span class="token keyword">null</span><span class="token punctuation">)</span> <span class="token keyword">return</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+
+  <span class="token keyword">return</span> <span class="token constant">JSON</span><span class="token punctuation">.</span><span class="token function">parse</span><span class="token punctuation">(</span>localValue<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+<p>It initializes a state variable <code>todos</code> using the <code>useState</code> hook. The initial state is retrieved from the local storage. If no data is stored, an empty array is used as the default state.</p>
+<h4>Local Storage and useEffect</h4>
+<pre class="language-jsx"><code class="language-jsx"><span class="token function">useEffect</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">{</span>
+  localStorage<span class="token punctuation">.</span><span class="token function">setItem</span><span class="token punctuation">(</span><span class="token string">"ITEMS"</span><span class="token punctuation">,</span> <span class="token constant">JSON</span><span class="token punctuation">.</span><span class="token function">stringify</span><span class="token punctuation">(</span>todos<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token punctuation">[</span>todos<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+<p>The <code>useEffect</code> hook is used here. It watches for changes in the <code>todos</code> state, and whenever it changes, it updates the local storage with the new value.</p>
+<h4>Todo Manipulation Functions</h4>
+<ul>
+<li><code>addTodo</code>: Adds a new todo item to the state.</li>
+<li><code>toggleTodo</code>: Toggles the completion status of a todo item.</li>
+<li><code>deleteTodo</code>: Deletes a todo item from the state.</li>
+</ul>
+<h4>Render</h4>
+<pre class="language-jsx"><code class="language-jsx"><span class="token keyword">return</span> <span class="token punctuation">(</span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span></span><span class="token punctuation">></span></span><span class="token plain-text">
+    </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span><span class="token class-name">NewTodoForm</span></span> <span class="token attr-name">onSubmit</span><span class="token script language-javascript"><span class="token script-punctuation punctuation">=</span><span class="token punctuation">{</span>addTodo<span class="token punctuation">}</span></span> <span class="token punctuation">/></span></span><span class="token plain-text">
+    </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>h1</span> <span class="token attr-name">className</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>header<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token plain-text">Todo List</span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>h1</span><span class="token punctuation">></span></span><span class="token plain-text">
+    </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span><span class="token class-name">TodoList</span></span> <span class="token attr-name">todos</span><span class="token script language-javascript"><span class="token script-punctuation punctuation">=</span><span class="token punctuation">{</span>todos<span class="token punctuation">}</span></span> <span class="token attr-name">toggleTodo</span><span class="token script language-javascript"><span class="token script-punctuation punctuation">=</span><span class="token punctuation">{</span>toggleTodo<span class="token punctuation">}</span></span> <span class="token attr-name">deleteTodo</span><span class="token script language-javascript"><span class="token script-punctuation punctuation">=</span><span class="token punctuation">{</span>deleteTodo<span class="token punctuation">}</span></span> <span class="token punctuation">/></span></span><span class="token plain-text">
+  </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span></span><span class="token punctuation">></span></span>
+<span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+<ul>
+<li>The component returns JSX, which represents the structure of the rendered component.</li>
+<li>It renders <code>NewTodoForm</code> for adding new todos, an <code>&lt;h1&gt;</code> element with the class &quot;header,&quot; and the <code>TodoList</code> component to display the list of todos.</li>
+</ul>
+<p>In summary, this React component manages a Todo list. It uses local storage to persist the todos, and it provides functions to add, toggle completion, and delete todos. The component structure consists of a form for adding new todos, a title for the todo list, and a list of todos with checkboxes to toggle completion and buttons to delete todos.</p>
+<h3>NewTodoForm.jsx</h3>
+<p>Open <em>src/NewTodoForm.jsx</em> and add the following code:</p>
+<pre class="language-jsx"><code class="language-jsx"><span class="token keyword">import</span> <span class="token punctuation">{</span> useState <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">"react"</span><span class="token punctuation">;</span>
+
+<span class="token keyword">export</span> <span class="token keyword">function</span> <span class="token function">NewTodoForm</span><span class="token punctuation">(</span><span class="token parameter"><span class="token punctuation">{</span> onSubmit <span class="token punctuation">}</span></span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">const</span> <span class="token punctuation">[</span>newItem<span class="token punctuation">,</span> setNewItem<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token function">useState</span><span class="token punctuation">(</span><span class="token string">""</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+  <span class="token keyword">function</span> <span class="token function">handleSubmit</span><span class="token punctuation">(</span><span class="token parameter">e</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    e<span class="token punctuation">.</span><span class="token function">preventDefault</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>newItem <span class="token operator">===</span> <span class="token string">""</span><span class="token punctuation">)</span> <span class="token keyword">return</span><span class="token punctuation">;</span>
+
+    <span class="token function">onSubmit</span><span class="token punctuation">(</span>newItem<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token function">setNewItem</span><span class="token punctuation">(</span><span class="token string">""</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token keyword">return</span> <span class="token punctuation">(</span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>form</span> <span class="token attr-name">onSubmit</span><span class="token script language-javascript"><span class="token script-punctuation punctuation">=</span><span class="token punctuation">{</span>handleSubmit<span class="token punctuation">}</span></span> <span class="token attr-name">className</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>new-item-form<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token plain-text">
+      </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">className</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>form-row<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token plain-text">
+        </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>label</span> <span class="token attr-name">htmlFor</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>item<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token plain-text">New Item</span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>label</span><span class="token punctuation">></span></span><span class="token plain-text">
+        </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span>
+          <span class="token attr-name">value</span><span class="token script language-javascript"><span class="token script-punctuation punctuation">=</span><span class="token punctuation">{</span>newItem<span class="token punctuation">}</span></span>
+          <span class="token attr-name">onChange</span><span class="token script language-javascript"><span class="token script-punctuation punctuation">=</span><span class="token punctuation">{</span><span class="token punctuation">(</span><span class="token parameter">e</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token function">setNewItem</span><span class="token punctuation">(</span>e<span class="token punctuation">.</span>target<span class="token punctuation">.</span>value<span class="token punctuation">)</span><span class="token punctuation">}</span></span>
+          <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>text<span class="token punctuation">"</span></span>
+          <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>item<span class="token punctuation">"</span></span>
+        <span class="token punctuation">/></span></span><span class="token plain-text">
+      </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span><span class="token plain-text">
+      </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>button</span> <span class="token attr-name">className</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>btn<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token plain-text">Add</span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>button</span><span class="token punctuation">></span></span><span class="token plain-text">
+    </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>form</span><span class="token punctuation">></span></span>
+  <span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
+<p>This React file defines a functional component named <code>NewTodoForm</code> that represents a form for adding new items to a todo list. Let's break down the key parts of this file:</p>
+<h4>Import Statement</h4>
+<pre class="language-jsx"><code class="language-jsx"><span class="token keyword">import</span> <span class="token punctuation">{</span> useState <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">"react"</span><span class="token punctuation">;</span></code></pre>
+<p>It imports the <code>useState</code> hook from the React library. The <code>useState</code> hook is used for managing state in functional components.</p>
+<h4>NewTodoForm Functional Component Definition</h4>
+<pre class="language-jsx"><code class="language-jsx"><span class="token keyword">export</span> <span class="token keyword">function</span> <span class="token function">NewTodoForm</span><span class="token punctuation">(</span><span class="token parameter"><span class="token punctuation">{</span> onSubmit <span class="token punctuation">}</span></span><span class="token punctuation">)</span> <span class="token punctuation">{</span></code></pre>
+<p>This declares a functional component named <code>NewTodoForm</code>. It takes an object with a property <code>onSubmit</code> as a parameter. This <code>onSubmit</code> function is expected to handle the submission of a new item.</p>
+<h4>NewTodoForm State Management</h4>
+<pre class="language-jsx"><code class="language-jsx"><span class="token keyword">const</span> <span class="token punctuation">[</span>newItem<span class="token punctuation">,</span> setNewItem<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token function">useState</span><span class="token punctuation">(</span><span class="token string">""</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+<p>It initializes a state variable <code>newItem</code> using the <code>useState</code> hook. This state represents the value of the input field in the form.</p>
+<h4>Form Submission Handling</h4>
+<pre class="language-jsx"><code class="language-jsx"><span class="token keyword">function</span> <span class="token function">handleSubmit</span><span class="token punctuation">(</span><span class="token parameter">e</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  e<span class="token punctuation">.</span><span class="token function">preventDefault</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token keyword">if</span> <span class="token punctuation">(</span>newItem <span class="token operator">===</span> <span class="token string">""</span><span class="token punctuation">)</span> <span class="token keyword">return</span><span class="token punctuation">;</span>
+
+  <span class="token function">onSubmit</span><span class="token punctuation">(</span>newItem<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+  <span class="token function">setNewItem</span><span class="token punctuation">(</span><span class="token string">""</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
+<ul>
+<li>The <code>handleSubmit</code> function is triggered when the form is submitted.</li>
+<li><code>e.preventDefault()</code> prevents the default form submission behavior, which would cause a page reload.</li>
+<li>It checks if <code>newItem</code> is not an empty string, and if not, it calls the <code>onSubmit</code> function with the current value of <code>newItem</code>.</li>
+<li>After submission, it resets the <code>newItem</code> state to an empty string.</li>
+</ul>
+<h4>Render JSX</h4>
+<pre class="language-jsx"><code class="language-jsx"><span class="token keyword">return</span> <span class="token punctuation">(</span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>form</span> <span class="token attr-name">onSubmit</span><span class="token script language-javascript"><span class="token script-punctuation punctuation">=</span><span class="token punctuation">{</span>handleSubmit<span class="token punctuation">}</span></span> <span class="token attr-name">className</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>new-item-form<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token plain-text">
+    </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">className</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>form-row<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token plain-text">
+      </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>label</span> <span class="token attr-name">htmlFor</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>item<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token plain-text">New Item</span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>label</span><span class="token punctuation">></span></span><span class="token plain-text">
+      </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span>
+        <span class="token attr-name">value</span><span class="token script language-javascript"><span class="token script-punctuation punctuation">=</span><span class="token punctuation">{</span>newItem<span class="token punctuation">}</span></span>
+        <span class="token attr-name">onChange</span><span class="token script language-javascript"><span class="token script-punctuation punctuation">=</span><span class="token punctuation">{</span><span class="token punctuation">(</span><span class="token parameter">e</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token function">setNewItem</span><span class="token punctuation">(</span>e<span class="token punctuation">.</span>target<span class="token punctuation">.</span>value<span class="token punctuation">)</span><span class="token punctuation">}</span></span>
+        <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>text<span class="token punctuation">"</span></span>
+        <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>item<span class="token punctuation">"</span></span>
+      <span class="token punctuation">/></span></span><span class="token plain-text">
+    </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span><span class="token plain-text">
+    </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>button</span> <span class="token attr-name">className</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>btn<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token plain-text">Add</span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>button</span><span class="token punctuation">></span></span><span class="token plain-text">
+  </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>form</span><span class="token punctuation">></span></span>
+<span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+<ul>
+<li>The component renders a form with an <code>onSubmit</code> handler set to the <code>handleSubmit</code> function.</li>
+<li>Inside the form, there is a label and an input field for entering the new item's text.</li>
+<li>The <code>value</code> of the input field is bound to the <code>newItem</code> state, and the <code>onChange</code> event updates the <code>newItem</code> state as the user types.</li>
+<li>Finally, there is a submit button with the label &quot;Add.&quot;</li>
+</ul>
+<p>In summary, this component provides a form for adding new items to a todo list. It manages the state of the input field (<code>newItem</code>) and triggers a callback (<code>onSubmit</code>) when the form is submitted. The <code>onSubmit</code> function is expected to handle the logic of adding the new item to the todo list.</p>
+<h3>TodoList.jsx</h3>
+<p>Open <em>src/TodoList.jsx</em> and add the following code:</p>
+<pre class="language-jsx"><code class="language-jsx"><span class="token keyword">import</span> <span class="token punctuation">{</span> TodoItem <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">"./TodoItem"</span><span class="token punctuation">;</span>
+
+<span class="token keyword">export</span> <span class="token keyword">function</span> <span class="token function">TodoList</span><span class="token punctuation">(</span><span class="token parameter"><span class="token punctuation">{</span> todos<span class="token punctuation">,</span> toggleTodo<span class="token punctuation">,</span> deleteTodo <span class="token punctuation">}</span></span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">return</span> <span class="token punctuation">(</span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>ul</span> <span class="token attr-name">className</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>list<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token plain-text">
+      </span><span class="token punctuation">{</span>todos<span class="token punctuation">.</span>length <span class="token operator">===</span> <span class="token number">0</span> <span class="token operator">&amp;&amp;</span> <span class="token string">"No Todos"</span><span class="token punctuation">}</span><span class="token plain-text">
+      </span><span class="token punctuation">{</span>todos<span class="token punctuation">.</span><span class="token function">map</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter">todo</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> <span class="token punctuation">(</span>
+          <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span><span class="token class-name">TodoItem</span></span>
+            <span class="token spread"><span class="token punctuation">{</span><span class="token operator">...</span>todo<span class="token punctuation">}</span></span>
+            <span class="token attr-name">key</span><span class="token script language-javascript"><span class="token script-punctuation punctuation">=</span><span class="token punctuation">{</span>todo<span class="token punctuation">.</span>id<span class="token punctuation">}</span></span>
+            <span class="token attr-name">toggleTodo</span><span class="token script language-javascript"><span class="token script-punctuation punctuation">=</span><span class="token punctuation">{</span>toggleTodo<span class="token punctuation">}</span></span>
+            <span class="token attr-name">deleteTodo</span><span class="token script language-javascript"><span class="token script-punctuation punctuation">=</span><span class="token punctuation">{</span>deleteTodo<span class="token punctuation">}</span></span>
+          <span class="token punctuation">/></span></span>
+        <span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">}</span><span class="token plain-text">
+    </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>ul</span><span class="token punctuation">></span></span>
+  <span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
+<p>This React file defines a functional component named <code>TodoList</code> that represents a list of todo items. Let's break down the key parts of this file:</p>
+<h4>TodoItem Import Statement</h4>
+<pre class="language-jsx"><code class="language-jsx"><span class="token keyword">import</span> <span class="token punctuation">{</span> TodoItem <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">"./TodoItem"</span><span class="token punctuation">;</span></code></pre>
+<p>It imports the <code>TodoItem</code> component from another file. Each individual todo item is represented by the <code>TodoItem</code> component.</p>
+<h4>TodoList Functional Component Definition</h4>
+<pre class="language-jsx"><code class="language-jsx"><span class="token keyword">export</span> <span class="token keyword">function</span> <span class="token function">TodoList</span><span class="token punctuation">(</span><span class="token parameter"><span class="token punctuation">{</span> todos<span class="token punctuation">,</span> toggleTodo<span class="token punctuation">,</span> deleteTodo <span class="token punctuation">}</span></span><span class="token punctuation">)</span> <span class="token punctuation">{</span></code></pre>
+<p>This declares a functional component named <code>TodoList</code>. It takes an object with properties <code>todos</code>, <code>toggleTodo</code>, and <code>deleteTodo</code> as parameters. These properties represent the list of todos, a function to toggle the completion status of a todo, and a function to delete a todo.</p>
+<h4>Rendering the Todo List</h4>
+<pre class="language-jsx"><code class="language-jsx"><span class="token keyword">return</span> <span class="token punctuation">(</span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>ul</span> <span class="token attr-name">className</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>list<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token plain-text">
+    </span><span class="token punctuation">{</span>todos<span class="token punctuation">.</span>length <span class="token operator">===</span> <span class="token number">0</span> <span class="token operator">&amp;&amp;</span> <span class="token string">"No Todos"</span><span class="token punctuation">}</span><span class="token plain-text">
+    </span><span class="token punctuation">{</span>todos<span class="token punctuation">.</span><span class="token function">map</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter">todo</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">{</span>
+      <span class="token keyword">return</span> <span class="token punctuation">(</span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span><span class="token class-name">TodoItem</span></span>
+          <span class="token spread"><span class="token punctuation">{</span><span class="token operator">...</span>todo<span class="token punctuation">}</span></span>
+          <span class="token attr-name">key</span><span class="token script language-javascript"><span class="token script-punctuation punctuation">=</span><span class="token punctuation">{</span>todo<span class="token punctuation">.</span>id<span class="token punctuation">}</span></span>
+          <span class="token attr-name">toggleTodo</span><span class="token script language-javascript"><span class="token script-punctuation punctuation">=</span><span class="token punctuation">{</span>toggleTodo<span class="token punctuation">}</span></span>
+          <span class="token attr-name">deleteTodo</span><span class="token script language-javascript"><span class="token script-punctuation punctuation">=</span><span class="token punctuation">{</span>deleteTodo<span class="token punctuation">}</span></span>
+        <span class="token punctuation">/></span></span>
+      <span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">}</span><span class="token plain-text">
+  </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>ul</span><span class="token punctuation">></span></span>
+<span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+<ul>
+<li>The component returns JSX, representing the structure of the rendered component.</li>
+<li>It renders an unordered list (<code>&lt;ul&gt;</code>) with the class name &quot;list.&quot;</li>
+<li>It checks if the length of the <code>todos</code> array is 0. If true, it displays the text &quot;No Todos.&quot; This is a simple conditional rendering to handle the case when there are no todos.</li>
+<li>It then uses the <code>map</code> function to iterate over each <code>todo</code> in the <code>todos</code> array and renders a <code>TodoItem</code> component for each todo.</li>
+<li>The spread operator (<code>{...todo}</code>) is used to pass all properties of the <code>todo</code> object as individual props to the <code>TodoItem</code> component.</li>
+<li>Each <code>TodoItem</code> component is assigned a unique <code>key</code> prop using the <code>todo.id</code> to help React efficiently update and re-render the list when needed.</li>
+<li>The <code>toggleTodo</code> and <code>deleteTodo</code> functions are also passed as props to each <code>TodoItem</code> component, allowing them to communicate with the parent component (<code>TodoList</code>).</li>
+</ul>
+<p>In summary, the <code>TodoList</code> component is responsible for rendering a list of todo items. It maps over the <code>todos</code> array and renders a <code>TodoItem</code> component for each todo, passing the necessary data and functions as props. If there are no todos, it displays a message indicating that there are no todos. The actual rendering of each todo item is delegated to the <code>TodoItem</code> component.</p>
+<h3>TodoItem.jsx</h3>
+<p>Open <em>src/TodoItem.jsx</em> and add the following code:</p>
+<pre class="language-jsx"><code class="language-jsx"><span class="token keyword">export</span> <span class="token keyword">function</span> <span class="token function">TodoItem</span><span class="token punctuation">(</span><span class="token parameter"><span class="token punctuation">{</span> completed<span class="token punctuation">,</span> id<span class="token punctuation">,</span> title<span class="token punctuation">,</span> toggleTodo<span class="token punctuation">,</span> deleteTodo <span class="token punctuation">}</span></span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">return</span> <span class="token punctuation">(</span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span><span class="token punctuation">></span></span><span class="token plain-text">
+      </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>label</span><span class="token punctuation">></span></span><span class="token plain-text">
+        </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span>
+          <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>checkbox<span class="token punctuation">"</span></span>
+          <span class="token attr-name">checked</span><span class="token script language-javascript"><span class="token script-punctuation punctuation">=</span><span class="token punctuation">{</span>completed<span class="token punctuation">}</span></span>
+          <span class="token attr-name">onChange</span><span class="token script language-javascript"><span class="token script-punctuation punctuation">=</span><span class="token punctuation">{</span><span class="token punctuation">(</span><span class="token parameter">e</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token function">toggleTodo</span><span class="token punctuation">(</span>id<span class="token punctuation">,</span> e<span class="token punctuation">.</span>target<span class="token punctuation">.</span>checked<span class="token punctuation">)</span><span class="token punctuation">}</span></span>
+        <span class="token punctuation">/></span></span><span class="token plain-text">
+        </span><span class="token punctuation">{</span>title<span class="token punctuation">}</span><span class="token plain-text">
+      </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>label</span><span class="token punctuation">></span></span><span class="token plain-text">
+      </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>button</span> <span class="token attr-name">onClick</span><span class="token script language-javascript"><span class="token script-punctuation punctuation">=</span><span class="token punctuation">{</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token function">deleteTodo</span><span class="token punctuation">(</span>id<span class="token punctuation">)</span><span class="token punctuation">}</span></span> <span class="token attr-name">className</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>btn btn-danger<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token plain-text">
+        Delete
+      </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>button</span><span class="token punctuation">></span></span><span class="token plain-text">
+    </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>li</span><span class="token punctuation">></span></span>
+  <span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
+<p>This React file defines a functional component named <code>TodoItem</code> that represents an individual todo item in a todo list. Let's break down the key parts of this file:</p>
+<h4>TodoItem Functional Component Definition</h4>
+<pre class="language-jsx"><code class="language-jsx"><span class="token keyword">export</span> <span class="token keyword">function</span> <span class="token function">TodoItem</span><span class="token punctuation">(</span><span class="token parameter"><span class="token punctuation">{</span> completed<span class="token punctuation">,</span> id<span class="token punctuation">,</span> title<span class="token punctuation">,</span> toggleTodo<span class="token punctuation">,</span> deleteTodo <span class="token punctuation">}</span></span><span class="token punctuation">)</span> <span class="token punctuation">{</span></code></pre>
+<p>This declares a functional component named <code>TodoItem</code>. It takes an object with properties <code>completed</code>, <code>id</code>, <code>title</code>, <code>toggleTodo</code>, and <code>deleteTodo</code> as parameters. These properties represent the details of a todo item and functions to handle toggling completion status and deleting the todo.</p>
+<h4>Rendering the Todo Item</h4>
+<pre class="language-jsx"><code class="language-jsx"><span class="token keyword">return</span> <span class="token punctuation">(</span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span><span class="token punctuation">></span></span><span class="token plain-text">
+    </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>label</span><span class="token punctuation">></span></span><span class="token plain-text">
+      </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span>
+        <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>checkbox<span class="token punctuation">"</span></span>
+        <span class="token attr-name">checked</span><span class="token script language-javascript"><span class="token script-punctuation punctuation">=</span><span class="token punctuation">{</span>completed<span class="token punctuation">}</span></span>
+        <span class="token attr-name">onChange</span><span class="token script language-javascript"><span class="token script-punctuation punctuation">=</span><span class="token punctuation">{</span><span class="token punctuation">(</span><span class="token parameter">e</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token function">toggleTodo</span><span class="token punctuation">(</span>id<span class="token punctuation">,</span> e<span class="token punctuation">.</span>target<span class="token punctuation">.</span>checked<span class="token punctuation">)</span><span class="token punctuation">}</span></span>
+      <span class="token punctuation">/></span></span><span class="token plain-text">
+      </span><span class="token punctuation">{</span>title<span class="token punctuation">}</span><span class="token plain-text">
+    </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>label</span><span class="token punctuation">></span></span><span class="token plain-text">
+    </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>button</span> <span class="token attr-name">onClick</span><span class="token script language-javascript"><span class="token script-punctuation punctuation">=</span><span class="token punctuation">{</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token function">deleteTodo</span><span class="token punctuation">(</span>id<span class="token punctuation">)</span><span class="token punctuation">}</span></span> <span class="token attr-name">className</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>btn btn-danger<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token plain-text">
+      Delete
+    </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>button</span><span class="token punctuation">></span></span><span class="token plain-text">
+  </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>li</span><span class="token punctuation">></span></span>
+<span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+<ul>
+<li>The component returns JSX, representing the structure of the rendered todo item.</li>
+<li>It renders a list item (<code>&lt;li&gt;</code>) containing the details of a todo item.</li>
+<li>Inside the list item, there is a label element containing an input checkbox and the title of the todo.</li>
+<li>The checkbox is controlled by the <code>checked</code> prop, which is set to the value of the <code>completed</code> property. The <code>onChange</code> event is used to handle changes to the checkbox. When the checkbox is toggled, the <code>toggleTodo</code> function is called with the <code>id</code> of the todo and the new checked state.</li>
+<li>The title of the todo is displayed inside the label.</li>
+<li>There is also a delete button (<code>&lt;button&gt;</code>) with an <code>onClick</code> event. When the button is clicked, the <code>deleteTodo</code> function is called with the <code>id</code> of the todo. The button has a class name for styling purposes.</li>
+</ul>
+<p>In summary, the <code>TodoItem</code> component is responsible for rendering the details of an individual todo item. It includes a checkbox to toggle the completion status and a delete button to remove the todo item. The component receives the todo details and callback functions (<code>toggleTodo</code> and <code>deleteTodo</code>) as props, making it reusable and allowing it to interact with the parent components that manage the todo list.</p>
+<h3>Sources</h3>
+<ul>
+<li><a href="https://react.dev/learn">react.dev</a></li>
+<li><a href="https://www.youtube.com/watch?v=Rh3tobg7hEo">Learn React With This One Project</a> by <a href="https://www.youtube.com/@WebDevSimplified">WebDevSimplified</a></li>
+<li><a href="https://frontendmasters.com/courses/complete-react-v8/">Complete Intro to React v8 by Brian Holt</a></li>
+</ul>
+
+  </div>
+</article>
+    <aside class="sidebar">
+  <div class="sidebar__content">
+    <h5>Notes</h5>
+    
+      <ul>
+        <li>
+          <a href="/notes/2023-12-16-logo-design-notes/">Logo Design Basics</a> 
+        </li>
+        <li>
+          <a href="/notes/2023-12-11-typography-notes/">Typography Basics</a> 
+        </li>
+        <li>
+          <a href="/notes/2023-11-30-web-accessibility-notes copy/">Web Accessibility Basics</a> 
+        </li>
+        <li>
+          <a href="/notes/2023-11-20-build-an-ai-image-generator/">Build an AI Image Generator</a> 
+        </li>
+        <li>
+          <a href="/notes/2023-11-18-eleventy-notes/">Build an 11ty Site</a> 
+        </li>
+        <li class="active">
+          <a href="/notes/2023-11-13-react-notes/">React Todo List App</a> 
+        </li>
+        <li>
+          <a href="/notes/2023-11-05-procreate-notes/">Proctreate Basics</a> 
+        </li>
+        <li>
+          <a href="/notes/2023-10-28-javascript-notes/">Javascript Basics</a> 
+        </li>
+        <li>
+          <a href="/notes/2023-10-22-midjourney-notes/">Midjourney Basics</a> 
+        </li>
+        <li>
+          <a href="/notes/2023-10-21-css-notes/">CSS Basics</a> 
+        </li>
+      </ul>
+  </div>
+</aside>
+    
+  </main>
+</body>
+</html>

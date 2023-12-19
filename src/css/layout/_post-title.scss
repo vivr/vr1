@@ -1,0 +1,11 @@
+.post-title {
+  grid-column: full-width;
+  padding-inline: 1rem;
+  margin-bottom: 0;
+
+  @include breakpoint(medium) {
+    grid-column: full-width-start / content-start;
+    grid-row: 1;
+    margin-bottom: 4rem;
+  }
+}

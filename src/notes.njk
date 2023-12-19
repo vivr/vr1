@@ -1,0 +1,8 @@
+---
+title: Notes
+layout: 'base.njk'
+tags: pages
+---
+{%- for post in collections.notes | reverse -%}
+  {% include 'page-snippet.njk' %}
+{%- endfor -%}

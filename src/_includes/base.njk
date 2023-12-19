@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    {% include '_meta.njk' %}
+  </head>
+<body>
+<a href="#main-content" class="visually-hidden">Skip to main content</a>
+  <main class="content-grid">
+    {% include '_header.njk' %}
+    
+    {%- if tags == "pages" or tags == "frontPage" -%}
+      <ul id="main-content" class="card" role="list">
+        {{ content | safe }}
+      </ul>
+    {%- else -%}
+    {% include '_title.njk' %}
+        {{ content | safe }}
+    {%- endif -%}
+    {% if '/notes' in page.url and tags != "pages" %}
+    {% include '_sidebar.njk' %}
+    {% endif %}
+  </main>
+</body>
+</html>

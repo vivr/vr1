@@ -1,0 +1,57 @@
+.header {
+  grid-column: full-width;
+  padding-inline: 1rem;
+  margin-bottom: 1rem;
+
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+
+  @include breakpoint(medium) {
+    grid-column: breakout-right;
+    margin-bottom: 4rem;
+  }
+
+  &__info {
+    flex: 1 0 100%;
+    margin-top: 0;
+    padding-right: 1rem;
+
+    @include breakpoint(medium) {
+      height: 18rem;
+      border-right: 1px solid var(--clr-tertiary);
+    }
+    p {
+      line-height: 1;
+      margin-bottom: 1rem;
+    }
+    h1,
+    p {
+      font-size: $fs-body;
+    }
+    a {
+      text-decoration: none;
+    }
+
+    @include breakpoint(medium) {
+      flex: 1;
+      text-align: right;
+    }
+  }
+
+  &__nav {
+    align-self: end;
+
+    .nav-list {
+      font-size: $fs-body;
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      line-height: 1;
+
+      li:not(:last-child) {
+        margin-bottom: 1rem;
+      }
+    }
+  }
+}

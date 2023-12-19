@@ -1,0 +1,21 @@
+<li>
+  <a href="{{ post.url }}">
+    <figure tabindex="0">
+      {% if '/explorations' in post.url %}
+
+        <img alt="" src="/assets/explorations/{{ post.date | postYear }}/{{ post.date | postMonth }}/{{ post.data.pageId }}/01.webp" />
+        <figcaption>Exploration {{ post.data.pageId }}</figcaption>
+
+{% else %}
+
+        <img class="invert-light" alt="{{ post.data.pageId }} logo" src="/assets/notes/{{ post.data.pageId }}.webp" />
+        <figcaption>{{ post.data.title }}</figcaption>
+
+{% endif %}
+
+    </figure>
+  </a>
+</li>
+
+
+

@@ -1,0 +1,12 @@
+---
+layout: 'base.njk'
+---
+<article class="notes">
+  <div class="notes__image">
+  <img class="invert-light" src="/assets/notes/{{ pageId }}.webp" alt="{{ pageId }} logo">
+  </div>
+
+  <div class="notes__content">
+    {{ content | safe }}
+  </div>
+</article>

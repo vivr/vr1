@@ -1,0 +1,8 @@
+---
+title: Vivienne Reay
+layout: 'base.njk'
+tags: frontPage
+---
+{%- for post in collections.posts | reverse -%}
+  {% include 'page-snippet.njk' %}
+{%- endfor -%}

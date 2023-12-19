@@ -1,0 +1,18 @@
+<div class="post-title">
+{% if '/explorations' in page.url and tags != "pages" %}
+<h2 id="main-content">
+  <span>AI Text-to-Image</span> 
+    <br />{{ title }} {{ pageId }} 
+    <br /><span class="post-date">{{ page.date | postDate }}
+</span>
+</h2>
+{% elseif '/notes' in page.url and tags != "pages" %}
+<h2 id="main-content">
+  <span>Notes:</span> 
+  <br />{{ title }} 
+  <br /><span class="post-date">{{ page.date | postDate }}
+</span>
+</h2>
+{% endif %}
+</div>
+

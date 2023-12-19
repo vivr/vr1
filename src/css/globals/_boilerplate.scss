@@ -1,0 +1,22 @@
+html {
+  box-sizing: border-box;
+  color-scheme: light dark;
+}
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+img,
+svg {
+  max-width: 100%;
+  height: auto;
+  vertical-align: middle;
+}
+
+body {
+  font-family: $basefont;
+  line-height: 1.6;
+  background-color: var(--clr-bg);
+  color: var(--clr-primary);
+}

@@ -1,0 +1,54 @@
+a.button {
+  text-decoration: none;
+}
+
+button.button {
+  border: none;
+  background-color: transparent;
+  font-family: inherit;
+  padding: 0;
+  cursor: pointer;
+
+  @media screen and (-ms-high-contrast: active) {
+    border: 1px solid currentcolor;
+  }
+}
+
+a.button,
+button.button {
+  display: inline-flex;
+  background-color: var(--clr-primary);
+  color: var(--clr-bg);
+  padding: 0.5em 0.9em 0.7em 0.8em;
+  min-height: em(34);
+  font-size: $fs-body;
+  font-weight: 500;
+  transition: 220ms all ease-in-out;
+
+  &:hover,
+  &.active {
+    background-color: var(--clr-secondary);
+  }
+
+  &:focus {
+    outline-style: solid;
+    outline-color: transparent;
+    box-shadow: 0 0 0 4px var(--clr-primary);
+  }
+
+  &__pagination {
+    justify-content: center;
+    background-color: var(--clr-bg);
+    border: 1px solid var(--clr-secondary);
+    color: var(--clr-primary);
+
+    padding: 0.2em 0.1em 0.4em 0.1em;
+    min-width: 5ch;
+
+    &:hover,
+    &.active {
+      color: var(--clr-bg);
+      background-color: var(--clr-secondary);
+    }
+  }
+}

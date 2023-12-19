@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>
+Javascript Basics   | Vivienne Reay
+
+</title>
+<meta name="description" content="A personal site for Vivienne Reay. This is where she keeps notes on front-end development and other interests."/>
+<link rel="icon" href="/assets/favicon.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Darker+Grotesque:wght@500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/css/style.css">
+  </head>
+<body>
+<a href="#main-content" class="visually-hidden">Skip to main content</a>
+  <main class="content-grid">
+    <header class="header">
+  <div class="header__info">
+    <h1><a href="/">Vivienne Reay</a></h1>
+    <p>vivreay[at]gmail.com</p>
+  </div>
+  <nav role="navigation" class="header__nav">
+  <ul role="list" class="nav-list">
+    <li><a href="/" class=" button">Index</a></li>
+    <li><a href="/explorations/" class=" button">AI Text-to-Image Explorations</a></li>
+    <li><a href="/notes/" class="active button">Notes</a></li>
+  </ul>
+</nav>
+</header><div class="post-title">
+
+<h2 id="main-content">
+  <span>Notes:</span> 
+  <br />Javascript Basics 
+  <br /><span class="post-date">28 Oct 2023
+</span>
+</h2>
+
+</div>
+
+
+        <article class="notes">
+  <div class="notes__image">
+  <img class="invert-light" src="/assets/notes/js.webp" alt="js logo">
+  </div>
+
+  <div class="notes__content">
+    <h3>What is Javascript?</h3>
+<p>Javascript is a programming language widely used for changing things that happen in the web browser. The language can be used as part of web pages on the client-side and can also be used on the server-side with node.js.</p>
+<h3>Data Types</h3>
+<p>JavaScript has data types to store different types of values.</p>
+<ul>
+<li><strong>Number:</strong> Represents numeric values, including integers and floating-point numbers.</li>
+<li><strong>String:</strong> Represents sequences of characters, including text, letters, and symbols.</li>
+<li><strong>Boolean:</strong> Represents two logical values: true and false.</li>
+<li><strong>Null:</strong> Represents the intentional absence of a value.</li>
+<li><strong>Undefined:</strong> Represents the default value of a variable that has not been declared or initialised.</li>
+<li><strong>BigInt:</strong> Represent integer values that are too large or too small to be represented by the default Number data type.</li>
+<li><strong>Symbol:</strong> Represents unique identifiers that can be used as property keys or object identifiers.</li>
+</ul>
+<h3>Comparisons</h3>
+<p>JavaScript comparisons are used to determine whether two values are equal or not.</p>
+<ul>
+<li><code>==</code>: two values are equal if they have the same value, regardless of their data types.</li>
+<li><code>===</code>: two values are equal if they have the same value and the same data type.</li>
+<li><code>!=</code>: two values are not equal if they do not have the same value.</li>
+<li><code>!==</code>: two values are <em>strictly</em> not equal if they do not have the same value or the same data type.</li>
+<li><code>&gt;</code>: checks if the first value is greater than the second value.</li>
+<li><code>&lt;</code>: checks if the first value is less than the second value.</li>
+<li><code>&gt;=</code>: checks if the first value is greater than or equal to the second value.</li>
+<li><code>&lt;=</code>: checks if the first value is less than or equal to the second value.</li>
+</ul>
+<h3>Booleans</h3>
+<p>Booleans are used to determine whether or not a block gets executed, where any defined variable that is neither zero nor an empty string is treated as true.</p>
+<ul>
+<li><code>AND(&amp;&amp;)</code>: true if ALL are true.</li>
+<li><code>OR(||)</code>: true if ONE is true.</li>
+<li><code>NOT(!)</code>: inverts true/false value.</li>
+</ul>
+<h3>Math Operators</h3>
+<ul>
+<li><code>+</code>: add two numbers.</li>
+<li><code>-</code>: subtract two numbers.</li>
+<li><code>*</code>: multiply two numbers.</li>
+<li><code>/</code>: divide two numbers.</li>
+<li><code>%</code>: divide two numbers, yield remainder.</li>
+<li><code>**</code>: exponentation (e.g. <code>2 ** 3 = 8</code>) It raises the left operand to the power of the right operand.</li>
+</ul>
+<h3>Assignment Operators</h3>
+<ul>
+<li><code>=</code>: assign value to variable.</li>
+<li><code>+=</code>: adds the right operand to the left operand and assigns the result to the left operand.</li>
+<li><code>-=</code>: subtracts the right operand from the left operand and assignd the result to the left operand.</li>
+<li><code>\*=</code>: multiplies the left operand by the right operand and assigns the result to the left operand.</li>
+<li><code>/=</code>: divides the left operand by the right operand and assigns the result to the left operand.</li>
+<li><code>%=</code>: computes the remainder when dividing the left operand by the right operand and assigns the result to the left operand.</li>
+</ul>
+<h3>String Concatenation</h3>
+<p>Concatenation typically refers to the process of combining strings or values together. You can use the <code>+</code> operator to concatenate strings.</p>
+<h3>Conditionals</h3>
+<p>JavaScript conditionals are used to control the flow of execution of a program based on certain conditions. The most basic conditional statement is the <code>if</code> statement. The <code>if</code> statement takes a condition as its argument, and if the condition is true, then the block of code following the <code>if</code> statement is executed.</p>
+<p>In addition to the <code>if</code> statement, JavaScript also has an <code>else</code> statement and an <code>else if</code> statement. The <code>else</code> statement is used to specify code that should be executed if the condition in the <code>if</code> statement is false. The <code>else if</code> statement is used to specify code that should be executed if the condition in the <code>if</code> statement is false and the condition in the <code>else if</code> statement is true.</p>
+<p>The <code>switch</code> statement is similar to a series of IF statements on the same variable. This is used for when you want to compare the same variable with many different values, and execute a different piece of code depending on which value it equals to.</p>
+<h3>Data Structures</h3>
+<p>Data structures in JavaScript encompass a variety of ways to organise and store data efficiently, each with its own strengths and applications. The choice of data structure depends on the specific requirements of the data and the operations that need to be performed on it. Here are some common data structures in JavaScript:</p>
+<ul>
+<li><strong>Arrays:</strong> An ordered collection of elements of the same data type. Elements are accessed using their index positions. Versatile and efficient for storing and manipulating ordered sequences of data.</li>
+<li><strong>Objects:</strong> Collections of key-value pairs. Keys are unique identifiers, and values can be of any data type. Suitable for storing and accessing data associated with unique identifiers.</li>
+<li><strong>Linked Lists:</strong> A collection of nodes, where each node contains data and a pointer to the next node in the list. Useful for efficient insertion and deletion at any point in the list.</li>
+<li><strong>Stacks:</strong> LIFO (Last In, First Out) data structure. Elements are added and removed from the top (last in).</li>
+<li><strong>Queues:</strong> FIFO (First In, First Out) data structure. Elements are added to the back and removed from the front.</li>
+<li><strong>Sets:</strong> Collections of unique values, where each value can only appear once. Efficient for checking for membership and removing duplicates.</li>
+<li><strong>Maps:</strong> Collections of key-value pairs, similar to objects, but keys must be unique and are often restricted to primitive data types. Ooptimised for retrieving values based on keys.</li>
+<li><strong>Trees:</strong> Hierarchical data structures with a root node and branches of child nodes. Useful for representing hierarchical relationships, such as file systems or organisational structures.</li>
+<li><strong>Graphs:</strong> Collections of interconnected nodes (vertices) and edges (relationships between nodes). Suitable for modeling complex relationships between entities.</li>
+</ul>
+<h3>Basic Rules for Writing Javascript</h3>
+<ul>
+<li>Javascript is case sensitive. Variables, functions and methods are written in camelCase (e.g. <code>let userName</code>).</li>
+<li>Names can use letters and digits, e.g. <code>let ageGroup5</code>.</li>
+<li>The dollar sign and the underscore can also be used at the beginning of your name or anywhere inside of it, e.g. <code>$kindOfSpecial</code>. <code>_internalValue</code>. No other special characters can be used, e.g. <code>let user-b</code> <em>is not allowed</em>.</li>
+<li>Snake case is bad practice for the Javascript language unlike some other programming languages, e.g. <code>let user_name</code>. <em>This is not recommended</em>.</li>
+<li>Names must not start with a digit, e.g. <code>let 21Players</code>. We are also not allowed to use keywords such as <code>let</code> and <code>const</code>, e.g. <code>let let</code>.</li>
+<li>The semi-colon (<code>;</code>) can be used to finish off a line of code but this is optional in most cases. For example, you can't omit the semi-colon when having two expressions in one line, e.g. <code>let const a = 1;let const b = 2;</code>.</li>
+</ul>
+<h3>Simple Debugging in the Console</h3>
+<ul>
+<li>Console log can be used to output data to the console: <code>console.log(name);</code></li>
+<li>We can get data from the console by using prompt: <code>let lastName = prompt('What is your last name?');</code></li>
+<li><em>alert</em> is similar to the prompt but it doesn't ask a question: <code>alert(name + ' is a ' + age + ' years old ' + job + '.');</code></li>
+</ul>
+<h3>Variables</h3>
+<p>A variable is a container in which we can store a value in order to use it repeatedly. By saving a value in a variable we don't have to write that value each time we want to use it. When we declare a variable it looks like this: <code>let name = viv;</code>.</p>
+<h3>When to Use <code>var</code> and <code>let</code></h3>
+<p>In general, it is recommended to use <code>let</code> instead of <code>var</code> for most variable declarations. This is because <code>let</code> has block scope, which makes it more predictable and easier to reason about the lifetime of variables. Additionally, <code>let</code> does not allow redeclaration, which helps to prevent bugs caused by accidentally overriding variables.</p>
+<p>However, there are some cases where <code>var</code> may still be useful. For example, <code>var</code> can be used to declare global variables, which are variables that are accessible from anywhere in the program. Additionally, <code>var</code> can be used to declare variables that need to be accessed before they are declared.</p>
+<h3>const</h3>
+<p>In Javascript, <code>const</code> is a keyword used to declare a constant variable. Once a variable is defined with <code>const</code>, its value cannot be reassigned. However, it's important to note that <code>const</code> does not make the variable itself immutable; it only prevents reassignment of the variable reference. Use <code>const</code> when you want to ensure that a variable's value remains constant throughout its scope.</p>
+<h3>Functions</h3>
+<p>Functions are like mini-programs that group together code blocks to perform specific tasks. They can make your code cleaner, reusable, and easier to manage. Functions can return values using the return keyword. The returned value can be used by other functions or assigned to variables.</p>
+<ul>
+<li><strong>Named Functions</strong>: Have a name and are called by their name.</li>
+<li><strong>Anonymous Functions</strong>: Don't have a name and are often triggered by events.</li>
+<li><strong>Immediately Invoked Function Expressions (IIFEs)</strong>: Anonymous functions that run immediately.</li>
+</ul>
+<h3>Properties and Methods</h3>
+<p>In javascript objects have properties and methods. Properties are pieces of meta information about the object and methods are functions that belong to the object.</p>
+<p>To use a method on an object call the object then add a punctuation mark followed by the name of the method and parentheses: <code>users.reverse();</code>. In some cases the method has arguments that can be passed inside the parentheses.</p>
+<ul>
+<li><strong>Properties</strong> are like attributes or characteristics of an object. They store information about the object and can be of various data types, such as numbers, strings, booleans, or even other objects. Properties are accessed using the dot notation.</li>
+<li><strong>Methods</strong> are functions associated with an object. They encapsulate actions or operations that the object can perform. Methods are also called using the dot notation, followed by the method name and parentheses:</li>
+</ul>
+<p>Properties and methods work together to define the behavior and characteristics of an object. Properties represent the state of the object, while methods allow the object to perform actions or respond to interactions. Methods can access and modify the object's properties, and properties can influence the outcome of method calls.</p>
+<h3>Loops</h3>
+<p>In JavaScript, a loop is a way to repeat a block of code multiple times. There are three main types of loops:</p>
+<ul>
+<li>
+<p><strong>for loops:</strong> Used when you know the number of times you want to repeat the code.</p>
+<pre class="language-javascript"><code class="language-javascript"><span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">let</span> i <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span> i <span class="token operator">&lt;=</span> <span class="token number">10</span><span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>i<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
+</li>
+<li>
+<p><strong>while loops:</strong> Used when you want to repeat the code as long as a specific condition is true.</p>
+<pre class="language-javascript"><code class="language-javascript"><span class="token keyword">let</span> i <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span>
+<span class="token keyword">while</span> <span class="token punctuation">(</span>i <span class="token operator">&lt;=</span> <span class="token number">10</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>i<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  i<span class="token operator">++</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
+</li>
+<li>
+<p><strong>do-while loops:</strong> Similar to while loops, but the code inside is executed at least once before checking the condition.</p>
+<pre class="language-javascript"><code class="language-javascript"><span class="token keyword">let</span> i <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span>
+<span class="token keyword">do</span> <span class="token punctuation">{</span>
+  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>i<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  i<span class="token operator">++</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span> <span class="token keyword">while</span> <span class="token punctuation">(</span>i <span class="token operator">&lt;=</span> <span class="token number">10</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+</li>
+</ul>
+<h3>The DOM (Document Object Model)</h3>
+<p>The DOM is a representation of an HTML document that allows languages like CSS and JavaScript to interact with the document. It organises the elements of an HTML document into a tree structure, where each element is a node. Nodes can have parent nodes, child nodes, and sibling nodes.</p>
+<h3>Selecting DOM Elements</h3>
+<ul>
+<li><strong>Selecting Elements by ID</strong>: The most straightforward way to select elements in the DOM is by their unique ID attribute. Each element can have only one ID, and it serves as a global identifier within the document. To select an element by its ID, use the <code>getElementById()</code> method:</li>
+<li><strong>Selecting Elements by Class</strong>: An element can have multiple classes, which are used to group related elements together. To select elements by their class, use the <code>getElementsByClassName()</code> method.</li>
+<li><strong>Selecting Elements by Tag Name</strong>: To select all elements of a specific tag type, such as <code>&lt;div&gt;</code>, <code>&lt;p&gt;</code>, or <code>&lt;img&gt;</code>, use the <code>getElementsByTagName()</code> method:</li>
+<li><strong>Selecting Elements by CSS Selectors</strong>: CSS selectors provide a more powerful and versatile way to select elements based on their attributes, relationships, and positions within the document structure. The <code>querySelector()</code> method selects a single element matching the selector, while <code>querySelectorAll()</code> returns a collection of elements.</li>
+<li><strong>Combining Selectors</strong>: CSS selectors can be combined using various combinators, such as child selectors (<code>&gt;</code>), descendant selectors <em>separated by white space</em> (``), and sibling selectors (<code>+</code>) to target specific element relationships:</li>
+</ul>
+<h3>getAttribute</h3>
+<p>The <code>getAttribute()</code> method is used to retrieve the value of a specified attribute from an HTML element. It takes two arguments:</p>
+<ol>
+<li>
+<p><strong>The name of the attribute to retrieve:</strong> This is a string that represents the name of the attribute you want to get the value of. For example, to get the value of the <code>id</code> attribute, you would pass <code>&quot;id&quot;</code> as the first argument.</p>
+</li>
+<li>
+<p><strong>An optional second argument:</strong> This argument specifies whether to retrieve the attribute value in its original form (the default) or whether to convert it to a specific data type. For example, to get the <code>value</code> attribute of an <code>&lt;input&gt;</code> element as a number, you would pass <code>&quot;value&quot;</code> as the first argument and <code>&quot;number&quot;</code> as the second argument.</p>
+</li>
+</ol>
+<p>Here is an example of how to use the <code>getAttribute()</code> method to get the value of the <code>id</code> attribute of an element with the ID <code>myElement</code>:</p>
+<pre class="language-javascript"><code class="language-javascript"><span class="token keyword">const</span> element <span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">getElementById</span><span class="token punctuation">(</span><span class="token string">"myElement"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">const</span> id <span class="token operator">=</span> element<span class="token punctuation">.</span><span class="token function">getAttribute</span><span class="token punctuation">(</span><span class="token string">"id"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>id<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// Output: myElement</span></code></pre>
+<h3>Changing Styles</h3>
+<p><strong>adding classes</strong>: The <code>classList</code> property is used to manipulate the class attributes of an HTML element in JavaScript. It provides a convenient and efficient way to add, remove, toggle, and check for classes on an element.</p>
+<p>To add one or more classes to an element, use the <code>add()</code> method of the <code>classList</code> property:</p>
+<pre class="language-javascript"><code class="language-javascript"><span class="token keyword">const</span> element <span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">getElementById</span><span class="token punctuation">(</span><span class="token string">"myElement"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+element<span class="token punctuation">.</span>classList<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span><span class="token string">"myClass1"</span><span class="token punctuation">,</span> <span class="token string">"myClass2"</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+<p><strong>Removing Classes</strong>: To remove one or more classes from an element, use the <code>remove()</code> method of the <code>classList</code> property:</p>
+<pre class="language-javascript"><code class="language-javascript"><span class="token keyword">const</span> element <span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">getElementById</span><span class="token punctuation">(</span><span class="token string">"myElement"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+element<span class="token punctuation">.</span>classList<span class="token punctuation">.</span><span class="token function">remove</span><span class="token punctuation">(</span><span class="token string">"myClass2"</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+<p><strong>Toggling Classes</strong>: To toggle the presence of a class on an element, meaning adding it if it's not there or removing it if it is, use the <code>toggle()</code> method of the <code>classList</code> property:</p>
+<pre class="language-javascript"><code class="language-javascript"><span class="token keyword">const</span> element <span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">getElementById</span><span class="token punctuation">(</span><span class="token string">"myElement"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+element<span class="token punctuation">.</span>classList<span class="token punctuation">.</span><span class="token function">toggle</span><span class="token punctuation">(</span><span class="token string">"myClass1"</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+<p><strong>Checking for Classes</strong>: To check whether an element has a specific class, use the <code>contains()</code> method of the <code>classList</code> property:</p>
+<pre class="language-javascript"><code class="language-javascript"><span class="token keyword">const</span> element <span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">getElementById</span><span class="token punctuation">(</span><span class="token string">"myElement"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">const</span> hasClass <span class="token operator">=</span> element<span class="token punctuation">.</span>classList<span class="token punctuation">.</span><span class="token function">contains</span><span class="token punctuation">(</span><span class="token string">"myClass1"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>hasClass<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// Output: true or false</span></code></pre>
+<p>This will check if the element has the class <code>myClass1</code> and assign the result to the <code>hasClass</code> variable.</p>
+<h3>innerHTML</h3>
+<p>Selecting and modifying the <code>innerHTML</code> property of an HTML element using JavaScript can be dangerous due to the potential for cross-site scripting (XSS) vulnerabilities. XSS attacks allow malicious code to be injected into a web page, which can then be executed in the user's browser.</p>
+<p>When you use <code>innerHTML</code> to set the content of an element, you are essentially inserting raw HTML code directly into the page. If this code contains malicious JavaScript, it can be executed when the page is loaded or when the user interacts with the page. This can lead to a variety of security risks.</p>
+<p>To avoid XSS vulnerabilities, it is generally recommended to avoid using <code>innerHTML</code> to set the content of elements. Instead, you should use more secure methods, such as:</p>
+<ul>
+<li><strong>Creating DOM elements and appending them to the parent element:</strong> This allows you to create elements with the desired content without directly inserting raw HTML code.</li>
+<li><strong>Using libraries that sanitise user input:</strong> There are several libraries available that can sanitise user input to remove any potential XSS payloads.</li>
+</ul>
+<h3>JavaScript Events</h3>
+<p>Events in JavaScript are user-triggered actions that occur in response to user interactions or browser events. They enable web applications to be dynamic and responsive to user input, creating a more engaging and interactive user experience. There are numerous types of events in JavaScript, ranging from user interactions to browser actions. Some common examples include:</p>
+<ul>
+<li><strong>Mouse events:</strong> Click, mouseover, mouseout, mousedown, mouseup, scroll</li>
+<li><strong>Keyboard events:</strong> Keydown, keyup, keypress</li>
+<li><strong>Form events:</strong> Submit, change, reset</li>
+<li><strong>Window events:</strong> Load, unload, resize, scroll</li>
+<li><strong>Document events:</strong> DOMContentLoaded, load</li>
+</ul>
+<p>To handle events in JavaScript, you need to associate event handlers with the elements that should respond to those events. Event handlers are functions that execute when the corresponding event occurs. The most common way to associate event handlers is using the <code>addEventListener()</code> method:</p>
+<pre class="language-javascript"><code class="language-javascript">element<span class="token punctuation">.</span><span class="token function">addEventListener</span><span class="token punctuation">(</span><span class="token string">"event_name"</span><span class="token punctuation">,</span> function_name<span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+<p>For example, to handle a click event on an element with the ID <code>myButton</code>, you would use the following code:</p>
+<pre class="language-javascript"><code class="language-javascript"><span class="token keyword">const</span> button <span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">getElementById</span><span class="token punctuation">(</span><span class="token string">"myButton"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+button<span class="token punctuation">.</span><span class="token function">addEventListener</span><span class="token punctuation">(</span><span class="token string">"click"</span><span class="token punctuation">,</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token function">alert</span><span class="token punctuation">(</span><span class="token string">"You clicked the button!"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+<p>This code creates an event listener for the <code>click</code> event on the <code>myButton</code> element. When the button is clicked, the anonymous function is executed, displaying an alert message.</p>
+<p>When an event occurs, it propagates up the DOM tree, from the target element to its parent elements, and so on. This allows you to handle events at different levels of the DOM hierarchy.</p>
+<h3>Sources</h3>
+<ul>
+<li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference">MDN web docs - JavaScript reference</a></li>
+<li><a href="https://en.wikibooks.org/wiki/JavaScript">Javascript - Wikibooks</a></li>
+<li><a href="https://www.udemy.com/course/the-complete-javascript-course/">The Complete JavaScript Course: From Zero to Expert!</a></li>
+<li><a href="https://www.udemy.com/course/javascript-the-complete-guide-2020-beginner-advanced/">JavaScript - The Complete Guide (Beginner + Advanced)</a></li>
+</ul>
+
+  </div>
+</article>
+    <aside class="sidebar">
+  <div class="sidebar__content">
+    <h5>Notes</h5>
+    
+      <ul>
+        <li>
+          <a href="/notes/2023-12-16-logo-design-notes/">Logo Design Basics</a> 
+        </li>
+        <li>
+          <a href="/notes/2023-12-11-typography-notes/">Typography Basics</a> 
+        </li>
+        <li>
+          <a href="/notes/2023-11-30-web-accessibility-notes copy/">Web Accessibility Basics</a> 
+        </li>
+        <li>
+          <a href="/notes/2023-11-20-build-an-ai-image-generator/">Build an AI Image Generator</a> 
+        </li>
+        <li>
+          <a href="/notes/2023-11-18-eleventy-notes/">Build an 11ty Site</a> 
+        </li>
+        <li>
+          <a href="/notes/2023-11-13-react-notes/">React Todo List App</a> 
+        </li>
+        <li>
+          <a href="/notes/2023-11-05-procreate-notes/">Proctreate Basics</a> 
+        </li>
+        <li class="active">
+          <a href="/notes/2023-10-28-javascript-notes/">Javascript Basics</a> 
+        </li>
+        <li>
+          <a href="/notes/2023-10-22-midjourney-notes/">Midjourney Basics</a> 
+        </li>
+        <li>
+          <a href="/notes/2023-10-21-css-notes/">CSS Basics</a> 
+        </li>
+      </ul>
+  </div>
+</aside>
+    
+  </main>
+</body>
+</html>

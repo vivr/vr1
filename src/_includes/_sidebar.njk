@@ -1,0 +1,13 @@
+<aside class="sidebar">
+  <div class="sidebar__content">
+    <h5>Notes</h5>
+    {% set navPages = collections.notes | eleventyNavigation | reverse %}
+      <ul>
+      {%- for entry in navPages %}
+        <li{% if entry.url == page.url %} class="active"{% endif %}>
+          <a href="{{ entry.url }}">{{ entry.title }}</a> 
+        </li>
+      {%- endfor %}
+      </ul>
+  </div>
+</aside>

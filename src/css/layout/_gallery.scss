@@ -1,0 +1,36 @@
+.gallery {
+  grid-column: full-width;
+
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(20ch, 1fr));
+  gap: 1rem;
+
+  margin-inline: 1rem;
+  margin-bottom: 4rem;
+  list-style: none;
+  padding: 0;
+
+  img {
+    object-fit: cover;
+  }
+
+  figure {
+    /* reset figure default margin */
+    margin: 0;
+    background-color: var(--clr-tertiary);
+
+    display: grid;
+    grid-template-areas: "card";
+    place-items: end;
+    overflow: hidden;
+  }
+
+  figure > * {
+    grid-area: card;
+  }
+
+  figcaption {
+    padding: 0.25em 0.5em;
+    background-color: var(--clr-bg);
+  }
+}

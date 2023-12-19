@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>
+Build an 11ty Site   | Vivienne Reay
+
+</title>
+<meta name="description" content="A personal site for Vivienne Reay. This is where she keeps notes on front-end development and other interests."/>
+<link rel="icon" href="/assets/favicon.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Darker+Grotesque:wght@500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/css/style.css">
+  </head>
+<body>
+<a href="#main-content" class="visually-hidden">Skip to main content</a>
+  <main class="content-grid">
+    <header class="header">
+  <div class="header__info">
+    <h1><a href="/">Vivienne Reay</a></h1>
+    <p>vivreay[at]gmail.com</p>
+  </div>
+  <nav role="navigation" class="header__nav">
+  <ul role="list" class="nav-list">
+    <li><a href="/" class=" button">Index</a></li>
+    <li><a href="/explorations/" class=" button">AI Text-to-Image Explorations</a></li>
+    <li><a href="/notes/" class="active button">Notes</a></li>
+  </ul>
+</nav>
+</header><div class="post-title">
+
+<h2 id="main-content">
+  <span>Notes:</span> 
+  <br />Build an 11ty Site 
+  <br /><span class="post-date">18 Nov 2023
+</span>
+</h2>
+
+</div>
+
+
+        <article class="notes">
+  <div class="notes__image">
+  <img class="invert-light" src="/assets/notes/code.webp" alt="code logo">
+  </div>
+
+  <div class="notes__content">
+    <h3>What is Eleventy?</h3>
+<p><a href="https://www.11ty.dev/">Eleventy (11ty)</a> lets you write content using template languages (such as Markdown and Nunjucks, etc.) and then generates static HTML files.</p>
+<h3>Directories and Files</h3>
+<p>Create a main directory for the project then add all the directories and folders listed below. <strong>Don't add</strong> <em>docs</em>, <em>node_modules</em> or <em>package.json</em>. These will be generated in the next steps.</p>
+<pre class="language-md"><code class="language-md">├── docs
+├── node_modules
+├── src
+│ ├── data
+│ │ ├── meta.js
+│ ├──_includes
+│ │ ├──_header.njk
+│ │ ├──_meta.njk
+│ │ ├──_nav.njk
+│ │ ├──_sidebar.njk
+│ │ ├──_title.njk
+│ │ ├──base.njk
+│ │ ├──exploration.njk
+│ │ ├──note.njk
+│ │ ├──page-snippet.njk
+│ ├── assets
+│ │ ├──explorations
+│ │ ├──├──2023
+│ │ ├──├──├──nov
+│ │ ├──├──├──├──01
+│ │ ├──├──├──├──├──01.webp
+│ │ ├──├──├──├──├──02.webp
+│ │ ├──├──├──├──├──03.webp
+│ │ ├──notes
+│ │ ├──├──my-first-note-img.svg
+│ │ ├──favicon.png
+│ │ ├──logo.svg
+│ ├── css
+│ │ ├──style.scss
+│ │ ├──_prism.scss
+│ ├── explorations
+│ │ ├──2023-11-18-01.md
+│ │ ├──explorations.json
+│ ├── notes
+│ │ ├──my-first-note.md
+│ │ ├──notes.json
+│ ├── explorations.njk
+│ ├── index.njk
+│ ├── notes.njk
+├── .eleventy.js
+├── .gitignore.js
+└── package.json</code></pre>
+<h3>Install Eleventy</h3>
+<ol>
+<li>Make sure <a href="https://nodejs.org/en/download">Nodejs</a> is installed.</li>
+<li>Open a terminal inside the root directory of your project and run <code>npm init -y</code>. This automatically generates a <em>package.json</em> file for your project with default values.</li>
+<li>Next, run <code>npm install @11ty/eleventy --save-dev</code>. This installs Eleventy as a development dependency for your project.</li>
+</ol>
+<h3>package.json</h3>
+<p>Open <em>package.json</em> in your code editor. Delete the existing <em>&quot;test&quot;</em> script in the <em>&quot;scripts&quot;</em> section and add the following:</p>
+<pre class="language-json"><code class="language-json"><span class="token property">"scripts"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+  <span class="token property">"start"</span><span class="token operator">:</span> <span class="token string">"eleventy --serve"</span><span class="token punctuation">,</span>
+  <span class="token property">"build"</span><span class="token operator">:</span> <span class="token string">"eleventy"</span>
+<span class="token punctuation">}</span><span class="token punctuation">,</span></code></pre>
+<p>The <code>start</code> script is used for starting a development server and the <code>build</code> script generates the static files for your site.</p>
+<p>When you want to run the local server and generate your static files, type <code>npm start</code> in the terminal (inside your project directory). To stop the server click <em>Ctrl C</em> in the terminal then type <code>y</code> and hit return.</p>
+<h3>.eleventy.js</h3>
+<p>Open the <em>.eleventy.js</em> file located in the root directory of your project. This is a configuration file where you can define various settings and customise the behaviour of Eleventy according to your project's requirements. Add the following code:</p>
+<pre class="language-javascript"><code class="language-javascript"><span class="token keyword">const</span> <span class="token punctuation">{</span> DateTime <span class="token punctuation">}</span> <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">"luxon"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">const</span> syntaxHighlight <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">"@11ty/eleventy-plugin-syntaxhighlight"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+module<span class="token punctuation">.</span><span class="token function-variable function">exports</span> <span class="token operator">=</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token parameter">eleventyConfig</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  eleventyConfig<span class="token punctuation">.</span><span class="token function">addPassthroughCopy</span><span class="token punctuation">(</span><span class="token string">"./src/css/style.css"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  eleventyConfig<span class="token punctuation">.</span><span class="token function">addPassthroughCopy</span><span class="token punctuation">(</span><span class="token string">"./src/assets"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  eleventyConfig<span class="token punctuation">.</span><span class="token function">addFilter</span><span class="token punctuation">(</span><span class="token string">"postDate"</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token parameter">dateObj</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> DateTime<span class="token punctuation">.</span><span class="token function">fromJSDate</span><span class="token punctuation">(</span>dateObj<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">toLocaleString</span><span class="token punctuation">(</span>DateTime<span class="token punctuation">.</span><span class="token constant">DATE_MED</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  eleventyConfig<span class="token punctuation">.</span><span class="token function">addFilter</span><span class="token punctuation">(</span><span class="token string">"postMonth"</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token parameter">dateObj</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> DateTime<span class="token punctuation">.</span><span class="token function">fromJSDate</span><span class="token punctuation">(</span>dateObj<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">toFormat</span><span class="token punctuation">(</span><span class="token string">"LLL"</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">toLowerCase</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  eleventyConfig<span class="token punctuation">.</span><span class="token function">addFilter</span><span class="token punctuation">(</span><span class="token string">"postYear"</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token parameter">dateObj</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> DateTime<span class="token punctuation">.</span><span class="token function">fromJSDate</span><span class="token punctuation">(</span>dateObj<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">toLocaleString</span><span class="token punctuation">(</span><span class="token punctuation">{</span> <span class="token literal-property property">year</span><span class="token operator">:</span> <span class="token string">"numeric"</span> <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token keyword">const</span> eleventyNavigationPlugin <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">"@11ty/eleventy-navigation"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  eleventyConfig<span class="token punctuation">.</span><span class="token function">addPlugin</span><span class="token punctuation">(</span>eleventyNavigationPlugin<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  eleventyConfig<span class="token punctuation">.</span><span class="token function">addPlugin</span><span class="token punctuation">(</span>syntaxHighlight<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token keyword">return</span> <span class="token punctuation">{</span>
+    <span class="token literal-property property">dir</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+      <span class="token literal-property property">input</span><span class="token operator">:</span> <span class="token string">"src"</span><span class="token punctuation">,</span>
+      <span class="token literal-property property">output</span><span class="token operator">:</span> <span class="token string">"docs"</span><span class="token punctuation">,</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token punctuation">}</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span></code></pre>
+<h4>Importing Dependencies</h4>
+<pre class="language-javascript"><code class="language-javascript"><span class="token keyword">const</span> <span class="token punctuation">{</span> DateTime <span class="token punctuation">}</span> <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">"luxon"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">const</span> syntaxHighlight <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">"@11ty/eleventy-plugin-syntaxhighlight"</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+<p>The <code>DateTime</code> object is imported from the Luxon library. Luxon is used for working with dates and times in JavaScript. The syntaxHighlight plugin is imported. This plugin is used for syntax highlighting in code blocks.</p>
+<h4>Module Export</h4>
+<pre class="language-javascript"><code class="language-javascript">module<span class="token punctuation">.</span><span class="token function-variable function">exports</span> <span class="token operator">=</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token parameter">eleventyConfig</span><span class="token punctuation">)</span> <span class="token punctuation">{</span></code></pre>
+<p>The module exports a function that takes <code>eleventyConfig</code> as a parameter. This function is where you configure Eleventy.</p>
+<h4>Passthrough Copy</h4>
+<pre class="language-javascript"><code class="language-javascript">eleventyConfig<span class="token punctuation">.</span><span class="token function">addPassthroughCopy</span><span class="token punctuation">(</span><span class="token string">"./src/css/style.css"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+eleventyConfig<span class="token punctuation">.</span><span class="token function">addPassthroughCopy</span><span class="token punctuation">(</span><span class="token string">"./src/assets"</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+<p>These lines configure Eleventy to copy the CSS file and the contents of the &quot;assets&quot; directory directly to the output directory without modification.</p>
+<h4>Date Formatting Filters</h4>
+<pre class="language-javascript"><code class="language-javascript">eleventyConfig<span class="token punctuation">.</span><span class="token function">addFilter</span><span class="token punctuation">(</span><span class="token string">"postDate"</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token parameter">dateObj</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">{</span>
+  <span class="token keyword">return</span> DateTime<span class="token punctuation">.</span><span class="token function">fromJSDate</span><span class="token punctuation">(</span>dateObj<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">toLocaleString</span><span class="token punctuation">(</span>DateTime<span class="token punctuation">.</span><span class="token constant">DATE_MED</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+eleventyConfig<span class="token punctuation">.</span><span class="token function">addFilter</span><span class="token punctuation">(</span><span class="token string">"postMonth"</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token parameter">dateObj</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">{</span>
+  <span class="token keyword">return</span> DateTime<span class="token punctuation">.</span><span class="token function">fromJSDate</span><span class="token punctuation">(</span>dateObj<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">toFormat</span><span class="token punctuation">(</span><span class="token string">"LLL"</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">toLowerCase</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+eleventyConfig<span class="token punctuation">.</span><span class="token function">addFilter</span><span class="token punctuation">(</span><span class="token string">"postYear"</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token parameter">dateObj</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">{</span>
+  <span class="token keyword">return</span> DateTime<span class="token punctuation">.</span><span class="token function">fromJSDate</span><span class="token punctuation">(</span>dateObj<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">toLocaleString</span><span class="token punctuation">(</span><span class="token punctuation">{</span> <span class="token literal-property property">year</span><span class="token operator">:</span> <span class="token string">"numeric"</span> <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+<p>These lines use Luxon's <code>DateTime</code> to format date objects into human-readable strings.</p>
+<h4>Eleventy Navigation Plugin</h4>
+<pre class="language-javascript"><code class="language-javascript"><span class="token keyword">const</span> eleventyNavigationPlugin <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">"@11ty/eleventy-navigation"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+eleventyConfig<span class="token punctuation">.</span><span class="token function">addPlugin</span><span class="token punctuation">(</span>eleventyNavigationPlugin<span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+<p>This plugin helps with creating navigation structures in your site.</p>
+<h4>Syntax Highlighting Plugin</h4>
+<pre class="language-javascript"><code class="language-javascript">eleventyConfig<span class="token punctuation">.</span><span class="token function">addPlugin</span><span class="token punctuation">(</span>syntaxHighlight<span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+<p>The syntax highlighting plugin is added to the Eleventy configuration. This plugin uses Prism. You can choose a theme and download the CSS from the <a href="https://prismjs.com/download.html#themes=prism&amp;languages=markup+css+clike+javascript">Prism website</a>.</p>
+<h4>Configuration Options</h4>
+<pre class="language-javascript"><code class="language-javascript"><span class="token keyword">return</span> <span class="token punctuation">{</span>
+  <span class="token literal-property property">dir</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token literal-property property">input</span><span class="token operator">:</span> <span class="token string">"src"</span><span class="token punctuation">,</span>
+    <span class="token literal-property property">output</span><span class="token operator">:</span> <span class="token string">"docs"</span><span class="token punctuation">,</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span></code></pre>
+<p>The configuration object specifies the input and output directories for Eleventy. The content is expected to be in the &quot;src&quot; directory, and the generated site will be output to the &quot;docs&quot; directory.</p>
+<h3>base.njk</h3>
+<p>Open the <em>includes/base.njk</em> file and add the following:</p>
+<pre class="language-twig"><code class="language-twig"><span class="token doctype"><span class="token punctuation">&lt;!</span><span class="token doctype-tag">DOCTYPE</span> <span class="token name">html</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>html</span> <span class="token attr-name">lang</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>en<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>head</span><span class="token punctuation">></span></span>
+    <span class="token twig language-twig"><span class="token delimiter punctuation">{%</span> <span class="token tag-name keyword">include</span> <span class="token string"><span class="token punctuation">'</span>_meta.njk<span class="token punctuation">'</span></span> <span class="token delimiter punctuation">%}</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>head</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>body</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>content-grid<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+    <span class="token twig language-twig"><span class="token delimiter punctuation">{%</span> <span class="token tag-name keyword">include</span> <span class="token string"><span class="token punctuation">'</span>_header.njk<span class="token punctuation">'</span></span> <span class="token delimiter punctuation">%}</span></span>
+    <span class="token twig language-twig"><span class="token delimiter punctuation">{%</span> <span class="token tag-name keyword">include</span> <span class="token string"><span class="token punctuation">'</span>_title.njk<span class="token punctuation">'</span></span> <span class="token delimiter punctuation">%}</span></span>
+    <span class="token twig language-twig"><span class="token delimiter punctuation">{%-</span> <span class="token tag-name keyword">if</span> tags <span class="token operator">==</span> <span class="token string"><span class="token punctuation">"</span>pages<span class="token punctuation">"</span></span> <span class="token operator">or</span> tags <span class="token operator">==</span> <span class="token string"><span class="token punctuation">"</span>frontPage<span class="token punctuation">"</span></span> <span class="token delimiter punctuation">-%}</span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>ul</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>card<span class="token punctuation">"</span></span> <span class="token attr-name">role</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>list<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+        <span class="token twig language-twig"><span class="token delimiter punctuation">{{</span> content <span class="token operator">|</span> safe <span class="token delimiter punctuation">}}</span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>ul</span><span class="token punctuation">></span></span>
+    <span class="token twig language-twig"><span class="token delimiter punctuation">{%-</span> <span class="token tag-name keyword">else</span> <span class="token delimiter punctuation">-%}</span></span>
+        <span class="token twig language-twig"><span class="token delimiter punctuation">{{</span> content <span class="token operator">|</span> safe <span class="token delimiter punctuation">}}</span></span>
+    <span class="token twig language-twig"><span class="token delimiter punctuation">{%-</span> <span class="token tag-name keyword">endif</span> <span class="token delimiter punctuation">-%}</span></span>
+    <span class="token twig language-twig"><span class="token delimiter punctuation">{%</span> <span class="token tag-name keyword">if</span> <span class="token string"><span class="token punctuation">'</span>/notes<span class="token punctuation">'</span></span> <span class="token operator">in</span> page<span class="token punctuation">.</span>url <span class="token operator">and</span> tags <span class="token operator">!=</span> <span class="token string"><span class="token punctuation">"</span>pages<span class="token punctuation">"</span></span> <span class="token delimiter punctuation">%}</span></span>
+    <span class="token twig language-twig"><span class="token delimiter punctuation">{%</span> <span class="token tag-name keyword">include</span> <span class="token string"><span class="token punctuation">'</span>_sidebar.njk<span class="token punctuation">'</span></span> <span class="token delimiter punctuation">%}</span></span>
+    <span class="token twig language-twig"><span class="token delimiter punctuation">{%</span> <span class="token tag-name keyword">endif</span> <span class="token delimiter punctuation">%}</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>body</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>html</span><span class="token punctuation">></span></span></code></pre>
+<p>This Nunjucks template defines the structure of an HTML document, includes various components using Nunjucks includes, and conditionally renders content based on tags and page URL.</p>
+<h3>meta.njk</h3>
+<p>Open the <em>includes/meta.njk</em> file and add the following code:</p>
+<pre class="language-twig"><code class="language-twig"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>meta</span> <span class="token attr-name">charset</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>UTF-8<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>meta</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>viewport<span class="token punctuation">"</span></span> <span class="token attr-name">content</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>width=device-width, initial-scale=1<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>title</span><span class="token punctuation">></span></span>
+<span class="token twig language-twig"><span class="token delimiter punctuation">{{</span> title <span class="token delimiter punctuation">}}</span></span> <span class="token twig language-twig"><span class="token delimiter punctuation">{%</span> <span class="token tag-name keyword">if</span> <span class="token string"><span class="token punctuation">'</span>/explorations<span class="token punctuation">'</span></span> <span class="token operator">in</span> page<span class="token punctuation">.</span>url <span class="token operator">and</span> tags <span class="token operator">!=</span> <span class="token string"><span class="token punctuation">"</span>pages<span class="token punctuation">"</span></span> <span class="token delimiter punctuation">%}</span></span>
+<span class="token twig language-twig"><span class="token delimiter punctuation">{{</span> pageId <span class="token delimiter punctuation">}}</span></span> | <span class="token twig language-twig"><span class="token delimiter punctuation">{{</span> meta<span class="token punctuation">.</span>siteName <span class="token delimiter punctuation">}}</span></span>
+<span class="token twig language-twig"><span class="token delimiter punctuation">{%</span> <span class="token tag-name keyword">elseif</span> page<span class="token punctuation">.</span>url <span class="token operator">!=</span> <span class="token string"><span class="token punctuation">'</span>/<span class="token punctuation">'</span></span> <span class="token delimiter punctuation">%}</span></span>  | <span class="token twig language-twig"><span class="token delimiter punctuation">{{</span> meta<span class="token punctuation">.</span>siteName <span class="token delimiter punctuation">}}</span></span>
+<span class="token twig language-twig"><span class="token delimiter punctuation">{%</span> <span class="token tag-name keyword">endif</span> <span class="token delimiter punctuation">%}</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>title</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>meta</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>description<span class="token punctuation">"</span></span> <span class="token attr-name">content</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span><span class="token twig language-twig"><span class="token delimiter punctuation">{{</span> meta<span class="token punctuation">.</span>siteDescription <span class="token delimiter punctuation">}}</span></span><span class="token punctuation">"</span></span><span class="token punctuation">/></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>link</span> <span class="token attr-name">rel</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>icon<span class="token punctuation">"</span></span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>/assets/favicon.png<span class="token punctuation">"</span></span> <span class="token punctuation">/></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>link</span> <span class="token attr-name">rel</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>preconnect<span class="token punctuation">"</span></span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>https://fonts.googleapis.com<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>link</span> <span class="token attr-name">rel</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>preconnect<span class="token punctuation">"</span></span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>https://fonts.gstatic.com<span class="token punctuation">"</span></span> <span class="token attr-name">crossorigin</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>link</span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>https://fonts.googleapis.com/css2?family=Darker+Grotesque:wght@500;800&amp;display=swap<span class="token punctuation">"</span></span> <span class="token attr-name">rel</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>stylesheet<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>link</span> <span class="token attr-name">rel</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>stylesheet<span class="token punctuation">"</span></span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>/css/style.css<span class="token punctuation">"</span></span><span class="token punctuation">></span></span></code></pre>
+<p>This Nunjucks partial sets up the essential meta tags for an HTML document, dynamically generates the title based on the page's URL and tags, includes a description, specifies a favicon, preconnects to external resources (Google Fonts), and includes custom stylesheets for the site.</p>
+<h3>header.njk</h3>
+<p>Open the <em>includes/header.njk</em> file and add the following code:</p>
+<pre class="language-twig"><code class="language-twig"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>header</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>header<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>header__info<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>h1</span><span class="token punctuation">></span></span>brand-name<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>h1</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>brand__logo<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>/<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>img</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>/assets/logo.svg<span class="token punctuation">"</span></span> <span class="token attr-name">alt</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>brand-name home<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+  <span class="token twig language-twig"><span class="token delimiter punctuation">{%</span> <span class="token tag-name keyword">include</span> <span class="token string"><span class="token punctuation">'</span>_nav.njk<span class="token punctuation">'</span></span> <span class="token delimiter punctuation">%}</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>header</span><span class="token punctuation">></span></span></code></pre>
+<p>This HTML code defines a header for the website, including a brand name, an SVG logo, and the inclusion of a navigation section from a separate Nunjucks file <code>{% include '_nav.njk' %}</code>.</p>
+<h3>nav.njk</h3>
+<p>Open the <em>includes/nav.njk</em> file and add the following code:</p>
+<pre class="language-twig"><code class="language-twig"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>nav</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>header__nav<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>ul</span> <span class="token attr-name">role</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>list<span class="token punctuation">"</span></span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>nav-list<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>/<span class="token punctuation">"</span></span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span><span class="token twig language-twig"><span class="token delimiter punctuation">{{</span> <span class="token string"><span class="token punctuation">'</span>active<span class="token punctuation">'</span></span> <span class="token keyword">if</span> tags <span class="token operator">==</span> <span class="token string"><span class="token punctuation">"</span>frontPage<span class="token punctuation">"</span></span><span class="token delimiter punctuation">}}</span></span><span class="token punctuation">"</span></span><span class="token punctuation">></span></span>index<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>li</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>/explorations/<span class="token punctuation">"</span></span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span><span class="token twig language-twig"><span class="token delimiter punctuation">{%</span> <span class="token tag-name keyword">if</span> <span class="token string"><span class="token punctuation">'</span>/explorations<span class="token punctuation">'</span></span> <span class="token operator">in</span> page<span class="token punctuation">.</span>url <span class="token delimiter punctuation">%}</span></span>active<span class="token twig language-twig"><span class="token delimiter punctuation">{%</span> <span class="token tag-name keyword">endif</span> <span class="token delimiter punctuation">%}</span></span><span class="token punctuation">"</span></span><span class="token punctuation">></span></span>ai text-to-image explorations<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>li</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>/notes/<span class="token punctuation">"</span></span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span><span class="token twig language-twig"><span class="token delimiter punctuation">{%</span> <span class="token tag-name keyword">if</span> <span class="token string"><span class="token punctuation">'</span>/notes<span class="token punctuation">'</span></span> <span class="token operator">in</span> page<span class="token punctuation">.</span>url <span class="token delimiter punctuation">%}</span></span>active<span class="token twig language-twig"><span class="token delimiter punctuation">{%</span> <span class="token tag-name keyword">endif</span> <span class="token delimiter punctuation">%}</span></span><span class="token punctuation">"</span></span><span class="token punctuation">></span></span>notes<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>li</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>ul</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>nav</span><span class="token punctuation">></span></span></code></pre>
+<p>This HTML code defines a navigation section with three navigation items. The &quot;active&quot; class is conditionally applied to the navigation items based on the page's tags and URL path, indicating the currently active page.</p>
+<h3>index.njk</h3>
+<p>Open the <em>index.njk</em> file and add the following code:</p>
+<pre class="language-twig"><code class="language-twig">---
+title: brand name
+layout: 'base.njk'
+tags: frontPage
+---
+<span class="token twig language-twig"><span class="token delimiter punctuation">{%-</span> <span class="token tag-name keyword">for</span> post <span class="token operator">in</span> collections<span class="token punctuation">.</span>posts <span class="token operator">|</span> reverse <span class="token delimiter punctuation">-%}</span></span>
+  <span class="token twig language-twig"><span class="token delimiter punctuation">{%</span> <span class="token tag-name keyword">include</span> <span class="token string"><span class="token punctuation">'</span>page-snippet.njk<span class="token punctuation">'</span></span> <span class="token delimiter punctuation">%}</span></span>
+<span class="token twig language-twig"><span class="token delimiter punctuation">{%-</span> <span class="token tag-name keyword">endfor</span> <span class="token delimiter punctuation">-%}</span></span></code></pre>
+<p>The purpose of this code is to generate the front page of the website, listing posts in reverse chronological order. Each post is rendered using the 'page-snippet.njk' template. The front matter at the beginning provides metadata for the page and specifies the layout to use.</p>
+<h3>sidebar.njk</h3>
+<p>Open the <em>includes/sidebar.njk</em> file and add the following:</p>
+<pre class="language-twig"><code class="language-twig"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>aside</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>sidebar<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>sidebar__content<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+    <span class="token twig language-twig"><span class="token delimiter punctuation">{%</span> <span class="token tag-name keyword">set</span> navPages <span class="token operator">=</span> collections<span class="token punctuation">.</span>notes <span class="token operator">|</span> eleventyNavigation <span class="token operator">|</span> reverse <span class="token delimiter punctuation">%}</span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>ul</span><span class="token punctuation">></span></span>
+      <span class="token twig language-twig"><span class="token delimiter punctuation">{%-</span> <span class="token tag-name keyword">for</span> entry <span class="token operator">in</span> navPages <span class="token delimiter punctuation">%}</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li<span class="token twig language-twig"><span class="token delimiter punctuation">{%</span> <span class="token tag-name keyword">if</span> entry<span class="token punctuation">.</span>url <span class="token operator">==</span> page<span class="token punctuation">.</span>url <span class="token delimiter punctuation">%}</span></span></span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>my-active-class<span class="token punctuation">"</span></span><span class="token attr-name"><span class="token twig language-twig"><span class="token delimiter punctuation">{%</span> <span class="token tag-name keyword">endif</span> <span class="token delimiter punctuation">%}</span></span></span><span class="token punctuation">></span></span>
+          <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span><span class="token twig language-twig"><span class="token delimiter punctuation">{{</span> entry<span class="token punctuation">.</span>url <span class="token delimiter punctuation">}}</span></span><span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token twig language-twig"><span class="token delimiter punctuation">{{</span> entry<span class="token punctuation">.</span>title <span class="token delimiter punctuation">}}</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">></span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>li</span><span class="token punctuation">></span></span>
+      <span class="token twig language-twig"><span class="token delimiter punctuation">{%-</span> <span class="token tag-name keyword">endfor</span> <span class="token delimiter punctuation">%}</span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>ul</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>aside</span><span class="token punctuation">></span></span></code></pre>
+<p>This code generates a sidebar with navigation links for notes, and it applies a class to highlight the active link based on the current page's URL.</p>
+<h3>title.njk</h3>
+<p>Open the <em>includes/title.njk</em> file and add the following:</p>
+<pre class="language-twig"><code class="language-twig"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>post-title<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+<span class="token twig language-twig"><span class="token delimiter punctuation">{%</span> <span class="token tag-name keyword">if</span> <span class="token string"><span class="token punctuation">'</span>/explorations<span class="token punctuation">'</span></span> <span class="token operator">in</span> page<span class="token punctuation">.</span>url <span class="token operator">and</span> tags <span class="token operator">!=</span> <span class="token string"><span class="token punctuation">"</span>pages<span class="token punctuation">"</span></span> <span class="token delimiter punctuation">%}</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>h1</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>main-content<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>span</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>title-small<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>ai text-to-image<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>span</span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>h1</span><span class="token punctuation">></span></span>
+<span class="token twig language-twig"><span class="token delimiter punctuation">{%</span> <span class="token tag-name keyword">elseif</span> <span class="token string"><span class="token punctuation">'</span>/notes<span class="token punctuation">'</span></span> <span class="token operator">in</span> page<span class="token punctuation">.</span>url <span class="token operator">and</span> tags <span class="token operator">!=</span> <span class="token string"><span class="token punctuation">"</span>pages<span class="token punctuation">"</span></span> <span class="token delimiter punctuation">%}</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>h1</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>main-content<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>span</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>title-small<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>notes<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>span</span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>h1</span><span class="token punctuation">></span></span>
+<span class="token twig language-twig"><span class="token delimiter punctuation">{%</span> <span class="token tag-name keyword">endif</span> <span class="token delimiter punctuation">%}</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span></code></pre>
+<p>This code allows for dynamic rendering of the collections titles, &quot;ai text-to-image&quot; and &quot;notes&quot;.</p>
+<h3>page-snippet.njk</h3>
+<p>Open the <em>includes/page-snippet.njk</em> file and add the following:</p>
+<pre class="language-twig"><code class="language-twig"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span><span class="token twig language-twig"><span class="token delimiter punctuation">{{</span> post<span class="token punctuation">.</span>url <span class="token delimiter punctuation">}}</span></span><span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>figure</span> <span class="token attr-name">tabindex</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>0<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+      <span class="token twig language-twig"><span class="token delimiter punctuation">{%</span> <span class="token tag-name keyword">if</span> <span class="token string"><span class="token punctuation">'</span>/explorations<span class="token punctuation">'</span></span> <span class="token operator">in</span> post<span class="token punctuation">.</span>url <span class="token delimiter punctuation">%}</span></span>
+
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>img</span> <span class="token attr-name">alt</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span><span class="token punctuation">"</span></span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>/assets/explorations/<span class="token twig language-twig"><span class="token delimiter punctuation">{{</span> post<span class="token punctuation">.</span>date <span class="token operator">|</span> postYear <span class="token delimiter punctuation">}}</span></span>/<span class="token twig language-twig"><span class="token delimiter punctuation">{{</span> post<span class="token punctuation">.</span>date <span class="token operator">|</span> postMonth <span class="token delimiter punctuation">}}</span></span>/<span class="token twig language-twig"><span class="token delimiter punctuation">{{</span> post<span class="token punctuation">.</span>data<span class="token punctuation">.</span>pageId <span class="token delimiter punctuation">}}</span></span>/01.webp<span class="token punctuation">"</span></span> <span class="token punctuation">/></span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>figcaption</span><span class="token punctuation">></span></span>exploration <span class="token twig language-twig"><span class="token delimiter punctuation">{{</span> post<span class="token punctuation">.</span>data<span class="token punctuation">.</span>pageId <span class="token delimiter punctuation">}}</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>figcaption</span><span class="token punctuation">></span></span>
+
+<span class="token twig language-twig"><span class="token delimiter punctuation">{%</span> <span class="token tag-name keyword">else</span> <span class="token delimiter punctuation">%}</span></span>
+
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>img</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>invert-light<span class="token punctuation">"</span></span> <span class="token attr-name">alt</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span><span class="token twig language-twig"><span class="token delimiter punctuation">{{</span> post<span class="token punctuation">.</span>data<span class="token punctuation">.</span>pageId <span class="token delimiter punctuation">}}</span></span> logo<span class="token punctuation">"</span></span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>/assets/notes/<span class="token twig language-twig"><span class="token delimiter punctuation">{{</span> post<span class="token punctuation">.</span>data<span class="token punctuation">.</span>pageId <span class="token delimiter punctuation">}}</span></span>.svg<span class="token punctuation">"</span></span> <span class="token punctuation">/></span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>figcaption</span><span class="token punctuation">></span></span><span class="token twig language-twig"><span class="token delimiter punctuation">{{</span> post<span class="token punctuation">.</span>data<span class="token punctuation">.</span>title <span class="token delimiter punctuation">}}</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>figcaption</span><span class="token punctuation">></span></span>
+
+<span class="token twig language-twig"><span class="token delimiter punctuation">{%</span> <span class="token tag-name keyword">endif</span> <span class="token delimiter punctuation">%}</span></span>
+
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>figure</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>li</span><span class="token punctuation">></span></span></code></pre>
+<p>This code generates a list item for a post, with different content and styling depending on whether the post is categorised as an exploration post or a notes post. The figure element contains an image and a caption, and the entire structure is wrapped in a link to the post's URL.</p>
+<h3>notes.njk</h3>
+<p>Open the <em>notes.njk</em> page and add the following:</p>
+<pre class="language-twig"><code class="language-twig">---
+title: notes
+layout: 'base.njk'
+tags: pages
+---
+<span class="token twig language-twig"><span class="token delimiter punctuation">{%-</span> <span class="token tag-name keyword">for</span> post <span class="token operator">in</span> collections<span class="token punctuation">.</span>notes <span class="token operator">|</span> reverse <span class="token delimiter punctuation">-%}</span></span>
+  <span class="token twig language-twig"><span class="token delimiter punctuation">{%</span> <span class="token tag-name keyword">include</span> <span class="token string"><span class="token punctuation">'</span>page-snippet.njk<span class="token punctuation">'</span></span> <span class="token delimiter punctuation">%}</span></span>
+<span class="token twig language-twig"><span class="token delimiter punctuation">{%-</span> <span class="token tag-name keyword">endfor</span> <span class="token delimiter punctuation">-%}</span></span></code></pre>
+<p>This file represents a page with the title &quot;notes.&quot; It uses the 'base.njk' layout and assigns the tag &quot;pages.&quot; The content of this page is generated by iterating over the posts in the 'notes' collection (in reverse order) and including the content of 'page-snippet.njk' for each post.</p>
+<h3>notes.json</h3>
+<p>Open the <em>notes/notes.json</em> and add the following code:</p>
+<pre class="language-json"><code class="language-json"><span class="token punctuation">{</span>
+  <span class="token property">"layout"</span><span class="token operator">:</span> <span class="token string">"note.njk"</span><span class="token punctuation">,</span>
+  <span class="token property">"tags"</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token string">"notes"</span><span class="token punctuation">,</span> <span class="token string">"posts"</span><span class="token punctuation">]</span>
+<span class="token punctuation">}</span></code></pre>
+<p>This front matter provides information about how this content should be processed and displayed. It specifies the layout 'note.njk' and assigns tags to the content. Tags are often used to categorise and organise content, and they can be used in templates to conditionally render content or apply specific styles.</p>
+<h3>my-first-note.md</h3>
+<p>Open the <em>notes/my-first-note.md</em> file and add the following code:</p>
+<pre class="language-markdown"><code class="language-markdown"><span class="token front-matter-block"><span class="token punctuation">---</span>
+<span class="token front-matter yaml language-yaml">title: my first note
+pageId: imagename
+eleventyNavigation:
+  key: pageId: my first note</span>
+<span class="token punctuation">---</span></span>
+
+<span class="token title important"><span class="token punctuation">###</span> This is my first note h2 title</span>
+
+Here is my first note paragraph.</code></pre>
+<p>The front matter provides metadata such as the title, pageId, and Eleventy navigation information. The content of the file includes a heading and a paragraph.</p>
+<h3>note.njk</h3>
+<p>Open the <em>includes/note.njk</em> file and add the following code:</p>
+<pre class="language-twig"><code class="language-twig">---
+layout: 'base.njk'
+---
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>article</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>notes<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>notes__image<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>img</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>invert-light<span class="token punctuation">"</span></span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>/assets/notes/<span class="token twig language-twig"><span class="token delimiter punctuation">{{</span> pageId <span class="token delimiter punctuation">}}</span></span>.svg<span class="token punctuation">"</span></span> <span class="token attr-name">alt</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span><span class="token twig language-twig"><span class="token delimiter punctuation">{{</span> pageId <span class="token delimiter punctuation">}}</span></span> logo<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>notes__content<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>h1</span><span class="token punctuation">></span></span><span class="token twig language-twig"><span class="token delimiter punctuation">{{</span> title <span class="token delimiter punctuation">}}</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>h1</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>post-date<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token twig language-twig"><span class="token delimiter punctuation">{{</span> page<span class="token punctuation">.</span>date <span class="token operator">|</span> postDate <span class="token delimiter punctuation">}}</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">></span></span>
+    <span class="token twig language-twig"><span class="token delimiter punctuation">{{</span> content <span class="token operator">|</span> safe <span class="token delimiter punctuation">}}</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>article</span><span class="token punctuation">></span></span></code></pre>
+<p>This template is designed to render individual notes. It includes a layout specified in the front matter ('base.njk') and contains a structure with an image and the content of the note. The template allows for dynamic rendering by using variables like {{ pageId }} and {{ content }}.</p>
+<h3>explorations.njk</h3>
+<p>Open the <em>explorations.njk</em> page and add the following:</p>
+<pre class="language-twig"><code class="language-twig">---
+title: ai text-to-image explorations
+layout: 'base.njk'
+tags: pages
+---
+<span class="token twig language-twig"><span class="token delimiter punctuation">{%-</span> <span class="token tag-name keyword">for</span> post <span class="token operator">in</span> collections<span class="token punctuation">.</span>explorations <span class="token operator">|</span> reverse <span class="token delimiter punctuation">-%}</span></span>
+  <span class="token twig language-twig"><span class="token delimiter punctuation">{%</span> <span class="token tag-name keyword">include</span> <span class="token string"><span class="token punctuation">'</span>page-snippet.njk<span class="token punctuation">'</span></span> <span class="token delimiter punctuation">%}</span></span>
+<span class="token twig language-twig"><span class="token delimiter punctuation">{%-</span> <span class="token tag-name keyword">endfor</span> <span class="token delimiter punctuation">-%}</span></span></code></pre>
+<p>This file represents a page with the title &quot;ai text-to-image explorations.&quot; It uses the 'base.njk' layout, assigns the tag &quot;pages,&quot; and includes content from the 'page-snippet.njk' file for each post in the 'explorations' collection, reversing the order. The actual content and structure of each post are defined in 'page-snippet.njk'.</p>
+<h3>explorations.json</h3>
+<p>Open the <em>explorations/explorations.json</em> file and add the following code:</p>
+<pre class="language-json"><code class="language-json"><span class="token punctuation">{</span>
+  <span class="token property">"layout"</span><span class="token operator">:</span> <span class="token string">"exploration.njk"</span><span class="token punctuation">,</span>
+  <span class="token property">"tags"</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token string">"explorations"</span><span class="token punctuation">,</span> <span class="token string">"posts"</span><span class="token punctuation">]</span>
+<span class="token punctuation">}</span></code></pre>
+<p>The &quot;layout&quot; key is set to &quot;exploration.njk&quot; which is our template. The &quot;tags&quot; key has an array as its value, and it contains two elements: &quot;explorations&quot; and &quot;posts&quot;. These tags are used to filter posts on your website.</p>
+<h3>2023-11-18-01.md</h3>
+<p>Open the <em>explorations/2023-11-18-01.md</em> file and add the following code:</p>
+<pre class="language-markdown"><code class="language-markdown"><span class="token front-matter-block"><span class="token punctuation">---</span>
+<span class="token front-matter yaml language-yaml">pageId: "01"
+galleryImages:
+  - image: "01"
+  - image: "02"
+  - image: "03"</span>
+<span class="token punctuation">---</span></span></code></pre>
+<p>The page with pageId &quot;01&quot; has a gallery with 03 images, and each image is identified by a numerical value from &quot;01&quot; to &quot;03.&quot; The data is being used to dynamically generate a gallery with the specified images on the page with the corresponding pageId.</p>
+<h3>exploration.njk</h3>
+<p>Open the <em>includes/exploration.njk</em> file and add the following code:</p>
+<pre class="language-twig"><code class="language-twig">---
+title: explorations
+layout: 'base.njk'
+---
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>gallery-title<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>h1</span><span class="token punctuation">></span></span><span class="token twig language-twig"><span class="token delimiter punctuation">{{</span> title <span class="token delimiter punctuation">}}</span></span> <span class="token twig language-twig"><span class="token delimiter punctuation">{{</span> pageId <span class="token delimiter punctuation">}}</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>h1</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>post-date<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token twig language-twig"><span class="token delimiter punctuation">{{</span> page<span class="token punctuation">.</span>date <span class="token operator">|</span> postDate <span class="token delimiter punctuation">}}</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>ul</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>gallery<span class="token punctuation">"</span></span> <span class="token attr-name">role</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>list<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+  <span class="token twig language-twig"><span class="token delimiter punctuation">{%</span> <span class="token tag-name keyword">for</span> galleryImage <span class="token operator">in</span> galleryImages <span class="token delimiter punctuation">%}</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span><span class="token punctuation">></span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>figure</span><span class="token punctuation">></span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>img</span> <span class="token attr-name">alt</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>ai text-image exploration - <span class="token twig language-twig"><span class="token delimiter punctuation">{{</span> page<span class="token punctuation">.</span>date <span class="token operator">|</span> postDate <span class="token delimiter punctuation">}}</span></span> - image <span class="token twig language-twig"><span class="token delimiter punctuation">{{</span> galleryImage<span class="token punctuation">.</span>image <span class="token delimiter punctuation">}}</span></span><span class="token punctuation">"</span></span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>/assets/explorations/<span class="token twig language-twig"><span class="token delimiter punctuation">{{</span> page<span class="token punctuation">.</span>date <span class="token operator">|</span> postYear <span class="token delimiter punctuation">}}</span></span>/<span class="token twig language-twig"><span class="token delimiter punctuation">{{</span> page<span class="token punctuation">.</span>date <span class="token operator">|</span> postMonth <span class="token delimiter punctuation">}}</span></span>/<span class="token twig language-twig"><span class="token delimiter punctuation">{{</span> pageId <span class="token delimiter punctuation">}}</span></span>/<span class="token twig language-twig"><span class="token delimiter punctuation">{{</span> galleryImage<span class="token punctuation">.</span>image <span class="token delimiter punctuation">}}</span></span>.webp<span class="token punctuation">"</span></span> <span class="token punctuation">/></span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>figcaption</span><span class="token punctuation">></span></span>image <span class="token twig language-twig"><span class="token delimiter punctuation">{{</span> galleryImage<span class="token punctuation">.</span>image <span class="token delimiter punctuation">}}</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>figcaption</span><span class="token punctuation">></span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>figure</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>li</span><span class="token punctuation">></span></span>
+  <span class="token twig language-twig"><span class="token delimiter punctuation">{%</span> <span class="token tag-name keyword">endfor</span> <span class="token delimiter punctuation">%}</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>ul</span><span class="token punctuation">></span></span></code></pre>
+<p>This template is designed to render a page titled &quot;explorations&quot; with a gallery of images.</p>
+<h3>data/meta.js</h3>
+<p>Open the <em>data/meta.js</em> file and add the following:</p>
+<pre class="language-javascript"><code class="language-javascript">module<span class="token punctuation">.</span>exports <span class="token operator">=</span> <span class="token punctuation">{</span>
+  <span class="token literal-property property">url</span><span class="token operator">:</span> <span class="token string">"https://your-site.co.uk/"</span> <span class="token operator">||</span> <span class="token string">"http://localhost:8080"</span><span class="token punctuation">,</span>
+  <span class="token literal-property property">siteName</span><span class="token operator">:</span> <span class="token string">"your site name"</span><span class="token punctuation">,</span>
+  <span class="token literal-property property">siteDescription</span><span class="token operator">:</span> <span class="token string">"Your site description."</span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span></code></pre>
+<p>This module is designed to be used as configuration settings for the website.</p>
+<h3>Sources</h3>
+<ul>
+<li><a href="https://www.smashingmagazine.com/2021/03/eleventy-static-site-generator/">A Deep Dive Into Eleventy Static Site Generator by Stephanie Eckles, March 24, 2021 (Smashing Magazine)</a>.</li>
+<li><a href="https://www.youtube.com/watch?v=4wD00RT6d-g">Turn static HTML/CSS into a blog with CMS using the JAMStack by Kevin Powell, June 2021 (Youtube)</a></li>
+</ul>
+
+  </div>
+</article>
+    <aside class="sidebar">
+  <div class="sidebar__content">
+    <h5>Notes</h5>
+    
+      <ul>
+        <li>
+          <a href="/notes/2023-12-16-logo-design-notes/">Logo Design Basics</a> 
+        </li>
+        <li>
+          <a href="/notes/2023-12-11-typography-notes/">Typography Basics</a> 
+        </li>
+        <li>
+          <a href="/notes/2023-11-30-web-accessibility-notes copy/">Web Accessibility Basics</a> 
+        </li>
+        <li>
+          <a href="/notes/2023-11-20-build-an-ai-image-generator/">Build an AI Image Generator</a> 
+        </li>
+        <li class="active">
+          <a href="/notes/2023-11-18-eleventy-notes/">Build an 11ty Site</a> 
+        </li>
+        <li>
+          <a href="/notes/2023-11-13-react-notes/">React Todo List App</a> 
+        </li>
+        <li>
+          <a href="/notes/2023-11-05-procreate-notes/">Proctreate Basics</a> 
+        </li>
+        <li>
+          <a href="/notes/2023-10-28-javascript-notes/">Javascript Basics</a> 
+        </li>
+        <li>
+          <a href="/notes/2023-10-22-midjourney-notes/">Midjourney Basics</a> 
+        </li>
+        <li>
+          <a href="/notes/2023-10-21-css-notes/">CSS Basics</a> 
+        </li>
+      </ul>
+  </div>
+</aside>
+    
+  </main>
+</body>
+</html>
