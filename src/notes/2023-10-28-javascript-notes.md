@@ -196,7 +196,7 @@ console.log(id); // Output: myElement
 
 ### Changing Styles
 
-**adding classes**: The `classList` property is used to manipulate the class attributes of an HTML element in JavaScript. It provides a convenient and efficient way to add, remove, toggle, and check for classes on an element.
+**Adding classes**: The `classList` property is used to manipulate the class attributes of an HTML element in JavaScript. It provides a convenient and efficient way to add, remove, toggle, and check for classes on an element.
 
 To add one or more classes to an element, use the `add()` method of the `classList` property:
 

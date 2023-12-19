@@ -1,18 +1,5 @@
 $fs-body: 1.25rem;
 
-body,
-figure,
-ul,
-ol,
-h1,
-h2,
-h3,
-h4,
-h5,
-p {
-  margin: 0;
-}
-
 h1,
 h3,
 h4,
@@ -20,15 +7,15 @@ h5,
 figure,
 ul,
 ol,
-p {
+p,
+.post-date {
   font-weight: 500;
 }
 
 h2 {
-  font-size: $fs-body;
   margin: 0 0 1rem 0;
   width: max-content;
-  padding: em(12) em(18) em(18) em(18);
+  padding: 1.3rem 1rem 1.5rem 1rem;
   color: var(--clr-primary);
   background-color: var(--clr-tertiary);
   text-transform: uppercase;
@@ -38,12 +25,10 @@ h2 {
   .post-date,
   span {
     font-size: 1rem;
-    font-weight: 500;
     letter-spacing: 0.01em;
   }
-  .post-date {
-    font-style: italic;
-    color: var(--clr-secondary);
+  span {
+    font-weight: 700;
   }
 }
 h3 {
@@ -55,17 +40,46 @@ h4 {
 h5 {
   font-size: 1.5625rem;
 }
+
 h3,
 h4,
 h5 {
   line-height: 1.1;
+  margin: 0;
 }
+
+.sidebar h5,
+.footer h5 {
+  margin-bottom: 2rem;
+}
+
+h1,
+h2,
 p,
 a,
 ul,
-ol {
+ol,
+.nav-list {
   font-size: $fs-body;
 }
+
+.sidebar ul,
+.footer ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.notes {
+  ol,
+  ul {
+    margin-bottom: 1em;
+  }
+  ol li + li,
+  ul li + li {
+    margin-top: 0.75em;
+  }
+}
+
 a {
   text-underline-offset: 0.2em;
   color: var(--clr-primary);
@@ -76,8 +90,18 @@ a.active,
 .active a {
   color: var(--clr-secondary);
 }
+.header a {
+  text-decoration: none;
+}
+.sidebar a {
+  text-decoration: none;
+  border-bottom: 1px solid var(--clr-tertiary);
+  display: block;
+  padding-bottom: 0.5rem;
+  margin-bottom: 1rem;
+}
 strong {
-  font-weight: 800;
+  font-weight: 700;
 }
 code {
   color: var(--clr-primary);

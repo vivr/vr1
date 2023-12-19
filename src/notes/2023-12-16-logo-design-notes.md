@@ -119,18 +119,29 @@ Understanding colour psychology is essential when designing a logo to ensure it 
 
 Various colour harmonies are employed to create visually appealing and effective logos. Some popular colour harmonies include:
 
-- **Monochromatic:**
-  - This harmony uses different shades, tones, and tints of a single colour. It creates a clean and minimalist look, often conveying simplicity and sophistication.
-- **Analogous:**
-  - Analogous colour schemes involve colours that are next to each other on the colour wheel. This harmony is often chosen for a cohesive and harmonious feel.
-- **Complementary:**
-  - Complementary colours are opposite each other on the colour wheel. Using these pairs in a logo design can create high contrast and make elements stand out.
-- **Split-Complementary:**
-  - This harmony is a variation of the complementary scheme. It involves a base colour and two adjacent to its complementary colour. It provides high contrast while maintaining colour richness.
-- **Triadic:**
-  - Triadic colour schemes use three colours evenly spaced around the colour wheel. This provides a balance of contrast and variety, often resulting in vibrant and dynamic logos.
-- **Tetradic (Double-Complementary):**
-  - Tetradic colour schemes involve four colours, in the form of two complementary colour pairs. This provides a rich colour palette and can be used for more complex designs.
+##### Monochromatic
+
+- This harmony uses different shades, tones, and tints of a single colour. It creates a clean and minimalist look, often conveying simplicity and sophistication.
+
+##### Analogous
+
+- Analogous colour schemes involve colours that are next to each other on the colour wheel. This harmony is often chosen for a cohesive and harmonious feel.
+
+##### Complementary
+
+- Complementary colours are opposite each other on the colour wheel. Using these pairs in a logo design can create high contrast and make elements stand out.
+
+##### Split-Complementary
+
+- This harmony is a variation of the complementary scheme. It involves a base colour and two adjacent to its complementary colour. It provides high contrast while maintaining colour richness.
+
+##### Triadic
+
+- Triadic colour schemes use three colours evenly spaced around the colour wheel. This provides a balance of contrast and variety, often resulting in vibrant and dynamic logos.
+
+##### Tetradic (Double-Complementary)
+
+- Tetradic colour schemes involve four colours, in the form of two complementary colour pairs. This provides a rich colour palette and can be used for more complex designs.
 
 ### Logo Design Process
 
@@ -140,55 +151,87 @@ From understanding the client's needs to brainstorming, sketching, refining desi
 
 Understanding the client's vision and requirements is crucial for a successful logo design. Ask the following questions if the client does not provide a brief:
 
-- **Business Background:**
-  - Nature of the business.
-  - Brief history and mission statement.
-- **Target Audience:**
-  - Who is the target audience or ideal customer?
-  - Demographic being targeted.
-- **Competitors:**
-  - Main competitors and thoughts on their logos.
-- **Unique Selling Proposition (USP):**
-  - What sets the brand apart from competitors?
-- **Logo Requirements:**
-  - Specific elements or symbols.
-  - Colour preferences or restrictions.
-- **Style Preferences:**
-  - Preferred styles (modern, classic, minimalistic, etc.).
-  - Logos from other brands that are admired.
-- **Company Details:**
-  - Full company name for the logo.
-  - Bylines, established date, or TM symbol requirements.
-- **Budget and Timeline:**
-  - Budget for the project.
-  - Desired completion timeline.
-- **Feedback and Revisions:**
-  - Feedback process and number of revision rounds.
+##### Business Background
+
+- Nature of the business.
+- Brief history and mission statement.
+
+##### Target Audience
+
+- Who is the target audience or ideal customer?
+- Demographic being targeted.
+
+##### Competitors
+
+- Main competitors and thoughts on their logos.
+
+##### Unique Selling Proposition (USP)
+
+- What sets the brand apart from competitors?
+
+##### Logo Requirements
+
+- Specific elements or symbols.
+- Colour preferences or restrictions.
+
+##### Style Preferences
+
+- Preferred styles (modern, classic, minimalistic, etc.).
+- Logos from other brands that are admired.
+
+##### Company Details
+
+- Full company name for the logo.
+- Bylines, established date, or TM symbol requirements.
+
+##### Budget and Timeline
+
+- Budget for the project.
+- Desired completion timeline.
+
+##### Feedback and Revisions
+
+- Feedback process and number of revision rounds.
 
 #### 2. Brainstorming
 
 Generate a pool of creative ideas based on the client brief:
 
-- **Research and Inspiration:**
-  - Industry research, competitor analysis, and design trend exploration.
-  - Inspiration from design books, websites, and visual references.
-- **Mind Mapping:**
-  - Visual organisation of key concepts, themes, and visual elements.
-- **Sketching:**
-  - Rough sketches exploring different visual representations.
-- **Concept Exploration:**
-  - Develop multiple concepts based on brand personality and values.
-  - Explore diverse styles and approaches.
-- **Typography Exploration:**
-  - Experiment with fonts and type treatments if text is essential.
-- **Presentation to Client:**
-  - Showcase 3 concepts with explanations for each.
-  - Present in PDF format.
-- **Colour Exploration:**
-  - finalise colour palette based on client preferences.
-  - Ensure colour choices align with the brand's identity.
-- **Second Presentation to Client:**
-  - Present approved logo concepts with reasoning and context.
+##### Research and Inspiration
+
+- Industry research, competitor analysis, and design trend exploration.
+- Inspiration from design books, websites, and visual references.
+
+##### Mind Mapping
+
+- Visual organisation of key concepts, themes, and visual elements.
+
+##### Sketching
+
+- Rough sketches exploring different visual representations.
+
+##### Concept Exploration
+
+- Develop multiple concepts based on brand personality and values.
+- Explore diverse styles and approaches.
+
+##### Typography Exploration
+
+- Experiment with fonts and type treatments if text is essential.
+
+##### Presentation to Client
+
+- Showcase 3 concepts with explanations for each.
+- Present in PDF format.
+
+##### Colour Exploration
+
+- finalise colour palette based on client preferences.
+- Ensure colour choices align with the brand's identity.
+
+##### Second Presentation to Client
+
+- Present approved logo concepts with reasoning and context.
 
 #### 3. Delivery of Final Files
 

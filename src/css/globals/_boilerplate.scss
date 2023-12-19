@@ -7,8 +7,7 @@ html {
 *::after {
   box-sizing: inherit;
 }
-img,
-svg {
+img {
   max-width: 100%;
   height: auto;
   vertical-align: middle;
@@ -16,7 +15,8 @@ svg {
 
 body {
   font-family: $basefont;
-  line-height: 1.6;
+  line-height: 1.7;
   background-color: var(--clr-bg);
   color: var(--clr-primary);
+  margin: 0;
 }
