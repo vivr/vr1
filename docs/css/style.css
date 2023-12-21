@@ -526,7 +526,7 @@ button.button__pagination.active {
   width: 100%;
   object-fit: cover;
   transform: scale(1) translate(0, 0);
-  transition: transform 1200ms ease-in;
+  transition: transform 600ms ease-in;
 }
 .card figure {
   /* reset figure default margin */
@@ -550,7 +550,7 @@ button.button__pagination.active {
   grid-area: card;
 }
 .card figcaption {
-  transition: transform 800ms 400ms ease-in;
+  transition: transform 400ms 200ms ease-in;
   font-size: 1.25rem;
   /* Visual styles for the caption */
   padding: 0.25em 0.5em;

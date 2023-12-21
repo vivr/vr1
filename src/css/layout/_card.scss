@@ -12,7 +12,7 @@
     width: 100%;
     object-fit: cover;
     transform: scale(1) translate(0, 0);
-    transition: transform 1200ms ease-in;
+    transition: transform 600ms ease-in;
   }
 
   figure {
@@ -41,7 +41,7 @@
   }
 
   figcaption {
-    transition: transform 800ms 400ms ease-in;
+    transition: transform 400ms 200ms ease-in;
     font-size: $fs-body;
     /* Visual styles for the caption */
     padding: 0.25em 0.5em;
