@@ -15,7 +15,7 @@ Logos come in various types, each serving a unique purpose in visually communica
 
 #### Logomark
 
-A logomark is a visual symbol or icon that represents a brand. It is a simple, distinctive image that is easily recognisable and associated with a particular company or product. Unlike a logo that may include text or a company name, a logo mark is a standalone graphic element that conveys the essence of the brand in a concise and memorable way. It serves as a visual shorthand, helping people quickly identify and remember the brand without the need for accompanying words. Examples include Nike and Apple.
+A logomark is a visual symbol or icon that represents a brand. It is a simple, distinctive image that is easily recognisable and associated with a particular company or product. A logo mark is a standalone graphic element that conveys the essence of the brand in a concise and memorable way. It serves as a visual shorthand, helping people quickly identify and remember the brand without the need for accompanying words. Examples include Nike and Apple.
 
 #### Logotype
 
@@ -43,7 +43,7 @@ The flat design style embodies simplicity and cleanliness by minimising design e
 
 #### Handwritten Type
 
-Brands and businesses seeking an authentic and relatable image often gravitate toward illustrative, script, and hand-drawn logos. Mastering this style poses a unique challenge for designers, as it necessitates a level of ease with drawing and illustration—a proficiency that may be more inherent for some individuals than others.
+Brands and businesses seeking an authentic and relatable image often gravitate toward illustrative, script, and hand-drawn logos.
 
 #### Geometric
 
