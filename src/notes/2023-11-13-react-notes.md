@@ -15,12 +15,11 @@ The tutorisl described in this post is from [Learn React With This One Project t
 
 ### Install Vite
 
-1. Run `npm create vite@latest .`
-2. Type in `.` (period) for the project name and this will create the project inside whatever folder you are currently in.
-3. Use the arrow key to select the _React_ framework.
-4. Choose _Javascript_ language.
-5. Run `npm i` to install all of our dependencies.
-6. Next, run `npm run dev` to start our application.
+1. Run `npm create vite@latest .` _(The `.` (period) will create the project inside whatever folder you are currently in)_.
+2. Use the arrow key to select the _React_ framework.
+3. Choose _Javascript_ language.
+4. Run `npm i` to install all dependencies.
+5. Next, run `npm run dev` to start the application.
 
 ### Manage Directories
 

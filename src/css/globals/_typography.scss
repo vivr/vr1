@@ -80,6 +80,14 @@ ol,
   }
 }
 
+pre[class*="language-"] + h4 {
+  margin: 2rem 0 1.7rem 0;
+}
+
+h4 + pre[class*="language-"] {
+  margin-top: 1.7rem;
+}
+
 a {
   text-underline-offset: 0.2em;
   color: var(--clr-primary);
