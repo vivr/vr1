@@ -237,7 +237,7 @@ Generate a pool of creative ideas based on the client brief:
 
 Once the client approves a concept, deliver logo files in various formats:
 
-- Save files in jpeg, png, and vector (.AI) formats.
+- Save files in jpeg, png, and vector formats.
 - Save print files in CMYK and web files in RGB.
 - Save print files in high resolution (300dpi to 600dpi).
 - Save web files in medium resolution (150dpi).
