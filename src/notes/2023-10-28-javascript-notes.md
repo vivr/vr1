@@ -48,7 +48,7 @@ Operators have **operands**. An operand is the value that is going to be operate
 
 - `=`: assign value to variable.
 - `+=`: adds the right operand to the left operand and assigns the result to the left operand.
-- `-=`: subtracts the right operand from the left operand and assignd the result to the left operand.
+- `-=`: subtracts the right operand from the left operand and assigns the result to the left operand.
 - `\*=`: multiplies the left operand by the right operand and assigns the result to the left operand.
 - `/=`: divides the left operand by the right operand and assigns the result to the left operand.
 - `%=`: computes the remainder when dividing the left operand by the right operand and assigns the result to the left operand.
