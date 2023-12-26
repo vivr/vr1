@@ -105,43 +105,69 @@ Logo designs shouldn't rely solely on colour. While colour can enhance a design,
 
 Understanding colour psychology is essential when designing a logo to ensure it effectively communicates the intended message and resonates with the target audience.
 
-- **Red** is a dynamic and attention-grabbing colour. Its bold and energetic nature makes it effective for conveying passion, excitement, and urgency. In logos, red is often employed by brands to stand out, create a sense of importance, or stimulate a strong emotional response from the audience. It is frequently used in industries such as food, technology, and retail.
-- **Orange** is a vibrant and energetic colour commonly used in logo design to convey warmth, enthusiasm, and friendliness. Its bold and lively nature makes it effective for brands aiming to evoke a sense of optimism and approachability. Orange is commonly used in beverages and the food industry.
-- **Yellow**, while a vibrant and attention-grabbing colour, is often considered challenging in logo design for several reasons. Its brightness can be overpowering and lead to visual fatigue if overused. Additionally, yellow can be less legible, particularly in small or intricate designs, making it a less practical choice for certain applications. Despite these challenges, when used thoughtfully and in combination with other colours, yellow can bring warmth, positivity, and energy to a logo design.
-- **Green** is strongly associated with nature, growth, and freshness, making it a versatile option for environmentally conscious brands, health and wellness companies, and those promoting sustainability. Green is also known for its calming and harmonious qualities, which can evoke a sense of balance and trust.
-- **Cyan** is a bright and refreshing colour that often evokes feelings of clarity, cleanliness, and innovation. It is commonly associated with technology, communication, and a modern aesthetic. Cyan can be particularly effective in logo designs for industries such as electronics, software, and telecommunications.
-- **Blue** is the most commonly used colour in logo design for several reasons. Firstly, blue is often associated with positive qualities such as trust, reliability, and professionalism. Its calming and universally liked nature makes it a safe and versatile choice for a wide range of industries. Many established and corporate brands use blue to convey a sense of stability and dependability.
-- **Purple** is associated with qualities like royalty, luxury, sophistication, and creativity. Its combination of blue and red suggests a balance between stability and energy, making it suitable for brands that want to communicate a sense of uniqueness and elegance. Purple is often chosen by beauty, cosmetic, hospitality and creative industries to evoke a sense of luxury and individuality.
-- **Pink** has positive associations with qualities like femininity, sweetness, and playfulness, it also carries cultural and gender-related stereotypes that might not align with the branding goals of certain businesses. Additionally, pink can be seen as less versatile in conveying a sense of professionalism or seriousness compared to more neutral or traditional colours. This perception can limit its application in industries where a more formal image is desired. However, when used thoughtfully, pink can be effective in industries like fashion, beauty, and certain creative sectors where its unique qualities align with the brand's identity and target audience.
-- **Multicoloured** logos are popular in various industries, including technology, entertainment, and creative sectors, where they can convey a sense of diversity, innovation, and energy. The strategic use of multiple colours allows for creative expression, differentiation, and the potential to evoke specific emotions or associations.
+#### Red
 
-#### Colour Harmony
+Red is a dynamic and attention-grabbing colour. Its bold and energetic nature makes it effective for conveying passion, excitement, and urgency. In logos, red is often employed by brands to stand out, create a sense of importance, or stimulate a strong emotional response from the audience. It is frequently used in industries such as food, technology, and retail.
+
+#### Orange
+
+Orange is a vibrant and energetic colour commonly used in logo design to convey warmth, enthusiasm, and friendliness. Its bold and lively nature makes it effective for brands aiming to evoke a sense of optimism and approachability. Orange is commonly used in beverages and the food industry.
+
+#### Yellow
+
+Yellow, while a vibrant and attention-grabbing colour, is often considered challenging in logo design for several reasons. Its brightness can be overpowering and lead to visual fatigue if overused. Additionally, yellow can be less legible, particularly in small or intricate designs, making it a less practical choice for certain applications. Despite these challenges, when used thoughtfully and in combination with other colours, yellow can bring warmth, positivity, and energy to a logo design.
+
+#### Green
+
+Green is strongly associated with nature, growth, and freshness, making it a versatile option for environmentally conscious brands, health and wellness companies, and those promoting sustainability. Green is also known for its calming and harmonious qualities, which can evoke a sense of balance and trust.
+
+#### Cyan
+
+Cyan is a bright and refreshing colour that often evokes feelings of clarity, cleanliness, and innovation. It is commonly associated with technology, communication, and a modern aesthetic. Cyan can be particularly effective in logo designs for industries such as electronics, software, and telecommunications.
+
+#### Blue
+
+Blue is the most commonly used colour in logo design for several reasons. Firstly, blue is often associated with positive qualities such as trust, reliability, and professionalism. Its calming and universally liked nature makes it a safe and versatile choice for a wide range of industries. Many established and corporate brands use blue to convey a sense of stability and dependability.
+
+#### Purple
+
+Purple is associated with qualities like royalty, luxury, sophistication, and creativity. Its combination of blue and red suggests a balance between stability and energy, making it suitable for brands that want to communicate a sense of uniqueness and elegance. Purple is often chosen by beauty, cosmetic, hospitality and creative industries to evoke a sense of luxury and individuality.
+
+#### Pink
+
+Pink has positive associations with qualities like femininity, sweetness, and playfulness, it also carries cultural and gender-related stereotypes that might not align with the branding goals of certain businesses. Additionally, pink can be seen as less versatile in conveying a sense of professionalism or seriousness compared to more neutral or traditional colours. This perception can limit its application in industries where a more formal image is desired. However, when used thoughtfully, pink can be effective in industries like fashion, beauty, and certain creative sectors where its unique qualities align with the brand's identity and target audience.
+
+#### Multicolours
+
+Multicoloured logos are popular in various industries, including technology, entertainment, and creative sectors, where they can convey a sense of diversity, innovation, and energy. The strategic use of multiple colours allows for creative expression, differentiation, and the potential to evoke specific emotions or associations.
+
+### Colour Harmony
 
 Various colour harmonies are employed to create visually appealing and effective logos. Some popular colour harmonies include:
 
-##### Monochromatic
+#### Monochromatic
 
-- This harmony uses different shades, tones, and tints of a single colour. It creates a clean and minimalist look, often conveying simplicity and sophistication.
+This harmony uses different shades, tones, and tints of a single colour. It creates a clean and minimalist look, often conveying simplicity and sophistication.
 
-##### Analogous
+#### Analogous
 
-- Analogous colour schemes involve colours that are next to each other on the colour wheel. This harmony is often chosen for a cohesive and harmonious feel.
+Analogous colour schemes involve colours that are next to each other on the colour wheel. This harmony is often chosen for a cohesive and harmonious feel.
 
-##### Complementary
+#### Complementary
 
-- Complementary colours are opposite each other on the colour wheel. Using these pairs in a logo design can create high contrast and make elements stand out.
+Complementary colours are opposite each other on the colour wheel. Using these pairs in a logo design can create high contrast and make elements stand out.
 
-##### Split-Complementary
+#### Split-Complementary
 
-- This harmony is a variation of the complementary scheme. It involves a base colour and two adjacent to its complementary colour. It provides high contrast while maintaining colour richness.
+This harmony is a variation of the complementary scheme. It involves a base colour and two adjacent to its complementary colour. It provides high contrast while maintaining colour richness.
 
-##### Triadic
+#### Triadic
 
-- Triadic colour schemes use three colours evenly spaced around the colour wheel. This provides a balance of contrast and variety, often resulting in vibrant and dynamic logos.
+Triadic colour schemes use three colours evenly spaced around the colour wheel. This provides a balance of contrast and variety, often resulting in vibrant and dynamic logos.
 
-##### Tetradic (Double-Complementary)
+#### Tetradic (Double-Complementary)
 
-- Tetradic colour schemes involve four colours, in the form of two complementary colour pairs. This provides a rich colour palette and can be used for more complex designs.
+Tetradic colour schemes involve four colours, in the form of two complementary colour pairs. This provides a rich colour palette and can be used for more complex designs.
 
 ### Logo Design Process
 
