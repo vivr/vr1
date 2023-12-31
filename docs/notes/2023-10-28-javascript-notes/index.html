@@ -122,34 +122,32 @@ Javascript Basics   | Vivienne Reay
 <h3>Loops</h3>
 <p>A loop is a way to repeat a block of code multiple times.</p>
 <h4>for loops</h4>
-<pre class="language-javascript"><code class="language-javascript"><span class="token keyword">var</span> students <span class="token operator">=</span> <span class="token punctuation">[</span> <span class="token string">"Matt"</span><span class="token punctuation">,</span> <span class="token string">"Sarah"</span><span class="token punctuation">,</span> <span class="token string">"Susan"</span> <span class="token punctuation">]</span><span class="token punctuation">;</span>
+<pre class="language-javascript"><code class="language-javascript"><span class="token keyword">var</span> students <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">"Matt"</span><span class="token punctuation">,</span> <span class="token string">"Sarah"</span><span class="token punctuation">,</span> <span class="token string">"Susan"</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
 
 <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">let</span> student <span class="token keyword">of</span> students<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-  <span class="token function">greetStudent</span><span class="token punctuation">(</span> student <span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token function">greetStudent</span><span class="token punctuation">(</span>student<span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token punctuation">}</span></code></pre>
 <p>This code defines an array of students, iterates over the array and calls a function (<code>greetStudent</code>) for each student</p>
 <h4>while loops</h4>
-<pre class="language-javascript"><code class="language-javascript"><span class="token keyword">var</span> students <span class="token operator">=</span> <span class="token punctuation">[</span> <span class="token string">"Matt"</span><span class="token punctuation">,</span> <span class="token string">"Sarah"</span><span class="token punctuation">,</span> <span class="token string">"Susan"</span> <span class="token punctuation">]</span><span class="token punctuation">;</span>
+<pre class="language-javascript"><code class="language-javascript"><span class="token keyword">var</span> students <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">"Matt"</span><span class="token punctuation">,</span> <span class="token string">"Sarah"</span><span class="token punctuation">,</span> <span class="token string">"Susan"</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
 
 <span class="token keyword">while</span> <span class="token punctuation">(</span>students<span class="token punctuation">.</span>length <span class="token operator">></span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
   <span class="token keyword">let</span> student <span class="token operator">=</span> students<span class="token punctuation">.</span><span class="token function">pop</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token function">greetStudent</span><span class="token punctuation">(</span>student<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token function">greetStudent</span><span class="token punctuation">(</span>student<span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token punctuation">}</span></code></pre>
 <p>This code is using a <code>while</code> loop to iterate over the <code>students</code> array in reverse order and call the <code>greetStudent</code> function for each student.</p>
 <p>The <code>while</code> loop continues to pop students from the array and greet them until the array is empty. The <code>pop</code> method modifies the original array by removing the last element and returning it, which is why the loop runs until the length of the array becomes 0. The result is that the students are greeted in reverse order: first Susan, then Sarah, and finally Matt.</p>
 <h3>Functions</h3>
 <p>Functions are like mini-programs that group together code blocks to perform specific tasks. They can make your code cleaner, reusable, and easier to manage. Functions can return values using the return keyword. The returned value can be used by other functions or assigned to variables.</p>
 <pre class="language-javascript"><code class="language-javascript"><span class="token keyword">function</span> <span class="token function">greetStudent</span><span class="token punctuation">(</span><span class="token parameter">student</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span> 
-	<span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">Hello, </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>student<span class="token punctuation">.</span>name<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">!</span><span class="token template-punctuation string">`</span></span> 
-  <span class="token punctuation">)</span><span class="token punctuation">;</span>
+  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">Hello, </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>student<span class="token punctuation">.</span>name<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">!</span><span class="token template-punctuation string">`</span></span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token punctuation">}</span></code></pre>
-<p>The interpolated string, also known as a template literal, is created using backticks in JavaScript. It allows you to embed expressions within the string. In this case, it’s dynamically inserting the value of <code>student.name</code> into the string. So, if <code>student.name</code> is, for instance, “John,” the resulting string would be <em>“Hello, John!”</em>.</p>
-<pre class="language-javascript"><code class="language-javascript"><span class="token keyword">function</span> <span class="token function">timeRemaining</span><span class="token punctuation">(</span><span class="token parameter">timeElapsed<span class="token punctuation">,</span>endTime</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+<p>The interpolated string, also known as a template literal, is created using backticks in JavaScript. It allows you to embed expressions within the string. In this case, it’s dynamically inserting the value of <code>student.name</code> into the string. So, if <code>student.name</code> is, for instance, &quot;John&quot;, the resulting string would be <em>“Hello, John!”</em>.</p>
+<pre class="language-javascript"><code class="language-javascript"><span class="token keyword">function</span> <span class="token function">timeRemaining</span><span class="token punctuation">(</span><span class="token parameter">timeElapsed<span class="token punctuation">,</span> endTime</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
   <span class="token keyword">return</span> endTime <span class="token operator">-</span> timeElapsed<span class="token punctuation">;</span>
 <span class="token punctuation">}</span>
 
-<span class="token keyword">var</span> left <span class="token operator">=</span> <span class="token function">timeRemaining</span><span class="token punctuation">(</span><span class="token number">42</span><span class="token punctuation">,</span><span class="token number">240</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">var</span> left <span class="token operator">=</span> <span class="token function">timeRemaining</span><span class="token punctuation">(</span><span class="token number">42</span><span class="token punctuation">,</span> <span class="token number">240</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 
 left<span class="token punctuation">;</span> <span class="token comment">// 198</span></code></pre>
 <p>The function <code>timeRemaining</code> calculates the time remaining by subtracting <code>timeElapsed</code> from <code>endTime</code>. We are calling the function with <code>timeElapsed</code> set to 42 and <code>endTime</code> set to 240. The result, <code>left</code>, would be the time remaining, which is 240 - 42 = 198.</p>
@@ -158,24 +156,20 @@ left<span class="token punctuation">;</span> <span class="token comment">// 198<
 <h4>String Concatenation (Number to String)</h4>
 <pre class="language-javascript"><code class="language-javascript"><span class="token keyword">var</span> msg1 <span class="token operator">=</span> <span class="token string">"There are "</span><span class="token punctuation">;</span>
 <span class="token keyword">var</span> numStudents <span class="token operator">=</span> <span class="token number">16</span><span class="token punctuation">;</span>
-<span class="token keyword">var</span> msg2 <span class="token operator">=</span> <span class="token string">" students."</span>
+<span class="token keyword">var</span> msg2 <span class="token operator">=</span> <span class="token string">" students."</span><span class="token punctuation">;</span>
 console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>msg1 <span class="token operator">+</span> numStudents <span class="token operator">+</span> msg2<span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token comment">// "There are 16 students."</span></code></pre>
 <p>When you use the <code>+</code> operator between a string and a number, JavaScript converts the number to a string before concatenating. So, <code>numStudents</code> gets implicitly converted to a string, and then all three strings are concatenated together.</p>
 <pre class="language-javascript"><code class="language-javascript"><span class="token keyword">var</span> numStudents <span class="token operator">=</span> <span class="token number">16</span><span class="token punctuation">;</span>
 
-console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>
-  <span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">There are </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>numStudents<span class="token operator">+</span><span class="token string">""</span><span class="token interpolation-punctuation punctuation">}</span></span><span class="token string"> students.</span><span class="token template-punctuation string">`</span></span> 
-<span class="token punctuation">)</span><span class="token punctuation">;</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">There are </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>numStudents <span class="token operator">+</span> <span class="token string">""</span><span class="token interpolation-punctuation punctuation">}</span></span><span class="token string"> students.</span><span class="token template-punctuation string">`</span></span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token comment">// "There are 16 students."</span></code></pre>
 <p>The <code>numStudents + &quot;&quot;</code> part ensures that the numeric value of <code>numStudents</code> is coerced into a string before being included in the template literal.</p>
 <h4>String to Number</h4>
 <pre class="language-javascript"><code class="language-javascript"><span class="token keyword">function</span> <span class="token function">addAStudent</span><span class="token punctuation">(</span><span class="token parameter">numStudents</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-  <span class="token keyword">return</span> numStudents <span class="token operator">+</span> <span class="token number">1</span>
+  <span class="token keyword">return</span> numStudents <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">;</span>
 <span class="token punctuation">}</span>
-<span class="token function">addAStudent</span><span class="token punctuation">(</span>
-  <span class="token function">Number</span><span class="token punctuation">(</span>studentInputElem<span class="token punctuation">.</span>value<span class="token punctuation">)</span>
-<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token function">addAStudent</span><span class="token punctuation">(</span><span class="token function">Number</span><span class="token punctuation">(</span>studentInputElem<span class="token punctuation">.</span>value<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token comment">// 17</span></code></pre>
 <p>The <code>Number</code> function is used to convert the value obtained from <code>studentInputElem.value</code> into a number.</p>
 <h4>Boolean Coercion</h4>
@@ -216,10 +210,10 @@ console<span class="token punctuation">.</span><span class="token function">log<
 
 teacher<span class="token punctuation">;</span>
 topic<span class="token punctuation">;</span></code></pre>
-<p>In this code snippet, there is a global variable <code>teacher</code> initialized with the value &quot;Kyle.&quot; Additionally, there is a function called <code>otherClass</code> that is invoked. Within the <code>otherClass</code> function, there are two assignments:</p>
+<p>In this code snippet, there is a global variable <code>teacher</code> initialised with the value &quot;Kyle.&quot; Additionally, there is a function called <code>otherClass</code> that is invoked. Within the <code>otherClass</code> function, there are two assignments:</p>
 <ul>
 <li><code>teacher = &quot;Suzy&quot;;</code>: This modifies the global variable <code>teacher</code> and changes its value to &quot;Suzy.&quot;</li>
-<li><code>topic = &quot;React&quot;;</code>: This seems like an attempt to create a new variable named <code>topic</code> without using the <code>var</code>, <code>let</code>, or <code>const</code> keyword. In JavaScript, if you assign a value to a variable without declaring it using <code>var</code>, <code>let</code>, or <code>const</code>, it becomes a global variable. So, <code>topic</code> would also become a global variable in this case.</li>
+<li><code>topic = &quot;React&quot;;</code>: This creates a new variable named <code>topic</code> without using the <code>var</code>, <code>let</code>, or <code>const</code> keyword. In JavaScript, if you assign a value to a variable without declaring it using <code>var</code>, <code>let</code>, or <code>const</code>, it becomes a global variable. So, <code>topic</code> would also become a global variable in this case.</li>
 </ul>
 <p>The <code>console.log(&quot;Welcome!&quot;);</code> statement logs &quot;Welcome!&quot; to the console when the <code>otherClass</code> function is invoked.</p>
 <p>After calling <code>otherClass()</code>, the code then has two expressions:</p>
@@ -234,7 +228,7 @@ topic<span class="token punctuation">;</span></code></pre>
 <h3>Function Expressions</h3>
 <p>A <strong>function expression</strong> is a way to define a function as part of an expression, rather than as a declaration. In other words, it involves assigning a function to a variable or passing it as an argument to another function.</p>
 <p>Here's a basic example of a function expression:</p>
-<pre class="language-javascript"><code class="language-javascript"><span class="token keyword">var</span> <span class="token function-variable function">add</span> <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">x<span class="token punctuation">,</span> y</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+<pre class="language-javascript"><code class="language-javascript"><span class="token keyword">var</span> <span class="token function-variable function">add</span> <span class="token operator">=</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token parameter">x<span class="token punctuation">,</span> y</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
   <span class="token keyword">return</span> x <span class="token operator">+</span> y<span class="token punctuation">;</span>
 <span class="token punctuation">}</span><span class="token punctuation">;</span>
 
@@ -266,7 +260,7 @@ console<span class="token punctuation">.</span><span class="token function">log<
 </li>
 </ul>
 <p>Here's an example of using a function expression as an argument to another function:</p>
-<pre class="language-javascript"><code class="language-javascript"><span class="token keyword">var</span> result <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">x<span class="token punctuation">,</span> y</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+<pre class="language-javascript"><code class="language-javascript"><span class="token keyword">var</span> result <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token parameter">x<span class="token punctuation">,</span> y</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
   <span class="token keyword">return</span> x <span class="token operator">*</span> y<span class="token punctuation">;</span>
 <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">(</span><span class="token number">4</span><span class="token punctuation">,</span> <span class="token number">6</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 
@@ -276,10 +270,10 @@ console<span class="token punctuation">.</span><span class="token function">log<
 <p>IIFE stands for <strong>Immediately Invoked Function Expression</strong>. It is a design pattern in JavaScript where a function is defined and executed immediately after its creation. The primary purpose of an IIFE is to create a new scope for variables, preventing them from polluting the global scope.</p>
 <pre class="language-javascript"><code class="language-javascript"><span class="token keyword">var</span> teacher <span class="token operator">=</span> <span class="token string">"Kyle"</span><span class="token punctuation">;</span>
 
-<span class="token punctuation">(</span> <span class="token keyword">function</span> <span class="token function">anotherTeacher</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+<span class="token punctuation">(</span><span class="token keyword">function</span> <span class="token function">anotherTeacher</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
   <span class="token keyword">var</span> teacher <span class="token operator">=</span> <span class="token string">"Suzy"</span><span class="token punctuation">;</span> <span class="token comment">// Suzy</span>
   console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>teacher<span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token punctuation">}</span> <span class="token punctuation">)</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 
 console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>teacher<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// Kyle</span></code></pre>
 <p>In this code, there's an Immediately Invoked Function Expression (IIFE) that defines a function named <code>anotherTeacher</code>. Inside the IIFE, there's a local variable <code>teacher</code> assigned the value &quot;Suzy,&quot; and it is logged to the console using <code>console.log(teacher);</code></p>
@@ -310,9 +304,9 @@ console<span class="token punctuation">.</span><span class="token function">log<
 <h3>Closure</h3>
 <p>Closures allow functions to remember and access variables from their outer (enclosing) scope, even after the outer function has finished executing. They are created when a function is defined within another function, forming a &quot;closed-over&quot; environment. Closures enable powerful patterns such as data encapsulation, providing a way to create private variables and maintain their values.</p>
 <pre class="language-javascript"><code class="language-javascript"><span class="token keyword">function</span> <span class="token function">ask</span><span class="token punctuation">(</span><span class="token parameter">question</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-  <span class="token function">setTimeout</span><span class="token punctuation">(</span><span class="token keyword">function</span> <span class="token function">waitASec</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+  <span class="token function">setTimeout</span><span class="token punctuation">(</span><span class="token keyword">function</span> <span class="token function">waitASec</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
     console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>question<span class="token punctuation">)</span><span class="token punctuation">;</span>
-  <span class="token punctuation">}</span><span class="token punctuation">,</span><span class="token number">100</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token number">100</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token punctuation">}</span>
 
 <span class="token function">ask</span><span class="token punctuation">(</span><span class="token string">"What is closure?"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
@@ -320,7 +314,7 @@ console<span class="token punctuation">.</span><span class="token function">log<
 <p>In this code snippet, there is a function called <code>ask</code> that takes a parameter <code>question</code>. Inside the <code>ask</code> function, there's a call to <code>setTimeout</code>. The <code>setTimeout</code> function is asynchronous and schedules the execution of the provided callback function (<code>waitASec</code>) after a specified delay of 100 milliseconds. The callback function logs the <code>question</code> to the console.</p>
 <p>Even though the <code>ask</code> function has finished executing by the time the <code>waitASec</code> function is invoked, the <code>waitASec</code> function still has access to the <code>question</code> parameter due to closure. This is because the inner function (<code>waitASec</code>) &quot;closes over&quot; the variables in its outer scope (<code>ask</code>), creating a closure. Therefore, when <code>ask(&quot;What is closure?&quot;)</code> is called, it logs &quot;What is closure?&quot; after a delay of 100 milliseconds. This demonstrates the concept of closure, where the inner function retains access to the variables of its outer function even after the outer function has completed execution.</p>
 <pre class="language-javascript"><code class="language-javascript"><span class="token keyword">function</span> <span class="token function">ask</span><span class="token punctuation">(</span><span class="token parameter">question</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-  <span class="token keyword">return</span> <span class="token keyword">function</span> <span class="token function">holdYourQuestion</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+  <span class="token keyword">return</span> <span class="token keyword">function</span> <span class="token function">holdYourQuestion</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
     console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>question<span class="token punctuation">)</span><span class="token punctuation">;</span>
   <span class="token punctuation">}</span><span class="token punctuation">;</span>
 <span class="token punctuation">}</span>
@@ -344,7 +338,7 @@ console<span class="token punctuation">.</span><span class="token function">log<
 <pre class="language-javascript"><code class="language-javascript"><span class="token keyword">var</span> workshop <span class="token operator">=</span> <span class="token punctuation">{</span>
   <span class="token literal-property property">teacher</span><span class="token operator">:</span> <span class="token string">"Kyle"</span><span class="token punctuation">,</span>
   <span class="token function">ask</span><span class="token punctuation">(</span><span class="token parameter">question</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>teacher<span class="token punctuation">,</span>question<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>teacher<span class="token punctuation">,</span> question<span class="token punctuation">)</span><span class="token punctuation">;</span>
   <span class="token punctuation">}</span><span class="token punctuation">,</span>
 <span class="token punctuation">}</span><span class="token punctuation">;</span>
 
@@ -365,7 +359,7 @@ workshop<span class="token punctuation">.</span><span class="token function">ask
     <span class="token keyword">this</span><span class="token punctuation">.</span>teacher <span class="token operator">=</span> teacher<span class="token punctuation">;</span>
   <span class="token punctuation">}</span>
   <span class="token function">ask</span><span class="token punctuation">(</span><span class="token parameter">question</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>teacher<span class="token punctuation">,</span>question<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>teacher<span class="token punctuation">,</span> question<span class="token punctuation">)</span><span class="token punctuation">;</span>
   <span class="token punctuation">}</span>
 <span class="token punctuation">}</span>
 

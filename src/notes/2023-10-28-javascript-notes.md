@@ -103,10 +103,10 @@ A loop is a way to repeat a block of code multiple times.
 #### for loops
 
 ```javascript
-var students = [ "Matt", "Sarah", "Susan" ];
+var students = ["Matt", "Sarah", "Susan"];
 
 for (let student of students) {
-  greetStudent( student );
+  greetStudent(student);
 }
 ```
 
@@ -115,11 +115,11 @@ This code defines an array of students, iterates over the array and calls a func
 #### while loops
 
 ```javascript
-var students = [ "Matt", "Sarah", "Susan" ];
+var students = ["Matt", "Sarah", "Susan"];
 
 while (students.length > 0) {
   let student = students.pop();
-    greetStudent(student);
+  greetStudent(student);
 }
 ```
 
@@ -133,20 +133,18 @@ Functions are like mini-programs that group together code blocks to perform spec
 
 ```javascript
 function greetStudent(student) {
-  console.log( 
-	`Hello, ${student.name}!` 
-  );
+  console.log(`Hello, ${student.name}!`);
 }
 ```
 
-The interpolated string, also known as a template literal, is created using backticks in JavaScript. It allows you to embed expressions within the string. In this case, it’s dynamically inserting the value of `student.name` into the string. So, if `student.name` is, for instance, “John,” the resulting string would be _“Hello, John!”_.
+The interpolated string, also known as a template literal, is created using backticks in JavaScript. It allows you to embed expressions within the string. In this case, it’s dynamically inserting the value of `student.name` into the string. So, if `student.name` is, for instance, "John", the resulting string would be _“Hello, John!”_.
 
 ```javascript
-function timeRemaining(timeElapsed,endTime) {
+function timeRemaining(timeElapsed, endTime) {
   return endTime - timeElapsed;
 }
 
-var left = timeRemaining(42,240);
+var left = timeRemaining(42, 240);
 
 left; // 198
 ```
@@ -162,7 +160,7 @@ Coercion in JavaScript refers to the process of converting a value from one type
 ```javascript
 var msg1 = "There are ";
 var numStudents = 16;
-var msg2 = " students."
+var msg2 = " students.";
 console.log(msg1 + numStudents + msg2);
 // "There are 16 students."
 ```
@@ -172,9 +170,7 @@ When you use the `+` operator between a string and a number, JavaScript converts
 ```javascript
 var numStudents = 16;
 
-console.log(
-  `There are ${numStudents+""} students.` 
-);
+console.log(`There are ${numStudents + ""} students.`);
 // "There are 16 students."
 ```
 
@@ -184,11 +180,9 @@ The `numStudents + ""` part ensures that the numeric value of `numStudents` is c
 
 ```javascript
 function addAStudent(numStudents) {
-  return numStudents + 1
+  return numStudents + 1;
 }
-addAStudent(
-  Number(studentInputElem.value)
-);
+addAStudent(Number(studentInputElem.value));
 // 17
 ```
 
@@ -196,7 +190,7 @@ The `Number` function is used to convert the value obtained from `studentInputEl
 
 #### Boolean Coercion
 
-In JavaScript, boolean coercion involves converting values to either `true` or `false` based on their truthiness or falsiness. The falsy values in JavaScript include `false`, `0`, `""` *(empty string)*, `null`, `undefined`, and `NaN`. All other values are considered truthy.
+In JavaScript, boolean coercion involves converting values to either `true` or `false` based on their truthiness or falsiness. The falsy values in JavaScript include `false`, `0`, `""` _(empty string)_, `null`, `undefined`, and `NaN`. All other values are considered truthy.
 
 ```javascript
 while (newStudents.length > 0) {
@@ -249,10 +243,10 @@ teacher;
 topic;
 ```
 
-In this code snippet, there is a global variable `teacher` initialized with the value "Kyle." Additionally, there is a function called `otherClass` that is invoked. Within the `otherClass` function, there are two assignments:
+In this code snippet, there is a global variable `teacher` initialised with the value "Kyle." Additionally, there is a function called `otherClass` that is invoked. Within the `otherClass` function, there are two assignments:
 
 - `teacher = "Suzy";`: This modifies the global variable `teacher` and changes its value to "Suzy."
-- `topic = "React";`: This seems like an attempt to create a new variable named `topic` without using the `var`, `let`, or `const` keyword. In JavaScript, if you assign a value to a variable without declaring it using `var`, `let`, or `const`, it becomes a global variable. So, `topic` would also become a global variable in this case.
+- `topic = "React";`: This creates a new variable named `topic` without using the `var`, `let`, or `const` keyword. In JavaScript, if you assign a value to a variable without declaring it using `var`, `let`, or `const`, it becomes a global variable. So, `topic` would also become a global variable in this case.
 
 The `console.log("Welcome!");` statement logs "Welcome!" to the console when the `otherClass` function is invoked.
 
@@ -276,7 +270,7 @@ A **function expression** is a way to define a function as part of an expression
 Here's a basic example of a function expression:
 
 ```javascript
-var add = function(x, y) {
+var add = function (x, y) {
   return x + y;
 };
 
@@ -291,9 +285,11 @@ In this example:
 Function expressions have a few key characteristics:
 
 - **Anonymous Functions:**
+
   - In the example above, the function lacks a name. It is referred to using the variable (`add` in this case).
 
 - **Assignment:**
+
   - The function is assigned to a variable (`add`), making it possible to reference and use the function through that variable.
 
 - **Flexibility:**
@@ -302,7 +298,7 @@ Function expressions have a few key characteristics:
 Here's an example of using a function expression as an argument to another function:
 
 ```javascript
-var result = (function(x, y) {
+var result = (function (x, y) {
   return x * y;
 })(4, 6);
 
@@ -318,10 +314,10 @@ IIFE stands for **Immediately Invoked Function Expression**. It is a design patt
 ```javascript
 var teacher = "Kyle";
 
-( function anotherTeacher() {
+(function anotherTeacher() {
   var teacher = "Suzy"; // Suzy
   console.log(teacher);
-} )();
+})();
 
 console.log(teacher); // Kyle
 ```
@@ -362,9 +358,9 @@ Closures allow functions to remember and access variables from their outer (encl
 
 ```javascript
 function ask(question) {
-  setTimeout(function waitASec(){
+  setTimeout(function waitASec() {
     console.log(question);
-  },100);
+  }, 100);
 }
 
 ask("What is closure?");
@@ -377,7 +373,7 @@ Even though the `ask` function has finished executing by the time the `waitASec`
 
 ```javascript
 function ask(question) {
-  return function holdYourQuestion(){
+  return function holdYourQuestion() {
     console.log(question);
   };
 }
@@ -407,7 +403,7 @@ The **this** keyword refers to the context in which a function is executed. Its 
 var workshop = {
   teacher: "Kyle",
   ask(question) {
-    console.log(this.teacher,question);
+    console.log(this.teacher, question);
   },
 };
 
@@ -433,7 +429,7 @@ class Workshop {
     this.teacher = teacher;
   }
   ask(question) {
-    console.log(this.teacher,question);
+    console.log(this.teacher, question);
   }
 }
 
