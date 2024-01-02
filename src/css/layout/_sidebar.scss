@@ -1,11 +1,13 @@
 .sidebar {
   grid-column: full-width;
   padding-inline: 1rem;
+  padding-block-start: 2rem;
 
   @include breakpoint(medium) {
     grid-column: content-end / breakout-right;
     justify-self: end;
     text-align: right;
+    padding-block-start: 0;
   }
 
   &__content {

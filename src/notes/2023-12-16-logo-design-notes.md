@@ -252,7 +252,7 @@ Generate a pool of creative ideas based on the client brief:
 
 ##### Colour Exploration
 
-- finalise colour palette based on client preferences.
+- Finalise colour palette based on client preferences.
 - Ensure colour choices align with the brand's identity.
 
 ##### Second Presentation to Client

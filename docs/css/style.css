@@ -655,12 +655,14 @@ button.button__pagination.active {
 .sidebar {
   grid-column: full-width;
   padding-inline: 1rem;
+  padding-block-start: 2rem;
 }
 @media (min-width: 60em) {
   .sidebar {
     grid-column: content-end/breakout-right;
     justify-self: end;
     text-align: right;
+    padding-block-start: 0;
   }
 }
 @media (min-width: 60em) {
