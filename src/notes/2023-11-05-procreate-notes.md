@@ -1,6 +1,6 @@
 ---
 title: Procreate Basics
-pageId: paint
+pageId: procreate
 eleventyNavigation:
   key: Proctreate Basics
 ---

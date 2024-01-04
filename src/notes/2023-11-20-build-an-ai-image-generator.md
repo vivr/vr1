@@ -1,6 +1,6 @@
 ---
 title: Build an AI Image Generator
-pageId: ai
+pageId: openai
 eleventyNavigation:
   key: Build an AI Image Generator
 ---

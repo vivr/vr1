@@ -1,6 +1,6 @@
 ---
 title: Midjourney Basics
-pageId: ai
+pageId: mj
 eleventyNavigation:
   key: Midjourney Basics
 ---
