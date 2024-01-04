@@ -9,6 +9,8 @@ eleventyNavigation:
 
 [DALL-E](https://openai.com/dall-e-3) is an AI model developed by [OpenAI](https://openai.com/) that specialises in creating images from textual descriptions. DALL-E uses a type of AI called a generative model, allowing it to dream up unique visuals based on the input it receives.
 
+### AI Image Generator
+
 The tutorial described in this post is from [Build an AI Image Generator in JavaScript tutorial by Ania Kubów](https://www.youtube.com/watch?v=l3TLQuwr4G0).
 
 ### Set up a New Project
