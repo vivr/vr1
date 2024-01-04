@@ -1,6 +1,6 @@
 ---
 title: Build an 11ty Site
-pageId: code
+pageId: eleventy
 eleventyNavigation:
   key: Build an 11ty Site
 ---
@@ -435,9 +435,9 @@ eleventyNavigation:
   key: pageId: my first note
 ---
 
-### This is my first note h2 title
+### This is my first note
 
-Here is my first note paragraph.
+Here is my first paragraph.
 ```
 
 The front matter provides metadata such as the title, pageId, and Eleventy navigation information. The content of the file includes a heading and a paragraph.

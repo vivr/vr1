@@ -59,6 +59,7 @@ p,
 a,
 ul,
 ol,
+dl,
 .nav-list {
   font-size: $fs-body;
 }
@@ -70,13 +71,21 @@ ol,
   margin: 0;
 }
 .notes {
+  dl,
   ol,
   ul {
     margin-bottom: 1em;
   }
+  dl li + li,
   ol li + li,
   ul li + li {
     margin-top: 0.75em;
+  }
+  dd {
+    margin: 0 0 1em 0;
+  }
+  dt {
+    font-size: 1.9531rem;
   }
 }
 
