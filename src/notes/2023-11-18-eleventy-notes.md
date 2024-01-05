@@ -11,7 +11,7 @@ eleventyNavigation:
 
 ### Directories and Files
 
-Add the following directories and files to the **root-directory/src** directory:
+Establish a main directory and subsequently include a subdirectory named _src_. Within the _root-directory/src_ directory, add the following directories and files:
 
 - \_data
   - meta.js
