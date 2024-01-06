@@ -13,15 +13,15 @@ eleventyNavigation:
 
 Create a main directory and add the following directories and files:
 
-```md
+<pre class="language-markdown">
 ┌── src
-│ ├── \_data
+│ ├── _data
 │ │ ├── meta.js
-│ ├── \_includes
-│ │ ├── \_header.njk
-│ │ ├── \_meta.njk
-│ │ ├── \_nav.njk
-│ │ ├── \_sidebar.njk
+│ ├── _includes
+│ │ ├── _header.njk
+│ │ ├── _meta.njk
+│ │ ├── _nav.njk
+│ │ ├── _sidebar.njk
 │ │ ├── base.njk
 │ │ ├── note.njk
 │ │ ├── page-snippet.njk
@@ -36,8 +36,8 @@ Create a main directory and add the following directories and files:
 │ │ ├── notes.json
 │ ├── index.njk
 │ ├── notes.njk
-└─├── .eleventy.js
-```
+└─└── .eleventy.js
+</pre>
 
 ### Install Eleventy
 

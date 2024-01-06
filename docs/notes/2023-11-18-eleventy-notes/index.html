@@ -46,14 +46,15 @@ Build an 11ty Site   | Vivienne Reay
 <p><a href="https://www.11ty.dev/">Eleventy (11ty)</a> lets you write content using template languages (such as Markdown and Nunjucks, etc.) and then generates static HTML files.</p>
 <h3>Directories and Files</h3>
 <p>Create a main directory and add the following directories and files:</p>
-<pre class="language-md"><code class="language-md">┌── src
-│ ├── \_data
+<pre class="language-markdown">
+┌── src
+│ ├── _data
 │ │ ├── meta.js
-│ ├── \_includes
-│ │ ├── \_header.njk
-│ │ ├── \_meta.njk
-│ │ ├── \_nav.njk
-│ │ ├── \_sidebar.njk
+│ ├── _includes
+│ │ ├── _header.njk
+│ │ ├── _meta.njk
+│ │ ├── _nav.njk
+│ │ ├── _sidebar.njk
 │ │ ├── base.njk
 │ │ ├── note.njk
 │ │ ├── page-snippet.njk
@@ -68,7 +69,8 @@ Build an 11ty Site   | Vivienne Reay
 │ │ ├── notes.json
 │ ├── index.njk
 │ ├── notes.njk
-└─├── .eleventy.js</code></pre>
+└─└── .eleventy.js
+</pre>
 <h3>Install Eleventy</h3>
 <ol>
 <li>Make sure <a href="https://nodejs.org/en/download">Nodejs</a> is installed.</li>
