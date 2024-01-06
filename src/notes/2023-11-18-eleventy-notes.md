@@ -11,31 +11,33 @@ eleventyNavigation:
 
 ### Directories and Files
 
-Establish a main directory and subsequently include a subdirectory named _src_. Within the _root-directory/src_ directory, add the following directories and files:
+Create a main directory and add the following directories and files:
 
-- \_data
-  - meta.js
-- \_includes
-  - \_header.njk
-  - \_meta.njk
-  - \_nav.njk
-  - \_sidebar.njk
-  - base.njk
-  - note.njk
-  - page-snippet.njk
-- assets
-  - notes
-    - my-first-note-img.webp
-  - favicon.png
-- css
-  - style.scss
-  - \_prism.scss
-- notes
-  - my-first-note.md
-  - notes.json
-- index.njk
-- notes.njk
-- .eleventy.js
+```md
+┌── src
+│ ├── \_data
+│ │ ├── meta.js
+│ ├── \_includes
+│ │ ├── \_header.njk
+│ │ ├── \_meta.njk
+│ │ ├── \_nav.njk
+│ │ ├── \_sidebar.njk
+│ │ ├── base.njk
+│ │ ├── note.njk
+│ │ ├── page-snippet.njk
+│ ├── assets
+│ │ ├── notes
+│ │ │ ├── my-first-note-img.webp
+│ │ ├── favicon.png
+│ ├── css
+│ │ ├── style.scss
+│ ├── notes
+│ │ ├── my-first-note.md
+│ │ ├── notes.json
+│ ├── index.njk
+│ ├── notes.njk
+└─├── .eleventy.js
+```
 
 ### Install Eleventy
 

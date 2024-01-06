@@ -45,50 +45,30 @@ Build an 11ty Site   | Vivienne Reay
     <h3>What is Eleventy?</h3>
 <p><a href="https://www.11ty.dev/">Eleventy (11ty)</a> lets you write content using template languages (such as Markdown and Nunjucks, etc.) and then generates static HTML files.</p>
 <h3>Directories and Files</h3>
-<p>Establish a main directory and subsequently include a subdirectory named <em>src</em>. Within the <em>root-directory/src</em> directory, add the following directories and files:</p>
-<ul>
-<li>_data
-<ul>
-<li>meta.js</li>
-</ul>
-</li>
-<li>_includes
-<ul>
-<li>_header.njk</li>
-<li>_meta.njk</li>
-<li>_nav.njk</li>
-<li>_sidebar.njk</li>
-<li>base.njk</li>
-<li>note.njk</li>
-<li>page-snippet.njk</li>
-</ul>
-</li>
-<li>assets
-<ul>
-<li>notes
-<ul>
-<li>my-first-note-img.webp</li>
-</ul>
-</li>
-<li>favicon.png</li>
-</ul>
-</li>
-<li>css
-<ul>
-<li>style.scss</li>
-<li>_prism.scss</li>
-</ul>
-</li>
-<li>notes
-<ul>
-<li>my-first-note.md</li>
-<li>notes.json</li>
-</ul>
-</li>
-<li>index.njk</li>
-<li>notes.njk</li>
-<li>.eleventy.js</li>
-</ul>
+<p>Create a main directory and add the following directories and files:</p>
+<pre class="language-md"><code class="language-md">┌── src
+│ ├── \_data
+│ │ ├── meta.js
+│ ├── \_includes
+│ │ ├── \_header.njk
+│ │ ├── \_meta.njk
+│ │ ├── \_nav.njk
+│ │ ├── \_sidebar.njk
+│ │ ├── base.njk
+│ │ ├── note.njk
+│ │ ├── page-snippet.njk
+│ ├── assets
+│ │ ├── notes
+│ │ │ ├── my-first-note-img.webp
+│ │ ├── favicon.png
+│ ├── css
+│ │ ├── style.scss
+│ ├── notes
+│ │ ├── my-first-note.md
+│ │ ├── notes.json
+│ ├── index.njk
+│ ├── notes.njk
+└─├── .eleventy.js</code></pre>
 <h3>Install Eleventy</h3>
 <ol>
 <li>Make sure <a href="https://nodejs.org/en/download">Nodejs</a> is installed.</li>
@@ -342,7 +322,7 @@ layout: 'base.njk'
 </article>
     <aside class="sidebar">
   <div class="sidebar__content">
-    <h5>Notes</h5>
+    <h4>Notes</h4>
     
       <ul>
         <li>
