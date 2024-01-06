@@ -1,6 +1,15 @@
 ---
 layout: 'base.njk'
 ---
+<div class="post-title">
+<h2 id="main-content">
+  <span>Notes:</span> 
+  <br />{{ title }}
+  <br /><span class="post-date">{{ page.date | postDate }}
+</span>
+</h2>
+</div>
+
 <article class="notes">
   <div class="notes__image">
   <img class="invert-light" src="/assets/notes/{{ pageId }}.webp" alt="{{ pageId }} logo">
