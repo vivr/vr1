@@ -193,10 +193,7 @@ Open the _\_includes/meta.njk_ file and add the following code:
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>
-{{ title }} {% if '/explorations' in page.url and tags != "pages" %}
-{{ pageId }} | {{ meta.siteName }}
-{% elseif page.url != '/' %}  | {{ meta.siteName }}
-{% endif %}
+{{ title }} | {{ meta.siteName }}
 </title>
 <meta name="description" content="{{ meta.siteDescription }}"/>
 <link rel="icon" href="/assets/favicon.png" />
@@ -206,7 +203,7 @@ Open the _\_includes/meta.njk_ file and add the following code:
 <link rel="stylesheet" href="/css/style.css">
 ```
 
-This Nunjucks partial sets up the essential meta tags for an HTML document, dynamically generates the title based on the page's URL and tags, includes a description, specifies a favicon, preconnects to external resources (Google Fonts), and includes custom stylesheets for the site.
+This Nunjucks partial sets up the essential meta tags for an HTML document, dynamically generates the title, includes a description, specifies a favicon, preconnects to external resources (Google Fonts), and includes a stylesheet for the site.
 
 {% endraw %}
 
@@ -318,7 +315,6 @@ Open the _\_includes/page-snippet.njk_ file and add the following:
     <figure tabindex="0">
         <img class="invert-light" alt="{{ post.data.pageId }} logo" src="/assets/notes/{{ post.data.pageId }}.webp" />
         <figcaption>{{ post.data.title }}</figcaption>
-
     </figure>
   </a>
 </li>
@@ -326,7 +322,7 @@ Open the _\_includes/page-snippet.njk_ file and add the following:
 
 {% endraw %}
 
-This code generates a list item for a post, with different content and styling depending on whether the post is categorised as an exploration post or a notes post. The figure element contains an image and a caption, and the entire structure is wrapped in a link to the post's URL.
+This code generates a list item for posts. The figure element contains an image and a caption, and the entire structure is wrapped in a link to the post's URL.
 
 ### notes.njk
 
