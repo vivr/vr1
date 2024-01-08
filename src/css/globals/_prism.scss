@@ -57,11 +57,7 @@ pre[class*="language-"]::selection {
     text-shadow: none;
   }
 }
-pre[class*="language-"] {
-  padding: 1em;
-  margin: 0.5em 0;
-  overflow: auto;
-}
+
 :not(pre) > code[class*="language-"],
 pre[class*="language-"] {
   background: #f5f2f0;

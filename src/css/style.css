@@ -18,15 +18,20 @@
     filter: invert(100%);
   }
 }
-html {
-  box-sizing: border-box;
-  color-scheme: light dark;
-}
-
 *,
 *::before,
 *::after {
-  box-sizing: inherit;
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  font: inherit;
+}
+
+html {
+  color-scheme: light dark;
 }
 
 img {
@@ -37,10 +42,9 @@ img {
 
 body {
   font-family: "Darker Grotesque", sans-serif;
-  line-height: 1.7;
   background-color: var(--clr-bg);
   color: var(--clr-primary);
-  margin: 0;
+  min-height: 100svh;
 }
 
 code[class*=language-],
@@ -109,12 +113,6 @@ pre[class*=language-]::selection {
     text-shadow: none;
   }
 }
-pre[class*=language-] {
-  padding: 1em;
-  margin: 0.5em 0;
-  overflow: auto;
-}
-
 :not(pre) > code[class*=language-],
 pre[class*=language-] {
   background: #f5f2f0;
@@ -250,6 +248,15 @@ pre[class*=language-] {
   }
 }
 h1,
+h2,
+h3,
+h4,
+h5 {
+  text-wrap: balance;
+}
+
+h1,
+h2,
 h3,
 h4,
 h5,
@@ -261,23 +268,15 @@ p,
   font-weight: 500;
 }
 
-h2 {
-  margin: 0 0 1rem 0;
-  width: max-content;
-  padding: 1.3rem 1rem 1.5rem 1rem;
-  color: var(--clr-primary);
-  background-color: var(--clr-tertiary);
-  text-transform: uppercase;
-  letter-spacing: 0.06em;
-  line-height: 1.3;
-}
-h2 .post-date,
-h2 span {
-  font-size: 1rem;
-  letter-spacing: 0.01em;
-}
-h2 span {
-  font-weight: 700;
+h1,
+h2,
+p,
+a,
+ul,
+ol,
+dl,
+.nav-list {
+  font-size: 1.25rem;
 }
 
 h3 {
@@ -292,63 +291,6 @@ h5 {
   font-size: 1.5625rem;
 }
 
-h3,
-h4,
-h5 {
-  line-height: 1.1;
-  margin: 0;
-}
-
-.sidebar h4 {
-  margin-bottom: 2rem;
-}
-
-h1,
-h2,
-p,
-a,
-ul,
-ol,
-dl,
-.nav-list {
-  font-size: 1.25rem;
-}
-
-.sidebar ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-.notes dl,
-.notes ol,
-.notes ul {
-  margin-bottom: 1em;
-}
-.notes dl li + li,
-.notes ol li + li,
-.notes ul li + li {
-  margin-top: 0.75em;
-}
-.notes ul ul ul {
-  list-style-type: disc;
-  margin-top: 0.75em;
-}
-.notes dd {
-  margin: 0 0 1em 0;
-}
-.notes dt {
-  font-size: 1.9531rem;
-}
-
-pre[class*=language-] + h4 {
-  margin: 2rem 0 1.7rem 0;
-}
-
-h4 + pre[class*=language-] {
-  margin-top: 1.7rem;
-}
-
 a {
   text-underline-offset: 0.2em;
   color: var(--clr-primary);
@@ -359,18 +301,6 @@ a:hover,
 a.active,
 .active a {
   color: var(--clr-secondary);
-}
-
-.header a {
-  text-decoration: none;
-}
-
-.sidebar a {
-  text-decoration: none;
-  border-bottom: 1px solid var(--clr-tertiary);
-  display: block;
-  padding-bottom: 0.5rem;
-  margin-bottom: 1rem;
 }
 
 strong {
@@ -460,6 +390,9 @@ code {
 }
 .header__nav .nav-list li:not(:last-child) {
   margin-bottom: 1rem;
+}
+.header a {
+  text-decoration: none;
 }
 
 a.button {
@@ -632,6 +565,64 @@ button.button__pagination.active {
 .notes__content {
   min-width: 0;
 }
+.notes :is(h3, h4, h5) {
+  margin-bottom: 0.65em;
+}
+.notes h3:not(:first-child) {
+  margin-top: 2em;
+}
+.notes h4 {
+  margin-top: 1.5em;
+}
+.notes h3,
+.notes h4,
+.notes h5 {
+  line-height: 1.1;
+}
+.notes p,
+.notes dl,
+.notes ol,
+.notes ul {
+  max-width: 75ch;
+  text-wrap: pretty;
+  line-height: 1.7;
+  margin-top: 1.15em;
+}
+.notes ol,
+.notes ul,
+.notes dd {
+  margin-bottom: 2em;
+}
+.notes ol,
+.notes ul {
+  margin-left: 2em;
+}
+.notes ol li + li,
+.notes ul li + li {
+  margin-top: 0.75em;
+}
+.notes dt {
+  font-size: 1.9531rem;
+}
+
+h2 {
+  margin: 0 0 1rem 0;
+  width: max-content;
+  padding: 1.3rem 1rem 1.5rem 1rem;
+  color: var(--clr-primary);
+  background-color: var(--clr-tertiary);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  line-height: 1.3;
+}
+h2 .post-date,
+h2 span {
+  font-size: 1rem;
+  letter-spacing: 0.01em;
+}
+h2 span {
+  font-weight: 700;
+}
 
 .sidebar {
   grid-column: full-width;
@@ -650,4 +641,19 @@ button.button__pagination.active {
   .sidebar__content {
     padding: 0;
   }
+}
+.sidebar a {
+  text-decoration: none;
+  border-bottom: 1px solid var(--clr-tertiary);
+  display: block;
+  padding-bottom: 0.5rem;
+  margin-bottom: 1rem;
+}
+.sidebar h4 {
+  margin-bottom: 2rem;
+}
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
 }/*# sourceMappingURL=style.css.map */

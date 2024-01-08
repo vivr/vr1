@@ -24,4 +24,79 @@
   &__content {
     min-width: 0;
   }
+
+  :is(h3, h4, h5) {
+    margin-bottom: 0.65em;
+  }
+
+  h3:not(:first-child) {
+    margin-top: 2em;
+  }
+  h4 {
+    margin-top: 1.5em;
+  }
+
+  h3,
+  h4,
+  h5 {
+    line-height: 1.1;
+  }
+  p,
+  dl,
+  ol,
+  ul {
+    max-width: 75ch;
+    text-wrap: pretty;
+    line-height: 1.7;
+
+    margin-top: 1.15em;
+  }
+
+  ol,
+  ul,
+  dd {
+    margin-bottom: 2em;
+  }
+
+  ol,
+  ul {
+    margin-left: 2em;
+  }
+
+  ol li + li,
+  ul li + li {
+    margin-top: 0.75em;
+  }
+
+  dt {
+    font-size: 1.9531rem;
+  }
+
+  // pre[class*="language-"] + h4 {
+  //   margin: 2rem 0 1.7rem 0;
+  // }
+
+  // h4 + pre[class*="language-"] {
+  //   margin-top: 1.7rem;
+  // }
+}
+
+h2 {
+  margin: 0 0 1rem 0;
+  width: max-content;
+  padding: 1.3rem 1rem 1.5rem 1rem;
+  color: var(--clr-primary);
+  background-color: var(--clr-tertiary);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  line-height: 1.3;
+
+  .post-date,
+  span {
+    font-size: 1rem;
+    letter-spacing: 0.01em;
+  }
+  span {
+    font-weight: 700;
+  }
 }
