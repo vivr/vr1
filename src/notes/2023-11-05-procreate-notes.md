@@ -35,7 +35,7 @@ Drawing guides are helpful for maintaining symmetry, aligning elements, or creat
 
 - **Drawing Assist:** This feature ensures that strokes align with the drawing guides.
 
-- **Customizable Grids:** Artists can customise the grid in Procreate, adjusting the number of subdivisions and vanishing points to suit their specific artistic needs.
+- **Customisable Grids:** Artists can customise the grid in Procreate, adjusting the number of subdivisions and vanishing points to suit their specific artistic needs.
 
 - **Symmetry Guides:** These guides enable artists to create symmetrical drawings effortlessly.
 
@@ -69,7 +69,7 @@ The transform tool allows you to resize, rotate, and distort your selected conte
 
 ### Adjustments
 
-Procreate provides various adjustment tools within the Adjustments menu that allow you to modify and enhance your artwork. There are a variety of adjustments and filters. Colour adjustments include Hue, saturation, and brightness, Colour balance, Curves and Gradient map. Filters include Gaussian blur, Motion blur, Perspective blur, Noise, Sharpen and more.
+Procreate provides various adjustment tools that allow you to modify and enhance your artwork. There are a variety of adjustments and filters. Colour adjustments include Hue, saturation, and brightness, Colour balance, Curves and Gradient map. Filters include Gaussian blur, Motion blur, Perspective blur, Noise, Sharpen and more.
 
 ### Actions
 

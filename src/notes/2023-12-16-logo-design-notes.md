@@ -52,7 +52,7 @@ Logo styles refer to the visual and design approaches that contribute to the ove
 
 <dl>
 <dt>Flat Design</dt>
-<dd>Flat design logos leverage straightforward shapes and vector graphics to evoke depth, favouring solid colours over gradients, blurs, or drop shadows. Microsoft, and Apple are notable examples of companies that have adopted flat design principles in their logos. Microsoft's current logo showcases a clean and straightforward windowpanes design without gradients or three-dimensional effects. Apple's logo, which has evolved over the years, maintains a flat aesthetic with a monochromatic apple icon, avoiding gloss or shading.
+<dd>Flat design logos leverage straightforward shapes and vector graphics to evoke depth, favouring solid colours over gradients, blurs, or drop shadows.
 
 ![Microsoft Logo](/assets/notes/2023/logo-design-notes/microsoft-logo.webp)
 
@@ -87,24 +87,12 @@ Logo styles refer to the visual and design approaches that contribute to the ove
 </dd>
 
 <dt>Negative Space</dt>
-<dd>A negative space logo is a design where the space around and between the main elements is deliberately used to create a secondary image or meaning. This technique is often employed to convey clever and hidden messages within the logo. Examples of well-known negative space logos include the arrow hidden in the FedEx logo and the bear in the Toblerone logo.
+<dd>A negative space logo is a design where the space around and between the main elements is deliberately used to create a secondary image or meaning. This technique is often employed to convey clever and hidden messages within the logo.
 
 ![Toblerone Logo](/assets/notes/2023/logo-design-notes/toblerone-logo.webp)
 
 </dd>
 </dl>
-
-### Grids, Golden Ratio, and Optical Adjustments
-
-Well-balanced spacing lends a professional and clean appearance, but excessive gaps can disrupt the cohesion between logotype and logomark elements. For newer brands, readability of the company name is crucial, so finding equilibrium between the type and symbol is key. Neither should dominate; they should complement each other.
-
-Various tools, including **grids**, aid in determining optimal spacing for elements, but not all logos require a grid for success. Hand-drawn or illustrated logos, for instance, thrive on organic, authentic irregularities, avoiding the need for perfectly even spacing.
-
-Designers can use the **golden ratio**, rooted in nature and characterised by circles and rectangles sized in a 1:1.618 ratio, to achieve optimal spacing for a logo. Arranging these elements based on the golden ratio creates visually pleasing shapes and spacing, drawing inspiration from natural proportions.
-
-![Golden Spiral](/assets/notes/2023/logo-design-notes/golden-spiral.webp)
-
-With practice, designers develop an eye for what looks right—avoiding distances that are too far or too close. **Optical adjustment** involves using your eye to find the perfect placement.
 
 ### Colour
 
