@@ -50,7 +50,7 @@ Sans-serif fonts, characterised by the absence of decorative strokes at the ends
 
 ### Script Typefaces
 
-Script typefaces, designed to mimic cursive or handwritten styles, exhibit flowing and connected characters reminiscent of traditional handwriting, calligraphy, or brush lettering. Script fonts, including examples like Lobster and Pacifico, add elegance, personality, or informality to text. Key characteristics of script fonts encompass a cursive style with connected letters for a continuous appearance, varied stroke thickness resembling natural writing instrument strokes, and the inclusion of swashes, flourishes, or ornamental details for added sophistication. These fonts can range from formal and elegant to casual and playful, catering to diverse design needs.
+Script typefaces, designed to mimic cursive or handwritten styles, exhibit flowing and connected characters reminiscent of traditional handwriting, calligraphy, or brush lettering. Script fonts, including examples like Lobster and Pacifico, add elegance, personality, or informality to text. These fonts can range from formal and elegant to casual and playful, catering to diverse design needs.
 
 ### Font Pairing
 
@@ -64,7 +64,7 @@ Typographic scales serve as a design system, establishing a harmonious and organ
 
 ### Whitespace
 
-Whitespace, also known as negative space, serves as a powerful design tool in typography by providing empty or unused space between and around elements. Thoughtful use of whitespace enhances readability, guides attention, contributes to aesthetics, and positively influences user experience. It is integral to typographic decisions, offering benefits such as improved readability and legibility, content organisation with clear hierarchy, visual comfort, strategic focus and emphasis, aesthetic appeal, and visual separation of text or elements. In both print and digital media, whitespace is crucial for preventing information overload, allowing the viewer's eyes to rest and facilitating easier absorption of information.
+Whitespace, also known as negative space, serves as a powerful design tool in typography by providing empty or unused space between and around elements. Thoughtful use of whitespace enhances readability, guides attention, contributes to aesthetics, and positively influences user experience. In both print and digital media, whitespace is crucial for preventing information overload, allowing the viewer's eyes to rest and facilitating easier absorption of information.
 
 ### Anatomy of Typography
 
@@ -112,7 +112,7 @@ Here's are some key terms and elements of typography:
 
 </dl>
 
-### Sources
+### References
 
 - [UI Design Bootcamp, 2021](https://www.udemy.com/course/ui-design-bootcamp-master-typography-colour-grids/)
 - [Typography and Layout - A Practical Guide, 2023](https://www.linkedin.com/learning/typography-and-layout-a-practical-guide)

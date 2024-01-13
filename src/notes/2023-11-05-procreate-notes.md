@@ -11,15 +11,35 @@ eleventyNavigation:
 
 ### Gallery
 
-When you open the Procreate app, the gallery view shows a grid of your saved projects. Tap the _+_ icon to initiate a new canvas. You can create folders to tidy up your collection. Procreate enables you to export your artworks in various formats or share them directly to social media or other apps. You can also delete projects from the gallery, aiding in storage management.
+When you open the Procreate app, the gallery view shows a grid of all saved projects. You can create folders to categorise artworks, search and sort your artworks. In addition, you can export, share, duplicate or delete your projects directly from the gallery.
 
 ### Layers
 
-Procreate uses a layer-based system, allowing you to work on different elements of your artwork independently. Toggling layer visibility, using solo visibility to isolate a single layer, and employing layer locks for protection are intuitive controls. The ability to merge layers, arrange their order, apply clipping masks, experiment with blend modes, enable Alpha Lock, and utilize Reference Layers adds depth and precision to your creative process.
+Layers in Procreate allow artists to organise and separate elements within their digital artworks.
+
+- **Adjustment Layers:** This type of layer enables non-destructive changes to the entire composition, such as colour adjustments or filters.
+
+- **Blend Modes:** Each layer can have its own blend mode, affecting how it interacts with layers beneath it. Blend modes control how colours and tones combine.
+
+- **Opacity Control:** Artists can adjust the opacity of individual layers.
+
+- **Clipping Masks:** Layers can be used as clipping masks, allowing elements on one layer to only be visible within the boundaries of another layer.
+
+- **Alpha Lock:** Activating Alpha Lock on a layer allows artists to work within the existing content without affecting transparent areas.
 
 ### Drawing Guides
 
-Drawing guides are helpful for maintaining symmetry, aligning elements, or creating specific shapes. Isometric guides help in creating drawings with a three-dimensional, isometric perspective. Perspective guides allow you to set up one, two, or three vanishing points. Symmetry guides allow you to create mirrored drawings. The Drawing Assist feature helps you create smooth, continuous lines by mirroring your strokes.
+Drawing guides are helpful for maintaining symmetry, aligning elements, or creating specific shapes.
+
+- **Perspective Guides:** These guides are used to assist artists in creating accurate and dynamic compositions. They help maintain proper perspective in drawings by providing grid lines that converge towards vanishing points.
+
+- **Drawing Assist:** This feature ensures that strokes align with the drawing guides.
+
+- **Customizable Grids:** Artists can customise the grid in Procreate, adjusting the number of subdivisions and vanishing points to suit their specific artistic needs.
+
+- **Symmetry Guides:** These guides enable artists to create symmetrical drawings effortlessly.
+
+- **QuickToggle:** The QuickToggle feature allows for easy activation and deactivation of drawing guides with a simple tap, providing a seamless and efficient workflow for artists to switch between guided and freehand drawing modes.
 
 ### Brushes
 
@@ -27,7 +47,13 @@ In Procreate, you can select from a diverse range of pre-installed brushes, adju
 
 ### Paint, Smudge and Erase
 
-The Paint, Smudge, and Erase tools are essential for creating and refining digital artwork. The Paint tool is used for applying colour to the canvas, creating strokes, and adding details to your artwork. The Smudge tool simulates the effect of smearing or blending wet paint on a canvas. It's great for creating smooth transitions between colours and softening edges. The Erase tool is used to remove parts of your artwork or correct mistakes. It's essentially a brush that erases pixels on the canvas.
+The Paint, Smudge, and Erase tools are essential for creating and refining digital artwork.
+
+- The **Paint** tool is used for applying colour to the canvas, creating strokes, and adding details to your artwork.
+
+- The **Smudge** tool simulates the effect of smearing or blending wet paint on a canvas. It's great for creating smooth transitions between colours and softening edges.
+
+- The **Erase** tool is used to remove parts of your artwork or correct mistakes.
 
 ### Colours
 
@@ -57,6 +83,6 @@ Procreate's animation feature allows users to create simple animations directly 
 
 You can paint directly onto imported 3D models using .USDZ and .OBJ file formats.
 
-### Source
+### Reference
 
 - [Procreate Handbook](https://procreate.com/handbook/)

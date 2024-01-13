@@ -252,6 +252,6 @@ body: JSON.stringify({
 
 You can read more about OpenAI Create Image on [this OpenAI API reference page](https://platform.openai.com/docs/api-reference/images/create).
 
-### Source
+### Reference
 
 [Build an AI Image Generator in JavaScript! (Super simple!) | OpenAI API DALL-E ChatGPT](https://www.youtube.com/watch?v=l3TLQuwr4G0) by [Code with Ania Kubów](https://www.youtube.com/@AniaKubow)

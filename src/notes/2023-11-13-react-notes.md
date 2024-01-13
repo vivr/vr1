@@ -11,7 +11,7 @@ React is a javascript library used for building user interfaces and web applicat
 
 ### Simple Todo List App
 
-The tutorisl described in this post is from [Learn React With This One Project tutorial by WebDevSimplified](https://www.youtube.com/watch?v=Rh3tobg7hEo).
+The tutorial described in this post is from [Learn React With This One Project tutorial by WebDevSimplified](https://www.youtube.com/watch?v=Rh3tobg7hEo).
 
 ### Install Vite
 
@@ -417,7 +417,7 @@ return (
 
 In summary, the `TodoItem` component is responsible for rendering the details of an individual todo item. It includes a checkbox to toggle the completion status and a delete button to remove the todo item. The component receives the todo details and callback functions (`toggleTodo` and `deleteTodo`) as props, making it reusable and allowing it to interact with the parent components that manage the todo list.
 
-### Sources
+### References
 
 - [react.dev](https://react.dev/learn)
 - [Learn React With This One Project](https://www.youtube.com/watch?v=Rh3tobg7hEo) by [WebDevSimplified](https://www.youtube.com/@WebDevSimplified)

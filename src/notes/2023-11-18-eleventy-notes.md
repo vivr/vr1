@@ -437,7 +437,7 @@ Open the _\_includes/sidebar.njk_ file and add the following:
 
 This code generates a sidebar with navigation links for notes, and it applies a class to highlight the active link based on the current page's URL.
 
-### Sources
+### References
 
 - [A Deep Dive Into Eleventy Static Site Generator by Stephanie Eckles, 2021](https://www.smashingmagazine.com/2021/03/eleventy-static-site-generator/).
 - [Turn static HTML/CSS into a blog with CMS using the JAMStack by Kevin Powell, 2021](https://www.youtube.com/watch?v=4wD00RT6d-g)

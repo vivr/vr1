@@ -54,6 +54,6 @@ The Basic Plan cost me $12 USD (£9.82 GBP) for one month. I'm just trying to le
 1. Go to your server and select one of your text channels. Type `/imagine prompt:` in the message box. _(When you type the forward slash `/` a list of commands pop up, you can choose the imagine command from this list instead of typing it)_.
 2. Type a description of the picture you want Midjourney to generate then click the return key to send your message.
 
-### Source
+### Reference
 
 - [Midjourney documentation page](https://docs.midjourney.com/)

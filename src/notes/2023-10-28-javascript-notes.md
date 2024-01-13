@@ -454,6 +454,6 @@ This code defines a class called `Workshop`.
 
 The usage of the class demonstrates how different instances of the same class can have different property values while sharing the same methods.
 
-### Sources
+### Reference
 
 - [Getting Started with Javascript v2 by Kyle Simpson (2019)](https://frontendmasters.com/courses/getting-started-javascript-v2/)

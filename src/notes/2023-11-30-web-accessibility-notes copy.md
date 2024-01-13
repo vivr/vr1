@@ -33,7 +33,7 @@ Ensure adequate color contrast between text and background for readability, espe
 
 Design your website to facilitate text resizing without sacrificing content or functionality and ensure usability when users zoom in. Use relative units like ems or rems, rather than fixed pixel sizes, to define text sizes, allowing text to scale appropriately with browser adjustments or zoom functions. Implement responsive design principles for adaptability to various screen sizes, inherently supporting text resizing within fluid layouts. Test your website with browser zoom functions across different browsers and devices to verify consistent behavior, and be attentive to potential zoom-only breakpoints, ensuring your design remains functional and visually appealing at different zoom levels.
 
-### Sources
+### References
 
 - [MDN - Accessibility](https://developer.mozilla.org/en-US/docs/Web/Accessibility)
 - [A11y Coffee](https://a11y.coffee/)
