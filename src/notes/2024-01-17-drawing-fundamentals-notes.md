@@ -1,8 +1,8 @@
 ---
-title: Drawing Fundamentals
+title: Drawing Basics
 pageId: drawing
 eleventyNavigation:
-  key: Drawing Fundamentals
+  key: Drawing Basics
 ---
 
 ### Line
