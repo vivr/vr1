@@ -569,7 +569,7 @@ button.button__pagination.active {
   margin-bottom: 0.65em;
 }
 .notes h3:not(:first-child) {
-  margin-top: 2em;
+  margin-top: 1em;
 }
 .notes h4 {
   margin-top: 1.5em;
@@ -591,11 +591,11 @@ button.button__pagination.active {
 .notes ol,
 .notes ul,
 .notes dd {
-  margin-bottom: 2em;
+  margin-bottom: 1em;
 }
 .notes ol,
 .notes ul {
-  margin-left: 2em;
+  margin-left: 1em;
 }
 .notes ol li + li,
 .notes ul li + li {
@@ -603,6 +603,12 @@ button.button__pagination.active {
 }
 .notes dt {
   font-size: 1.9531rem;
+}
+.notes pre[class*=language-] + h4 {
+  margin: 2rem 0 1.7rem 0;
+}
+.notes h4 + pre[class*=language-] {
+  margin-top: 1.7rem;
 }
 
 h2 {

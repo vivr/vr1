@@ -11,32 +11,51 @@ eleventyNavigation:
 
 ### Directories and Files
 
-Create a main directory and add the following directories and files:
+Create a main directory for the project then add all the directories and files listed below. **Don't add** _docs_, _node_modules_ or _package.json_. These will be generated in the next steps.
 
 <pre class="language-markdown">
-┌── src
-│ ├── _data
+├── docs
+├── node_modules
+├── src
+│ ├── data
 │ │ ├── meta.js
-│ ├── _includes
-│ │ ├── _header.njk
-│ │ ├── _meta.njk
-│ │ ├── _nav.njk
-│ │ ├── _sidebar.njk
-│ │ ├── base.njk
-│ │ ├── note.njk
-│ │ ├── page-snippet.njk
+│ ├──_includes
+│ │ ├──_header.njk
+│ │ ├──_meta.njk
+│ │ ├──_nav.njk
+│ │ ├──_sidebar.njk
+│ │ ├──_title.njk
+│ │ ├──base.njk
+│ │ ├──exploration.njk
+│ │ ├──note.njk
+│ │ ├──page-snippet.njk
 │ ├── assets
-│ │ ├── notes
-│ │ │ ├── my-first-note-img.webp
-│ │ ├── favicon.png
+│ │ ├──explorations
+│ │ ├──├──2023
+│ │ ├──├──├──nov
+│ │ ├──├──├──├──01
+│ │ ├──├──├──├──├──01.webp
+│ │ ├──├──├──├──├──02.webp
+│ │ ├──├──├──├──├──03.webp
+│ │ ├──notes
+│ │ ├──├──my-first-note-img.svg
+│ │ ├──favicon.png
+│ │ ├──logo.svg
 │ ├── css
-│ │ ├── style.scss
+│ │ ├──style.scss
+│ │ ├──_prism.scss
+│ ├── explorations
+│ │ ├──2023-11-18-01.md
+│ │ ├──explorations.json
 │ ├── notes
-│ │ ├── my-first-note.md
-│ │ ├── notes.json
+│ │ ├──my-first-note.md
+│ │ ├──notes.json
+│ ├── explorations.njk
 │ ├── index.njk
 │ ├── notes.njk
-└─└── .eleventy.js
+├── .eleventy.js
+├── .gitignore.js
+└── package.json
 </pre>
 
 ### Install Eleventy
@@ -169,47 +188,9 @@ The configuration object specifies the input and output directories for Eleventy
 
 {% endraw %}
 
-### meta.js
-
-Open the _\_data/meta.js_ file and add the following:
-
-```javascript
-module.exports = {
-  url: "https://your-site.co.uk/" || "http://localhost:8080",
-  siteName: "your site name",
-  siteDescription: "Your site description.",
-};
-```
-
-This module is designed to be used as configuration settings for the website.
-
-### meta.njk
-
-Open the _\_includes/meta.njk_ file and add the following code:
-
-{% raw %}
-
-```twig
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>
-{{ title }} | {{ meta.siteName }}
-</title>
-<meta name="description" content="{{ meta.siteDescription }}"/>
-<link rel="icon" href="/assets/favicon.png" />
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Darker+Grotesque:wght@500;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/css/style.css">
-```
-
-This Nunjucks partial sets up the essential meta tags for an HTML document, dynamically generates the title, includes a description, specifies a favicon, preconnects to external resources (Google Fonts), and includes a stylesheet for the site.
-
-{% endraw %}
-
 ### base.njk
 
-Open the _\_includes/base.njk_ file and add the following:
+Open the _includes/base.njk_ file and add the following:
 
 {% raw %}
 
@@ -220,22 +201,20 @@ Open the _\_includes/base.njk_ file and add the following:
     {% include '_meta.njk' %}
   </head>
 <body>
-<a href="#main-content" class="visually-hidden">Skip to main content</a>
-  <main class="content-grid">
+  <div class="content-grid">
     {% include '_header.njk' %}
-
+    {% include '_title.njk' %}
     {%- if tags == "pages" or tags == "frontPage" -%}
-      <ul id="main-content" class="card" role="list">
+      <ul class="card" role="list">
         {{ content | safe }}
       </ul>
     {%- else -%}
-      {{ content | safe }}
+        {{ content | safe }}
     {%- endif -%}
-
     {% if '/notes' in page.url and tags != "pages" %}
-      {% include '_sidebar.njk' %}
+    {% include '_sidebar.njk' %}
     {% endif %}
-  </main>
+  </div>
 </body>
 </html>
 ```
@@ -244,41 +223,72 @@ Open the _\_includes/base.njk_ file and add the following:
 
 This Nunjucks template defines the structure of an HTML document, includes various components using Nunjucks includes, and conditionally renders content based on tags and page URL.
 
+### meta.njk
+
+Open the _includes/meta.njk_ file and add the following code:
+
+{% raw %}
+
+```twig
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>
+{{ title }} {% if '/explorations' in page.url and tags != "pages" %}
+{{ pageId }} | {{ meta.siteName }}
+{% elseif page.url != '/' %}  | {{ meta.siteName }}
+{% endif %}
+</title>
+<meta name="description" content="{{ meta.siteDescription }}"/>
+<link rel="icon" href="/assets/favicon.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Darker+Grotesque:wght@500;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/css/style.css">
+```
+
+This Nunjucks partial sets up the essential meta tags for an HTML document, dynamically generates the title based on the page's URL and tags, includes a description, specifies a favicon, preconnects to external resources (Google Fonts), and includes custom stylesheets for the site.
+
+{% endraw %}
+
 ### header.njk
 
-Open the _\_includes/header.njk_ file and add the following code:
+Open the _includes/header.njk_ file and add the following code:
 
 {% raw %}
 
 ```twig
 <header class="header">
   <div class="header__info">
-    <h1><a href="/">Vivienne Reay</a></h1>
+    <h1>brand-name</h1>
+  </div>
+  <div class="brand__logo">
+    <a href="/"><img src="/assets/logo.svg" alt="brand-name home"></a>
   </div>
   {% include '_nav.njk' %}
 </header>
 ```
 
-This HTML code defines a header for the website, including a brand name and the inclusion of a navigation section from a separate Nunjucks file `{% include '_nav.njk' %}`.
+This HTML code defines a header for the website, including a brand name, an SVG logo, and the inclusion of a navigation section from a separate Nunjucks file `{% include '_nav.njk' %}`.
 
 {% endraw %}
 
 ### nav.njk
 
-Open the _\_includes/nav.njk_ file and add the following code:
+Open the _includes/nav.njk_ file and add the following code:
 
 {% raw %}
 
 ```twig
-<nav role="navigation" class="header__nav">
+<nav class="header__nav">
   <ul role="list" class="nav-list">
-    <li><a href="/" class="{{ 'active' if tags == "frontPage"}} button">Index</a></li>
-    <li><a href="/notes/" class="{% if '/notes' in page.url %}active{% endif %} button">Notes</a></li>
+    <li><a href="/" class="{{ 'active' if tags == "frontPage"}}">index</a></li>
+    <li><a href="/explorations/" class="{% if '/explorations' in page.url %}active{% endif %}">ai text-to-image explorations</a></li>
+    <li><a href="/notes/" class="{% if '/notes' in page.url %}active{% endif %}">notes</a></li>
   </ul>
 </nav>
 ```
 
-This HTML code defines a navigation section with two navigation items. The "active" class is conditionally applied to the navigation items based on the page's tags and URL path, indicating the currently active page.
+This HTML code defines a navigation section with three navigation items. The "active" class is conditionally applied to the navigation items based on the page's tags and URL path, indicating the currently active page.
 
 {% endraw %}
 
@@ -290,7 +300,7 @@ Open the _index.njk_ file and add the following code:
 
 ```twig
 ---
-title: Vivienne Reay
+title: brand name
 layout: 'base.njk'
 tags: frontPage
 ---
@@ -303,9 +313,54 @@ tags: frontPage
 
 The purpose of this code is to generate the front page of the website, listing posts in reverse chronological order. Each post is rendered using the 'page-snippet.njk' template. The front matter at the beginning provides metadata for the page and specifies the layout to use.
 
+### sidebar.njk
+
+Open the _includes/sidebar.njk_ file and add the following:
+
+{% raw %}
+
+```twig
+<aside class="sidebar">
+  <div class="sidebar__content">
+    {% set navPages = collections.notes | eleventyNavigation | reverse %}
+      <ul>
+      {%- for entry in navPages %}
+        <li{% if entry.url == page.url %} class="my-active-class"{% endif %}>
+          <a href="{{ entry.url }}">{{ entry.title }}</a>
+        </li>
+      {%- endfor %}
+      </ul>
+  </div>
+</aside>
+```
+
+{% endraw %}
+
+This code generates a sidebar with navigation links for notes, and it applies a class to highlight the active link based on the current page's URL.
+
+### title.njk
+
+Open the _includes/title.njk_ file and add the following:
+
+{% raw %}
+
+```twig
+<div class="post-title">
+{% if '/explorations' in page.url and tags != "pages" %}
+<h1 id="main-content"><span class="title-small">ai text-to-image</span></h1>
+{% elseif '/notes' in page.url and tags != "pages" %}
+<h1 id="main-content"><span class="title-small">notes</span></h1>
+{% endif %}
+</div>
+```
+
+This code allows for dynamic rendering of the collections titles, "ai text-to-image" and "notes".
+
+{% endraw %}
+
 ### page-snippet.njk
 
-Open the _\_includes/page-snippet.njk_ file and add the following:
+Open the _includes/page-snippet.njk_ file and add the following:
 
 {% raw %}
 
@@ -313,8 +368,18 @@ Open the _\_includes/page-snippet.njk_ file and add the following:
 <li>
   <a href="{{ post.url }}">
     <figure tabindex="0">
-        <img class="invert-light" alt="{{ post.data.pageId }} logo" src="/assets/notes/{{ post.data.pageId }}.webp" />
+      {% if '/explorations' in post.url %}
+
+        <img alt="" src="/assets/explorations/{{ post.date | postYear }}/{{ post.date | postMonth }}/{{ post.data.pageId }}/01.webp" />
+        <figcaption>exploration {{ post.data.pageId }}</figcaption>
+
+{% else %}
+
+        <img class="invert-light" alt="{{ post.data.pageId }} logo" src="/assets/notes/{{ post.data.pageId }}.svg" />
         <figcaption>{{ post.data.title }}</figcaption>
+
+{% endif %}
+
     </figure>
   </a>
 </li>
@@ -322,7 +387,7 @@ Open the _\_includes/page-snippet.njk_ file and add the following:
 
 {% endraw %}
 
-This code generates a list item for posts. The figure element contains an image and a caption, and the entire structure is wrapped in a link to the post's URL.
+This code generates a list item for a post, with different content and styling depending on whether the post is categorised as an exploration post or a notes post. The figure element contains an image and a caption, and the entire structure is wrapped in a link to the post's URL.
 
 ### notes.njk
 
@@ -332,7 +397,7 @@ Open the _notes.njk_ page and add the following:
 
 ```twig
 ---
-title: Notes
+title: notes
 layout: 'base.njk'
 tags: pages
 ---
@@ -364,22 +429,22 @@ Open the _notes/my-first-note.md_ file and add the following code:
 
 ```markdown
 ---
-title: My First Note
+title: my first note
 pageId: imagename
 eleventyNavigation:
-  key: My First Note
+  key: pageId: my first note
 ---
 
-### This is a heading
+### This is my first note h2 title
 
-Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam perspiciatis nam, ipsa soluta ex aut ut repudiandae aperiam eligendi nihil!
+Here is my first note paragraph.
 ```
 
 The front matter provides metadata such as the title, pageId, and Eleventy navigation information. The content of the file includes a heading and a paragraph.
 
 ### note.njk
 
-Open the _\_includes/note.njk_ file and add the following code:
+Open the _includes/note.njk_ file and add the following code:
 
 {% raw %}
 
@@ -387,21 +452,13 @@ Open the _\_includes/note.njk_ file and add the following code:
 ---
 layout: 'base.njk'
 ---
-<div class="post-title">
-<h2 id="main-content">
-  <span>Notes:</span>
-  <br />{{ title }}
-  <br /><span class="post-date">{{ page.date | postDate }}
-</span>
-</h2>
-</div>
-
 <article class="notes">
   <div class="notes__image">
-  <img class="invert-light" src="/assets/notes/{{ pageId }}.webp" alt="{{ pageId }} logo">
+  <img class="invert-light" src="/assets/notes/{{ pageId }}.svg" alt="{{ pageId }} logo">
   </div>
-
   <div class="notes__content">
+    <h1>{{ title }}</h1>
+    <p class="post-date">{{ page.date | postDate }}</p>
     {{ content | safe }}
   </div>
 </article>
@@ -411,33 +468,103 @@ This template is designed to render individual notes. It includes a layout speci
 
 {% endraw %}
 
-### sidebar.njk
+### explorations.njk
 
-Open the _\_includes/sidebar.njk_ file and add the following:
+Open the _explorations.njk_ page and add the following:
 
 {% raw %}
 
 ```twig
-<aside class="sidebar">
-  <div class="sidebar__content">
-    <h5>Notes</h5>
-    {% set navPages = collections.notes | eleventyNavigation | reverse %}
-      <ul>
-      {%- for entry in navPages %}
-        <li{% if entry.url == page.url %} class="active"{% endif %}>
-          <a href="{{ entry.url }}">{{ entry.title }}</a>
-        </li>
-      {%- endfor %}
-      </ul>
-  </div>
-</aside>
+---
+title: ai text-to-image explorations
+layout: 'base.njk'
+tags: pages
+---
+{%- for post in collections.explorations | reverse -%}
+  {% include 'page-snippet.njk' %}
+{%- endfor -%}
 ```
+
+This file represents a page with the title "ai text-to-image explorations." It uses the 'base.njk' layout, assigns the tag "pages," and includes content from the 'page-snippet.njk' file for each post in the 'explorations' collection, reversing the order. The actual content and structure of each post are defined in 'page-snippet.njk'.
 
 {% endraw %}
 
-This code generates a sidebar with navigation links for notes, and it applies a class to highlight the active link based on the current page's URL.
+### explorations.json
 
-### References
+Open the _explorations/explorations.json_ file and add the following code:
 
-- [A Deep Dive Into Eleventy Static Site Generator by Stephanie Eckles, 2021](https://www.smashingmagazine.com/2021/03/eleventy-static-site-generator/).
-- [Turn static HTML/CSS into a blog with CMS using the JAMStack by Kevin Powell, 2021](https://www.youtube.com/watch?v=4wD00RT6d-g)
+```json
+{
+  "layout": "exploration.njk",
+  "tags": ["explorations", "posts"]
+}
+```
+
+The "layout" key is set to "exploration.njk" which is our template. The "tags" key has an array as its value, and it contains two elements: "explorations" and "posts". These tags are used to filter posts on your website.
+
+### 2023-11-18-01.md
+
+Open the _explorations/2023-11-18-01.md_ file and add the following code:
+
+```markdown
+---
+pageId: "01"
+galleryImages:
+  - image: "01"
+  - image: "02"
+  - image: "03"
+---
+```
+
+The page with pageId "01" has a gallery with 03 images, and each image is identified by a numerical value from "01" to "03." The data is being used to dynamically generate a gallery with the specified images on the page with the corresponding pageId.
+
+### exploration.njk
+
+Open the _includes/exploration.njk_ file and add the following code:
+
+{% raw %}
+
+```twig
+---
+title: explorations
+layout: 'base.njk'
+---
+<div class="gallery-title">
+  <h1>{{ title }} {{ pageId }}</h1>
+  <p class="post-date">{{ page.date | postDate }}</p>
+</div>
+
+<ul class="gallery" role="list">
+  {% for galleryImage in galleryImages %}
+  <li>
+      <figure>
+        <img alt="ai text-image exploration - {{ page.date | postDate }} - image {{ galleryImage.image }}" src="/assets/explorations/{{ page.date | postYear }}/{{ page.date | postMonth }}/{{ pageId }}/{{ galleryImage.image }}.webp" />
+        <figcaption>image {{ galleryImage.image }}</figcaption>
+      </figure>
+  </li>
+  {% endfor %}
+</ul>
+```
+
+This template is designed to render a page titled "explorations" with a gallery of images.
+
+{% endraw %}
+
+### data/meta.js
+
+Open the _data/meta.js_ file and add the following:
+
+```javascript
+module.exports = {
+  url: "https://your-site.co.uk/" || "http://localhost:8080",
+  siteName: "your site name",
+  siteDescription: "Your site description.",
+};
+```
+
+This module is designed to be used as configuration settings for the website.
+
+### Sources
+
+- [A Deep Dive Into Eleventy Static Site Generator by Stephanie Eckles, March 24, 2021 (Smashing Magazine)](https://www.smashingmagazine.com/2021/03/eleventy-static-site-generator/).
+- [Turn static HTML/CSS into a blog with CMS using the JAMStack by Kevin Powell, June 2021 (Youtube)](https://www.youtube.com/watch?v=4wD00RT6d-g)

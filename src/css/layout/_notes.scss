@@ -29,8 +29,11 @@
     margin-bottom: 0.65em;
   }
 
+  h3:first-child {
+  }
+
   h3:not(:first-child) {
-    margin-top: 2em;
+    margin-top: 1em;
   }
   h4 {
     margin-top: 1.5em;
@@ -55,12 +58,12 @@
   ol,
   ul,
   dd {
-    margin-bottom: 2em;
+    margin-bottom: 1em;
   }
 
   ol,
   ul {
-    margin-left: 2em;
+    margin-left: 1em;
   }
 
   ol li + li,
@@ -72,13 +75,13 @@
     font-size: 1.9531rem;
   }
 
-  // pre[class*="language-"] + h4 {
-  //   margin: 2rem 0 1.7rem 0;
-  // }
+  pre[class*="language-"] + h4 {
+    margin: 2rem 0 1.7rem 0;
+  }
 
-  // h4 + pre[class*="language-"] {
-  //   margin-top: 1.7rem;
-  // }
+  h4 + pre[class*="language-"] {
+    margin-top: 1.7rem;
+  }
 }
 
 h2 {
