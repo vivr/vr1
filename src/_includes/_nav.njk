@@ -1,6 +1,8 @@
 <nav role="navigation" class="header__nav">
   <ul role="list" class="nav-list">
     <li><a href="/" class="{{ 'active' if tags == "frontPage"}} button">Index</a></li>
-    <li><a href="/notes/" class="{% if '/notes' in page.url %}active{% endif %} button">Notes</a></li>
+    <li><a href="/artanddesign/" class="{% if '/artanddesign' in page.url %}active{% endif %} button">Notes on Art &amp; Design</a></li>
+    <li><a href="/technotes/" class="{% if '/technotes' in page.url %}active{% endif %} button">Notes on Technology</a></li>
+    <li><a href="/music/" class="{% if '/music' in page.url %}active{% endif %} button">Notes on Music</a></li>
   </ul>
 </nav>

@@ -16,9 +16,10 @@
         {{ content | safe }}
     {%- endif -%}
     
-    {% if '/notes' in page.url and tags != "pages" %}
+    {% if tags != "pages" and tags != "frontPage" %}
     {% include '_sidebar.njk' %}
     {% endif %}
+
   </main>
 </body>
 </html>

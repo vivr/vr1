@@ -1,8 +1,20 @@
 <li>
-  <a href="{{ post.url }}">
-    <figure tabindex="0">
-        <img class="invert-light" alt="{{ post.data.pageId }} logo" src="/assets/notes/{{ post.data.pageId }}.webp" />
-        <figcaption>{{ post.data.title }}</figcaption>
+<a href="{{ post.url }}">
+<figure tabindex="0">
+<img alt="photo of {{ post.data.pageId }}" src="/assets/
+{% if '/music' in post.url %}
+music/
+{% endif %}
+{% if '/artanddesign' in post.url %}
+artanddesign/
+{% endif %}
+{% if '/technotes' in post.url %}
+technotes/
+{% endif %}
+{{ post.data.pageId }}.webp" />
+<figcaption>{{ post.data.title }}</figcaption>
+
+
     </figure>
   </a>
 </li>

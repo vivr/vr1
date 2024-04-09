@@ -1,7 +1,7 @@
 <aside class="sidebar">
   <div class="sidebar__content">
-    <h4>Notes</h4>
-    {% set navPages = collections.notes | eleventyNavigation | reverse %}
+    <h4>All Posts</h4>
+    {% set navPages = collections.posts | eleventyNavigation | reverse %}
       <ul>
       {%- for entry in navPages %}
         <li{% if entry.url == page.url %} class="active"{% endif %}>

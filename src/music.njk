@@ -1,0 +1,8 @@
+---
+title: Notes on Music
+layout: 'base.njk'
+tags: pages
+---
+{%- for post in collections.music | reverse -%}
+  {% include 'page-snippet.njk' %}
+{%- endfor -%}

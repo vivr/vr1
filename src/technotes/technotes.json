@@ -1,0 +1,4 @@
+{
+  "layout": "technotes.njk",
+  "tags": ["technotes", "posts"]
+}
