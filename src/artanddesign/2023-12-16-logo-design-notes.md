@@ -17,31 +17,31 @@ Logos come in various types, each serving a unique purpose in visually communica
 <dt>Logomark</dt>
 <dd>A logomark is a visual symbol or icon that represents a brand. It serves as a visual shorthand, helping people quickly identify and remember the brand without the need for accompanying words. Examples include Nike and Apple.
 
-![Nike Logo](/assets/notes/2023/logo-design-notes/nike-logo.webp)
+![Nike Logo](/assets/artanddesign/2023/logo-design-notes/nike-logo.webp)
 
 </dd>
 <dt>Logotype</dt>
 <dd>A logotype, also known as wordmark, is a company's name or a distinctive arrangement of letters designed in a specific way to represent a brand. Examples include Coca-Cola and Google.
 
-![Coca-Cola Logo](/assets/notes/2023/logo-design-notes/coca-cola-logo.webp)
+![Coca-Cola Logo](/assets/artanddesign/2023/logo-design-notes/coca-cola-logo.webp)
 
 </dd>
 <dt>Monogram Logo</dt>
 <dd>A monogram logo is a design created by combining two or more letters, typically the initials of a person, company, or brand, into a single, unique symbol. Examples include Louis Vuitton and BMW.
 
-![Louis Vuiton Logo](/assets/notes/2023/logo-design-notes/louis-vuitton-logo.webp)
+![Louis Vuiton Logo](/assets/artanddesign/2023/logo-design-notes/louis-vuitton-logo.webp)
 
 </dd>
 <dt>Emblem, Seal or Badge</dt>
 <dd>An emblem, seal, or badge is a visual design that combines images and text to create a distinctive symbol representing an organisation, authority, or group. It typically consists of a central image surrounded by text or other decorative elements. Examples include Harley-Davidson and Starbucks.
 
-![Harley-Davidson Logo](/assets/notes/2023/logo-design-notes/harley-davidson-logo.webp)
+![Harley-Davidson Logo](/assets/artanddesign/2023/logo-design-notes/harley-davidson-logo.webp)
 
 </dd>
 <dt>Combination Mark</dt>
 <dd>A combination mark is a type of logo that combines a logotype with a distinct symbol or icon. Famous examples of combination marks include the logos of companies like Adidas, Starbucks, and Burger King, where the combination of both text and a distinctive symbol contributes to the overall brand identity.
 
-![Adidas Logo](/assets/notes/2023/logo-design-notes/adidas-logo.webp)
+![Adidas Logo](/assets/artanddesign/2023/logo-design-notes/adidas-logo.webp)
 
 </dd>
 </dl>
@@ -54,42 +54,42 @@ Logo styles refer to the visual and design approaches that contribute to the ove
 <dt>Flat Design</dt>
 <dd>Flat design logos leverage straightforward shapes and vector graphics to evoke depth, favouring solid colours over gradients, blurs, or drop shadows.
 
-![Microsoft Logo](/assets/notes/2023/logo-design-notes/microsoft-logo.webp)
+![Microsoft Logo](/assets/artanddesign/2023/logo-design-notes/microsoft-logo.webp)
 
 </dd>
 
 <dt>Handwritten Type</dt>
 <dd>Brands and businesses seeking an authentic and relatable image often gravitate toward illustrative, script, and hand-drawn logos.
 
-![Ray Ban Logo](/assets/notes/2023/logo-design-notes/ray-ban-logo.webp)
+![Ray Ban Logo](/assets/artanddesign/2023/logo-design-notes/ray-ban-logo.webp)
 
 </dd>
 
 <dt>Geometric</dt>
 <dd>Geometric logos employ fundamental shapes to craft intricate patterns, offering a versatile style that can range from sleek simplicity to intricate ornateness.
 
-![Mastercard Logo](/assets/notes/2023/logo-design-notes/mastercard-logo.webp)
+![Mastercard Logo](/assets/artanddesign/2023/logo-design-notes/mastercard-logo.webp)
 
 </dd>
 
 <dt>Gradient Ovelay</dt>
 <dd>Gradient or Gradient Overlay logos leverage gradients and blending modes to craft a sophisticated layered appearance, making them ideal for emanating a practical, vibrant vibe that captures attention.
 
-![Instagram Logo](/assets/notes/2023/logo-design-notes/instagram-logo.webp)
+![Instagram Logo](/assets/artanddesign/2023/logo-design-notes/instagram-logo.webp)
 
 </dd>
 
 <dt>Crest</dt>
 <dd>Crest style logos are a good way to organise logos that need many lines of type including an established date, maybe a subline, or byline and a main company name. Accompanying symbols can also be used in a crest to further explain the companies mission.
 
-![Manchester United Logo](/assets/notes/2023/logo-design-notes/manchester-united-logo.webp)
+![Manchester United Logo](/assets/artanddesign/2023/logo-design-notes/manchester-united-logo.webp)
 
 </dd>
 
 <dt>Negative Space</dt>
 <dd>A negative space logo is a design where the space around and between the main elements is deliberately used to create a secondary image or meaning. This technique is often employed to convey clever and hidden messages within the logo.
 
-![Toblerone Logo](/assets/notes/2023/logo-design-notes/toblerone-logo.webp)
+![Toblerone Logo](/assets/artanddesign/2023/logo-design-notes/toblerone-logo.webp)
 
 </dd>
 </dl>
@@ -136,42 +136,42 @@ Various colour harmonies are employed to create visually appealing and effective
 <dt>Monochromatic</dt>
 <dd>This harmony uses different shades, tones, and tints of a single colour. It creates a clean and minimalist look, often conveying simplicity and sophistication.
 
-![Monochromatic Colour Harmony](/assets/notes/2023/logo-design-notes/monochromatic-colour-harmony.webp)
+![Monochromatic Colour Harmony](/assets/artanddesign/2023/logo-design-notes/monochromatic-colour-harmony.webp)
 
 </dd>
 
 <dt>Analogous</dt>
 <dd>Analogous colour schemes involve colours that are next to each other on the colour wheel. This harmony is often chosen for a cohesive and harmonious feel.
 
-![Analogous Colour Harmony](/assets/notes/2023/logo-design-notes/analogous-colour-harmony.webp)
+![Analogous Colour Harmony](/assets/artanddesign/2023/logo-design-notes/analogous-colour-harmony.webp)
 
 </dd>
 
 <dt>Complementary</dt>
 <dd>Complementary colours are opposite each other on the colour wheel. Using these pairs in a logo design can create high contrast and make elements stand out.
 
-![Complementary Colour Harmony](/assets/notes/2023/logo-design-notes/complementary-colour-harmony.webp)
+![Complementary Colour Harmony](/assets/artanddesign/2023/logo-design-notes/complementary-colour-harmony.webp)
 
 </dd>
 
 <dt>Split-Complementary</dt>
 <dd>This harmony is a variation of the complementary scheme. It involves a base colour and two adjacent to its complementary colour. It provides high contrast while maintaining colour richness.
 
-![Split Complementary Colour Harmony](/assets/notes/2023/logo-design-notes/split-complementary-colour-harmony.webp)
+![Split Complementary Colour Harmony](/assets/artanddesign/2023/logo-design-notes/split-complementary-colour-harmony.webp)
 
 </dd>
 
 <dt>Triadic</dt>
 <dd>Triadic colour schemes use three colours evenly spaced around the colour wheel. This provides a balance of contrast and variety, often resulting in vibrant and dynamic logos.
 
-![Triadic Colour Harmony](/assets/notes/2023/logo-design-notes/triadic-colour-harmony.webp)
+![Triadic Colour Harmony](/assets/artanddesign/2023/logo-design-notes/triadic-colour-harmony.webp)
 
 </dd>
 
 <dt>Tetradic</dt>
 <dd>Tetradic (Double-Complementary) colour schemes involve four colours, in the form of two complementary colour pairs. This provides a rich colour palette and can be used for more complex designs.
 
-![Tetradic Colour Harmony](/assets/notes/2023/logo-design-notes/tetradic-colour-harmony.webp)
+![Tetradic Colour Harmony](/assets/artanddesign/2023/logo-design-notes/tetradic-colour-harmony.webp)
 
 </dd>
 
