@@ -64,4 +64,4 @@ The standard unit for measuring air pressure intensity or amplitude is the pasca
 ### Reference
 
 - [AUDIO BASICS (Part 1): How Sound Works](https://www.youtube.com/watch?v=mjv7O0KS1ug) by [Audio University](https://www.youtube.com/@AudioUniversity)
-- [AUDIO BASICS (Part 2): Properties of a Sound Wave by Audio University](https://www.youtube.com/watch?v=KUMI9sqD6vc) by [Audio University](https://www.youtube.com/@AudioUniversity)
+- [AUDIO BASICS (Part 2): Properties of a Sound Wave](https://www.youtube.com/watch?v=KUMI9sqD6vc) by [Audio University](https://www.youtube.com/@AudioUniversity)

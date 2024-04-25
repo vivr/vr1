@@ -33,7 +33,7 @@ When you sharpen a note you move the pitch up a half step and when you flatten a
 
 The step method helps describe intervals between two notes, but it can get tricky over longer distances. It's simpler to describe intervals using the seven main notes of a scale and relative numbering. You can use the scale numbers to show the basic spacing between notes, which works for any scale.
 
-The degrees of a scale refer to the individual steps or notes within that scale, counted sequentially from the tonic (the first note of the scale) to the octave (the note with the same name as the tonic, but at a higher pitch). In Western music, the degrees of a scale are typically named using solfege syllables:
+The degrees of a scale refer to the individual steps or notes within that scale, counted sequentially from the tonic (the first note of the scale) to the octave (the note with the same name as the tonic, but at a higher pitch). Here are the technical names for the different degrees of musical scale:
 
 - Tonic (First (Root))
 - Supertonic (Second)
