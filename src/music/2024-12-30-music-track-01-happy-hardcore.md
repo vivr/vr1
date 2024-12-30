@@ -1,11 +1,11 @@
 ---
-title: Music from Tuts 01 - Happy Hardcore
+title: Music Track 01 - Happy Hardcore
 pageId: happy-hardcore
 eleventyNavigation:
-  key: Music from Tuts 01 - Happy Hardcore
+  key: Music Track 01 - Happy Hardcore
 ---
 
-### Learning Through Music Tutorials: Happy Hardcore
+### Music Track 01 - Happy Hardcore
 
 Following tutorials has been a great way for me to learn music production and I recently tried one by [STRANJAH](https://www.youtube.com/watch?v=EXtskGVhvtA) called _DnB Producer makes HAPPY HARDCORE...? 😃_. It was a really easy to follow guide that helped me create something I wouldn't have tried otherwise.
 
