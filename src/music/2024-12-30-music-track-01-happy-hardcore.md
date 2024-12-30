@@ -13,10 +13,8 @@ I built the track in **Ableton Live** using vocal samples from [91Vocals Soulful
 
 Here's the finished track:
 
-<div style="position: relative; width: 100%; padding-bottom: 56.25%">
 <iframe src="https://www.youtube.com/embed/yodCjqvppqE?si=pCm7wk7HxFxcs2lE"
         title="Happy Hardcore Track | Made using a tutorial by STRANJAH" frameborder="0" allowfullscreen
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
         style="position: absolute; width: 100%; height: 100%;">
 </iframe>
-</div>
