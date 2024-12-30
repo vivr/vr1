@@ -7,9 +7,9 @@ eleventyNavigation:
 
 ### Music Track 01 - Happy Hardcore
 
-Following tutorials has been a great way for me to learn music production and I recently tried one by [STRANJAH](https://www.youtube.com/watch?v=EXtskGVhvtA) called _DnB Producer makes HAPPY HARDCORE...? 😃_. It was a really easy to follow guide that helped me create something I wouldn't have tried otherwise.
+Following tutorials has been a great way for me to learn music production and I recently tried one by [STRANJAH](https://www.youtube.com/@STRANJAH) called [DnB Producer makes HAPPY HARDCORE...? 😃](https://www.youtube.com/watch?v=EXtskGVhvtA). It was a really easy to follow tutorial that helped me create something I wouldn't have tried otherwise.
 
-I built the track in **Ableton Live** using vocal samples from [91Vocals Soulful Drum and Bass Vocals](https://91vocals.com/products/soulful-drum-bass-vocals?srsltid=AfmBOoqXxdbTPoAUmrWGOLa_9aSNsb07H2bKaC52vOyvmfSNV3u5aKYm).
+I built the track in **Ableton Live** using vocal samples from [91Vocals Soulful Drum and Bass Vocals](https://91vocals.com/products/soulful-drum-bass-vocals?srsltid=AfmBOoqXxdbTPoAUmrWGOLa_9aSNsb07H2bKaC52vOyvmfSNV3u5aKYm). I also used some drum samples from [Test Press Noisia Sample Pack Vol. 1](https://splice.com/sounds/packs/splice/Noisia-sample-pack/samples) and [Test Press Noisia Sample Pack Vol. 2](https://splice.com/sounds/packs/test-press/noisia-sample-pack-vol-2/samples).
 
 Here's the finished track:
 
