@@ -2,7 +2,7 @@
 title: Music Theory 01 - Sound
 pageId: vinyl
 eleventyNavigation:
-  key: Music Theory 01 - Sound
+  key: Music Theory 01
 ---
 
 ### What is Sound?
