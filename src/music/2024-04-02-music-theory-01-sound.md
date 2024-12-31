@@ -1,5 +1,5 @@
 ---
-title: Music Theory 01 - Sound
+title: Music Theory 01
 pageId: vinyl
 eleventyNavigation:
   key: Music Theory 01
