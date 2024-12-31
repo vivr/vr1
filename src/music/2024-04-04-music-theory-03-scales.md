@@ -1,8 +1,8 @@
 ---
-title: Music Theory 03 - Scales
+title: Music Theory 03
 pageId: piano
 eleventyNavigation:
-  key: Music Theory 03 - Scales
+  key: Music Theory 03
 ---
 
 ### Musical Scales

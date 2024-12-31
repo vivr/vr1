@@ -1,8 +1,8 @@
 ---
-title: Music Theory 02 - Intervals
+title: Music Theory 02
 pageId: mixer
 eleventyNavigation:
-  key: Music Theory 02 - Intervals
+  key: Music Theory 02
 ---
 
 ### Musical Intervals

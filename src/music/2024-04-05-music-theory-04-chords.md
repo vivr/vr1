@@ -1,8 +1,8 @@
 ---
-title: Music Theory 04 - Chords
+title: Music Theory 04
 pageId: guitar
 eleventyNavigation:
-  key: Music Theory 04 - Chords
+  key: Music Theory 04
 ---
 
 ### Chords
