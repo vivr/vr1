@@ -3,6 +3,9 @@ title: Home
 layout: 'base.njk'
 tags: frontPage
 ---
-{%- for post in collections.posts | reverse -%}
-  {% include 'page-snippet.njk' %}
+
+{% import 'macros.njk' as macros %}
+
+{%- for colInfo in homeCollections -%}
+  {{ macros.collection_card(colInfo.slug, colInfo) }}
 {%- endfor -%}

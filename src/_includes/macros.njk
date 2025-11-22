@@ -1,0 +1,61 @@
+{#
+  Central macros used across collection templates and index.
+
+  - page_snippet(post): renders a card for a post using its front matter image.
+  - collection_card(slug, colInfo): renders the card for a top-level collection
+    using either its featured image or a fallback from its first post.
+#}
+
+{# ------------------------------ #}
+{#   Post snippet (collection grid) #}
+{# ------------------------------ #}
+
+{% macro page_snippet(post) -%}
+  <li>
+    <a href="{{ post.url }}">
+      <figure tabindex="0">
+        <img
+          alt="image for {{ post.data.title }}"
+          src="{{ post.data.image }}"
+        />
+        <figcaption>{{ post.data.title }}</figcaption>
+      </figure>
+    </a>
+  </li>
+{%- endmacro %}
+
+
+{# ------------------------------ #}
+{#   Collection card for homepage  #}
+{# ------------------------------ #}
+
+{% macro collection_card(slug, colInfo) -%}
+  {%- set items = collections[slug] or [] -%}
+
+  {# Choose the card image for the collection:
+     1. If siteCollections.json defines "image", use that
+     2. Otherwise, if there are posts, use the first post's image
+     3. Otherwise, fallback to /assets/<slug>.webp
+  #}
+
+  {%- if colInfo.image -%}
+    {%- set image = colInfo.image -%}
+  {%- elif items | length > 0 -%}
+    {%- set first = items[0] -%}
+    {%- set image = first.data.image -%}
+  {%- else -%}
+    {%- set image = '/assets/' ~ slug ~ '.webp' -%}
+  {%- endif -%}
+
+  <li>
+    <a href="/{{ slug }}/">
+      <figure tabindex="0">
+        <img
+          alt="image for {{ colInfo.title or slug }}"
+          src="{{ image }}"
+        />
+        <figcaption>{{ colInfo.title or slug }}</figcaption>
+      </figure>
+    </a>
+  </li>
+{%- endmacro %}

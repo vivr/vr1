@@ -1,0 +1,56 @@
+{# Start from the passed-in collectionName if present #}
+{% set cname = collectionName or '' %}
+
+{# If cname is missing or too broad, infer a better one from the URL #}
+{% if page.url %}
+  {# If cname is 'programming', that is the big combined collection. Narrow it to the topic slug. #}
+  {% if cname == 'programming' %}
+    {% set parts = page.url.split('/') %}
+    {# /programming/<topic-slug>/... #}
+    {% if parts | length > 2 and parts[2] %}
+      {% set cname = parts[2] %}
+    {% endif %}
+  {% endif %}
+
+  {# If we still do not have a cname, try URL-based inference as a fallback #}
+  {% if not cname %}
+    {% set parts = page.url.split('/') %}
+    {% if parts | length > 1 and parts[1] %}
+      {% set cname = parts[1] %}
+    {% endif %}
+  {% endif %}
+{% endif %}
+
+{# Final fallback if everything else failed #}
+{% if not cname %}
+  {% set cname = 'misc' %}
+{% endif %}
+
+{# Look up the pages for this collection #}
+{% set rawPages = collections[cname] or [] %}
+
+{# Collections under src/programming/ use `order`, others by date (latest first) #}
+{% if rawPages | isProgrammingCollection %}
+  {% set pages = rawPages | sortByOrderAsc %}
+{% else %}
+  {% set pages = rawPages | sortByDateDesc %}
+{% endif %}
+
+{%- if position == 'bottom' and pages | length > 0 -%}
+  {# Find current page and render previous/next #}
+  {% for p in pages %}
+    {% if p.url == page.url %}
+      <nav class="post-navigation" aria-label="Post">
+        {% if loop.index0 > 0 %}
+          {% set prev = pages[loop.index0 - 1] %}
+          <a class="post-prev" href="{{ prev.url }}" rel="prev">← {{ prev.data.title }}</a>
+        {% endif %}
+
+        {% if loop.index0 < (pages | length) - 1 %}
+          {% set next = pages[loop.index0 + 1] %}
+          <a class="post-next" href="{{ next.url }}" rel="next">{{ next.data.title }} →</a>
+        {% endif %}
+      </nav>
+    {% endif %}
+  {% endfor %}
+{%- endif -%}

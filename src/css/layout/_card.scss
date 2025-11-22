@@ -16,11 +16,9 @@
   }
 
   figure {
-    /* reset figure default margin */
     margin: 0;
     height: 40vmin;
     background-color: var(--clr-tertiary);
-
     display: grid;
     grid-template-areas: "card";
     place-items: end;
@@ -31,7 +29,6 @@
     figure,
     img {
       aspect-ratio: 4/3;
-      /* Remove height to prevent distorting aspect-ratio */
       height: auto;
     }
   }
@@ -41,32 +38,30 @@
   }
 
   figcaption {
-    transition: transform 400ms 200ms ease-in;
     font-size: $fs-body;
-    /* Visual styles for the caption */
     padding: 0.25em 0.5em;
     background-color: var(--clr-bg);
-    /* provide stacking context */
     z-index: 1;
+    transform: none;
+    transition: color 200ms ease-in, background-color 200ms ease-in;
   }
+
+  /* Caption colour changes on hover */
   figure:hover figcaption,
   figure:focus figcaption {
     color: var(--clr-secondary);
-    transform: translateY(0);
+    background-color: var(--clr-tertiary);
   }
+
+  /* Image still zooms on hover */
   figure:hover img,
   figure:focus img {
     transform: scale(1.3) translate(-8%, -3%);
   }
+
   figure:focus {
     outline: 2px solid var(--clr-tertiary);
     outline-offset: 2px;
-  }
-
-  @media (any-hover: hover) and (any-pointer: fine) {
-    figcaption {
-      transform: translateY(100%);
-    }
   }
 
   @media (prefers-reduced-motion: reduce) {
@@ -75,9 +70,6 @@
     }
     img {
       transform: none !important;
-    }
-    figcaption {
-      transition-delay: 0ms;
     }
   }
 }

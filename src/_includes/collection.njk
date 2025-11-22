@@ -1,0 +1,71 @@
+---
+layout: 'base.njk'
+---
+
+{%- set collection = page.data.collectionSlug or '' -%}
+{%- if not collection -%}
+
+  {# 1. If this is under /programming/, use the topic slug from the URL #}
+  {%- if page.url -%}
+    {%- set parts = page.url.split('/') -%}
+    {# URL structure: /programming/<topic-slug>/... #}
+    {%- if parts | length > 2 and parts[1] == 'programming' and parts[2] != '' -%}
+      {%- set collection = parts[2] -%}
+    {%- endif -%}
+  {%- endif -%}
+
+  {# 2. If still no collection, infer from tags (skip structural tags) #}
+  {%- if not collection -%}
+    {%- set tags = page.data.tags or [] -%}
+    {%- for t in tags -%}
+      {%- if t != 'posts'
+            and t != 'frontPage'
+            and t != 'pages'
+            and collection == '' -%}
+        {%- set collection = t -%}
+      {%- endif -%}
+    {%- endfor -%}
+  {%- endif -%}
+
+  {# 3. If tags didn't yield a collection, try inferring from the page URL (first path segment) #}
+  {%- if collection == '' and page.url -%}
+    {%- set parts = page.url.split('/') -%}
+    {%- if parts | length > 1 and parts[1] != '' -%}
+      {%- set collection = parts[1] -%}
+    {%- endif -%}
+  {%- endif -%}
+
+  {# 4. Final fallback #}
+  {%- if collection == '' -%}
+    {%- set collection = 'misc' -%}
+  {%- endif -%}
+{%- endif -%}
+
+
+{# Use an explicit `image` frontmatter field for per-page images. If not present,
+   do not render the image element. This removes guessing/fallback behaviour. #}
+{%- set imagePath = (image or page.data.image or page.image) or '' -%}
+
+<div class="post-title">
+<h2 id="main-content">
+  <span>{{ collection | capitalize }}:</span>
+  <br />{{ title }}
+  <br /><span class="post-date">{{ page.date | postDate }}</span>
+</h2>
+</div>
+<article class="notes{%- if not imagePath %} notes--no-image{%- endif %}">
+  {%- if imagePath -%}
+  <div class="notes__image">
+    <img src="{{ imagePath }}" alt="image for {{ title }}">
+  </div>
+  {%- endif -%}
+
+  <div class="notes__content">
+    {{ content | safe }}
+
+    {% set collectionName = collection %}
+    {% set position = 'bottom' %}
+    {% include 'series-nav.njk' %}
+  </div>
+
+</article>

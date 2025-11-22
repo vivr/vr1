@@ -1,8 +1,26 @@
 <nav role="navigation" class="header__nav">
+  {% set currentUrl = page.url or '/' %}
   <ul role="list" class="nav-list">
-    <li><a href="/" class="{{ 'active' if tags == "frontPage"}} button">Index</a></li>
-    <li><a href="/artanddesign/" class="{% if '/artanddesign' in page.url %}active{% endif %} button">Notes on Art &amp; Design</a></li>
-    <li><a href="/technotes/" class="{% if '/technotes' in page.url %}active{% endif %} button">Notes on Technology</a></li>
-    <li><a href="/music/" class="{% if '/music' in page.url %}active{% endif %} button">Notes on Music</a></li>
+    <li>
+      <a
+        href="/"
+        class="button{% if tags == 'frontPage' %} active{% endif %}"
+      >
+        Index
+      </a>
+    </li>
+
+    {# Loop over the top-level collections discovered dynamically in /_data/homeCollections.js #}
+    {% for col in homeCollections %}
+      {% set isActive = ('/' ~ col.slug ~ '/') in currentUrl %}
+      <li>
+        <a
+          href="/{{ col.slug }}/"
+          class="button{% if isActive %} active{% endif %}"
+        >
+          {{ col.title }}
+        </a>
+      </li>
+    {% endfor %}
   </ul>
 </nav>

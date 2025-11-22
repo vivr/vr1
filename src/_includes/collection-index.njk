@@ -1,0 +1,46 @@
+---
+layout: 'base.njk'
+---
+
+{% import 'macros.njk' as macros %}
+
+{# Determine which collection to render #}
+{% set collectionSlug = collectionSlug or '' %}
+
+{# Fallbacks if collectionSlug is missing (just in case) #}
+{% if not collectionSlug %}
+  {# Try to infer from first non-post/frontPage tag #}
+  {% set tagsList = tags or [] %}
+  {% for t in tagsList %}
+    {% if t != 'posts' and t != 'frontPage' and not collectionSlug %}
+      {% set collectionSlug = t %}
+    {% endif %}
+  {% endfor %}
+{% endif %}
+
+{% if not collectionSlug and page.url %}
+  {# Try to infer from URL: /python/, /react/, etc. #}
+  {% set parts = page.url.split('/') %}
+  {% if parts | length > 1 and parts[1] %}
+    {% set collectionSlug = parts[1] %}
+  {% endif %}
+{% endif %}
+
+{# Final fallback #}
+{% if not collectionSlug %}
+  {% set collectionSlug = 'misc' %}
+{% endif %}
+
+{# Render all posts in that collection #}
+{% set rawItems = collections[collectionSlug] or [] %}
+
+{# Collections under src/programming/ use `order`, others use latest date first #}
+{% if rawItems | isProgrammingCollection %}
+  {% set items = rawItems | sortByOrderAsc %}
+{% else %}
+  {% set items = rawItems | sortByDateDesc %}
+{% endif %}
+
+{% for post in items %}
+  {{ macros.page_snippet(post) }}
+{% endfor %}

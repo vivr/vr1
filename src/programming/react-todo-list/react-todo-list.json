@@ -1,0 +1,5 @@
+{
+  "layout": "collection.njk",
+  "tags": ["react-todo-list", "posts"],
+  "image": "/assets/programming/react.webp"
+}

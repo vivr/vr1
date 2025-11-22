@@ -1,0 +1,5 @@
+{
+  "layout": "collection.njk",
+  "tags": ["learning-python", "posts"],
+  "image": "/assets/programming/python.webp"
+}

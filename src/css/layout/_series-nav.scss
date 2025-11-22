@@ -1,0 +1,43 @@
+/* Series navigation styles (prev / next) */
+.post-navigation {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-top: 3.5rem;
+  align-items: center;
+}
+
+.post-navigation .post-prev,
+.post-navigation .post-next {
+  display: inline-flex;
+  align-items: center;
+  background-color: var(--clr-primary);
+  color: var(--clr-bg);
+  padding: 0.5em 0.9em 0.7em 0.8em;
+  min-height: 2.125em;
+  font-size: 1.25rem;
+  font-weight: 500;
+  text-decoration: none;
+  transition: 220ms all ease-in-out;
+}
+
+.post-navigation .post-prev:hover,
+.post-navigation .post-prev.active,
+.post-navigation .post-next:hover,
+.post-navigation .post-next.active {
+  background-color: var(--clr-secondary);
+}
+
+.post-navigation .post-prev:focus,
+.post-navigation .post-next:focus {
+  outline-style: solid;
+  outline-color: transparent;
+  box-shadow: 0 0 0 4px var(--clr-primary);
+}
+
+.post-navigation .post-prev {
+  justify-self: start;
+}
+.post-navigation .post-next {
+  justify-self: end;
+}

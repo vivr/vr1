@@ -1,4 +1,4 @@
 {
-  "layout": "music.njk",
+  "layout": "collection.njk",
   "tags": ["music", "posts"]
 }

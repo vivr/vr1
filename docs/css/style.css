@@ -1,8 +1,8 @@
 :root {
   --clr-primary: hsl(0, 0%, 2%);
-  --clr-bg: hsl(120, 2%, 90%);
-  --clr-secondary: hsl(105, 2%, 40%);
-  --clr-tertiary: hsl(120, 2%, 80%);
+  --clr-bg: rgb(229, 230, 229);
+  --clr-secondary: rgb(101, 104, 100);
+  --clr-tertiary: rgb(203, 205, 203);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -10,7 +10,7 @@
     --clr-primary: hsl(0, 0%, 98%);
     --clr-bg: hsl(120, 2%, 10%);
     --clr-secondary: hsl(105, 2%, 60%);
-    --clr-tertiary: hsl(120, 2%, 20%);
+    --clr-tertiary: rgb(50, 52, 50);
   }
 }
 @media (prefers-color-scheme: light) {
@@ -368,7 +368,7 @@ code {
 }
 @media (min-width: 60em) {
   .header__info {
-    height: 18rem;
+    height: 22rem;
     padding: 1rem;
     border-right: 1px solid var(--clr-tertiary);
   }
@@ -471,6 +471,8 @@ button.button__pagination.active {
   margin-inline: 1rem;
   list-style: none;
   padding: 0;
+  /* Caption colour changes on hover */
+  /* Image still zooms on hover */
 }
 .card img {
   height: 40vmin;
@@ -480,7 +482,6 @@ button.button__pagination.active {
   transition: transform 600ms ease-in;
 }
 .card figure {
-  /* reset figure default margin */
   margin: 0;
   height: 40vmin;
   background-color: var(--clr-tertiary);
@@ -493,7 +494,6 @@ button.button__pagination.active {
   .card figure,
   .card img {
     aspect-ratio: 4/3;
-    /* Remove height to prevent distorting aspect-ratio */
     height: auto;
   }
 }
@@ -501,18 +501,17 @@ button.button__pagination.active {
   grid-area: card;
 }
 .card figcaption {
-  transition: transform 400ms 200ms ease-in;
   font-size: 1.25rem;
-  /* Visual styles for the caption */
   padding: 0.25em 0.5em;
   background-color: var(--clr-bg);
-  /* provide stacking context */
   z-index: 1;
+  transform: none;
+  transition: color 200ms ease-in, background-color 200ms ease-in;
 }
 .card figure:hover figcaption,
 .card figure:focus figcaption {
   color: var(--clr-secondary);
-  transform: translateY(0);
+  background-color: var(--clr-tertiary);
 }
 .card figure:hover img,
 .card figure:focus img {
@@ -522,20 +521,12 @@ button.button__pagination.active {
   outline: 2px solid var(--clr-tertiary);
   outline-offset: 2px;
 }
-@media (any-hover: hover) and (any-pointer: fine) {
-  .card figcaption {
-    transform: translateY(100%);
-  }
-}
 @media (prefers-reduced-motion: reduce) {
   .card * {
     transition-duration: 0ms !important;
   }
   .card img {
     transform: none !important;
-  }
-  .card figcaption {
-    transition-delay: 0ms;
   }
 }
 
@@ -628,6 +619,51 @@ h2 span {
 }
 h2 span {
   font-weight: 700;
+}
+
+/* Series navigation styles (prev / next) */
+.post-navigation {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-top: 3.5rem;
+  align-items: center;
+}
+
+.post-navigation .post-prev,
+.post-navigation .post-next {
+  display: inline-flex;
+  align-items: center;
+  background-color: var(--clr-primary);
+  color: var(--clr-bg);
+  padding: 0.5em 0.9em 0.7em 0.8em;
+  min-height: 2.125em;
+  font-size: 1.25rem;
+  font-weight: 500;
+  text-decoration: none;
+  transition: 220ms all ease-in-out;
+}
+
+.post-navigation .post-prev:hover,
+.post-navigation .post-prev.active,
+.post-navigation .post-next:hover,
+.post-navigation .post-next.active {
+  background-color: var(--clr-secondary);
+}
+
+.post-navigation .post-prev:focus,
+.post-navigation .post-next:focus {
+  outline-style: solid;
+  outline-color: transparent;
+  box-shadow: 0 0 0 4px var(--clr-primary);
+}
+
+.post-navigation .post-prev {
+  justify-self: start;
+}
+
+.post-navigation .post-next {
+  justify-self: end;
 }
 
 .sidebar {

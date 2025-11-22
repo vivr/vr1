@@ -19,7 +19,7 @@
     line-height: 0.7rem;
 
     @include breakpoint(medium) {
-      height: 18rem;
+      height: 22rem;
       padding: 1rem;
       border-right: 1px solid var(--clr-tertiary);
     }

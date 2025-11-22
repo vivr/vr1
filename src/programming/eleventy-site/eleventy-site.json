@@ -1,0 +1,5 @@
+{
+  "layout": "collection.njk",
+  "tags": ["eleventy-site", "posts"],
+  "image": "/assets/programming/eleventy.webp"
+}

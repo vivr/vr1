@@ -1,0 +1,5 @@
+{
+  "layout": "collection.njk",
+  "tags": ["machine-learning-basics", "posts"],
+  "image": "/assets/programming/ml.webp"
+}

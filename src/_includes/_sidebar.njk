@@ -1,13 +1,53 @@
 <aside class="sidebar">
   <div class="sidebar__content">
-    <h4>All Posts</h4>
-    {% set navPages = collections.posts | eleventyNavigation | reverse %}
-      <ul>
-      {%- for entry in navPages %}
-        <li{% if entry.url == page.url %} class="active"{% endif %}>
-          <a href="{{ entry.url }}">{{ entry.title }}</a> 
-        </li>
-      {%- endfor %}
-      </ul>
+
+    {# 1. Try to use an explicit collectionSlug if the page sets one
+       (e.g. programming.njk, python.njk, react.njk, music.njk, artanddesign.njk) #}
+    {% set cname = collectionSlug or '' %}
+
+    {# 2. If no collectionSlug, infer from tags on the page (single post pages) #}
+    {% if not cname %}
+      {% set pageTags = tags or [] %}
+      {% for t in pageTags %}
+        {% if t != 'posts' and t != 'frontPage' and t != 'pages' and not cname %}
+          {% set cname = t %}
+        {% endif %}
+      {% endfor %}
+    {% endif %}
+
+    {# 3. Fallback if we still didn't find anything #}
+    {% if not cname %}
+      {% set cname = 'posts' %}
+    {% endif %}
+
+    {# 4. Fetch the matching collection dynamically #}
+    {% set rawNavPages = collections[cname] or [] %}
+
+    {# Collections under src/programming/ use `order`, others use date (latest first) #}
+    {% if rawNavPages | isProgrammingCollection %}
+      {% set navPages = rawNavPages | sortByOrderAsc %}
+    {% else %}
+      {% set navPages = rawNavPages | sortByDateDesc %}
+    {% endif %}
+
+    <h4>In this section</h4>
+
+<ul class="sidebar-list">
+  {% for entry in navPages %}
+    {% set label = entry.data.shortTitle or entry.data.title %}
+    {% set isActive = entry.inputPath == page.inputPath %}
+
+    <li class="sidebar-item{% if isActive %} sidebar-item--active{% endif %}">
+      <a
+        href="{{ entry.url }}"
+        {% if isActive %}class="active" aria-current="page"{% endif %}
+      >
+        {{ label }}
+      </a>
+    </li>
+  {% endfor %}
+</ul>
+
+
   </div>
 </aside>

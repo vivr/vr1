@@ -1,0 +1,12 @@
+---
+title: Programming
+layout: 'base.njk'
+tags: pages
+---
+
+{%- set cards = [] -%}
+{% import 'macros.njk' as macros %}
+
+{%- for topic in collections.programmingTopics -%}
+  {{ macros.page_snippet(topic) }}
+{%- endfor -%}

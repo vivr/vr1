@@ -1,8 +1,8 @@
 :root {
   --clr-primary: hsl(0, 0%, 2%);
-  --clr-bg: hsl(120, 2%, 90%);
-  --clr-secondary: hsl(105, 2%, 40%);
-  --clr-tertiary: hsl(120, 2%, 80%);
+  --clr-bg: rgb(229, 230, 229);
+  --clr-secondary: rgb(101, 104, 100);
+  --clr-tertiary: rgb(203, 205, 203);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -10,7 +10,7 @@
     --clr-primary: hsl(0, 0%, 98%);
     --clr-bg: hsl(120, 2%, 10%);
     --clr-secondary: hsl(105, 2%, 60%);
-    --clr-tertiary: hsl(120, 2%, 20%);
+    --clr-tertiary: rgb(50, 52, 50);
   }
 }
 @media (prefers-color-scheme: light) {
