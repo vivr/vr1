@@ -97,6 +97,6 @@ Three evenly spaced colours. Bright and balanced, but needs control to avoid vis
 
 Two complementary pairs. Gives range but can be hard to keep consistent.
 
-### Sources
+### Source
 
 - [*Logo Design Mastery in Adobe Illustrator* by Lindsay Marsh, 2022](https://www.udemy.com/course/logo-design-mastery-in-adobe-illustrator/)

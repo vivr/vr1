@@ -4,61 +4,38 @@ date: 2024-04-03
 image: /assets/music/sound.webp
 ---
 
-### What is Sound?
+### What is sound?
 
-Sound occurs when vibrations pass through a substance like air, water, wood, or metal. These vibrations, known as acoustical energy, create waves of high and low air pressure.
+Sound is made when something vibrates. These vibrations travel through air, water, or other materials as waves of higher and lower pressure.
 
-Consider dropping a pebble into a pond. The impact pushes the water down, causing it to bounce back up, forming concentric ripples. Similarly, sound travels through air with movements of compression and expansion, akin to the ripple effect in water.
+### How sound moves
 
-### Phases of a Sound Wave
+Sound travels as a chain reaction. One particle moves and pushes the next. This creates a wave that reaches your ear.
 
-Sound consists of two primary phases: **compression** and **rarefaction**. Picture a snare drum: when struck by a drumstick, the drum's membrane is pushed downward. This action creates a region of low pressure, known as rarefaction, as air particles disperse to fill the space.
+### Compression and rarefaction
 
-Consequently, the membrane rebounds upward, compressing the air molecules around it. Compression arises when air pressure increases due to the particles being forced closer together.
+A sound wave moves by repeating two phases:
 
-This movement of the drum doesn't just impact the nearby air particles but sets off a sequence of reactions.
+* **Compression**: air particles are pushed closer together.
+* **Rarefaction**: air particles spread apart again.
 
-### How Sound Travels
+These two phases matter because **they are what carry the sound through the air**. When something vibrates, it pushes the air (compression) and then pulls back (rarefaction). This push and pull travels outward in a wave. Your ear detects these tiny pressure changes and your brain turns them into sound. Without this cycle of compression and rarefaction, vibrations would not travel and you would not hear anything.
 
-Sound waves spread outwards, carrying the essence of the sound source with them. When you listen to a snare drum or any sound, you're essentially detecting the vibrations in the air provoked by that source. It's not the drum itself or the air particles immediately surrounding it that vibrate your eardrums. Instead, it's the movement of individual air particles, transferring energy from one to another, that creates the sound wave reaching your ears.
+### Speed of sound
 
-### Inverse Square Law
-
-When not blocked, sound spreads out in three dimensions, forming a sphere of acoustical energy. As it moves away from the source, it affects more particles with the same energy. However, this energy diminishes over distance. This decline, known as **attenuation**, follows the inverse square law.
-
-### Speed of Sound
-
-The rate at which sound spreads out from its source depends on the substance it travels through. The typical speed of sound is 1130 feet per second (344 metres per second). At this pace, sound waves cover 1 foot in approximately 1.1 milliseconds. This calculation is based on standard temperature conditions (59 degrees Fahrenheit or 15 degrees Celsius). Regardless of a sound's characteristics, all sounds in a specific material move at the same speed.
-
-### Phase
-
-Sound waves represent fluctuations in air pressure, alternating between positive and negative values. Graphically, these changes can be depicted as a circle. Phase refers to different positions along this circle. When time is introduced to the graph, the circle transforms into a sine wave. In this representation, the y-axis illustrates peaks of maximum compression at the top and troughs of maximum rarefaction at the bottom, indicating high pressure at the top and low pressure at the bottom. Meanwhile, the x-axis portrays the passage of time from right to left.
+Sound travels at about **344 metres per second** in air at normal temperature. All sounds move at the same speed in the same material.
 
 ### Frequency
 
-Phase is quantified in degrees, with a full circle equaling 360 degrees, known as a cycle. Sound waves oscillate rapidly, completing numerous cycles of positive and negative pressure every second. Frequency denotes how many of these cycles occur per second.
-
-The human hearing range spans from 20 cycles per second (cps) to 20,000 cps. Frequency correlates with musical pitch, although other factors influence pitch too. Generally, higher frequencies correspond to higher pitches. For instance, doubling a sound's frequency raises its pitch by one octave, while halving the frequency lowers the pitch by one octave.
-
-Frequency is measured in Hertz (Hz), where 1 cps equals 1 Hz, and 1,000 cps equals 1 kHz. Humans can perceive sounds within the range of 20 Hz to 20 kHz.
-
-### Period
-
-Frequency indicates the number of cycles completed within a second, while the period of a wave signifies how long it takes to complete one cycle. Period, a time measurement, is typically expressed in seconds or milliseconds.
-
-For example, a sound wave with a frequency of 1 Hz completes one cycle every second, giving it a period of 1 second. In contrast, a sound wave with a frequency of 2 Hz finishes one cycle in 0.5 seconds, yielding a period of 0.5 seconds. As frequencies rise into the audible range (beyond 20 Hz), milliseconds become a more practical unit of measurement than seconds.
+Frequency is how many wave cycles happen each second. It is measured in **Hertz (Hz)**. Higher frequencies sound higher in pitch. Lower frequencies sound lower.
 
 ### Wavelength
 
-Period represents a unit of time, while wavelength denotes a unit of distance. Wavelength describes the physical span required for a sound wave to finish one cycle. Lower frequencies exhibit longer wavelengths, while higher frequencies display shorter wavelengths.
-
-To determine the wavelength corresponding to a specific frequency, apply the formula: speed of sound divided by frequency. Although variations in temperature and humidity may influence the speed of sound, using the standard speed of sound (approximately 1130 feet per second) in this formula will yield an accurate result.
+Wavelength is the distance a wave travels during one cycle. Low frequencies have long wavelengths. High frequencies have short wavelengths.
 
 ### Amplitude
 
-Amplitude characterises the magnitude of pressure alterations in sound waves. Sounds with higher amplitudes exhibit more pronounced compression and rarefaction phases, whereas those with lower amplitudes show less extreme pressure changes.
-
-The standard unit for measuring air pressure intensity or amplitude is the pascal (Pa). However, due to the vast range of amplitudes detectable by humans, working directly with pascals can be challenging. Therefore, we utilise the decibel (dB), specifically sound pressure level (SPL) in decibels. Dealing with SPL, adding 6 dB doubles the SPL, while subtracting 6 dB halves it.
+Amplitude shows how strong the pressure changes are in a sound wave. Higher amplitude means a louder sound. Loudness is measured in **decibels (dB)**.
 
 ### Sources
 

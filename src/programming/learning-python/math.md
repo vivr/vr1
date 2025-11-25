@@ -7,7 +7,7 @@ order: 5
 
 ### Math operators
 
-#### Basic maths
+#### Basic math
 
 Python does simple maths just like a calculator:
 
