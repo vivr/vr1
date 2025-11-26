@@ -1,6 +1,5 @@
 ---
-title: JS Basics - Undefined vs Undeclared
-shortTitle: Undefined vs Undeclared
+title: Undefined vs Undeclared
 date: 2023-10-28
 order: 13
 ---

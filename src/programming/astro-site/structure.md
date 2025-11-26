@@ -1,6 +1,5 @@
 ---
-title: Astro Site – Structure
-shortTitle: Structure
+title: Structure
 date: 2025-11-25
 order: 2
 ---

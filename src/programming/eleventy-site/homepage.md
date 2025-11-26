@@ -1,6 +1,5 @@
 ---
-title: Eleventy Site – Homepage
-shortTitle: Homepage
+title: Homepage
 date: 2025-11-21
 order: 4
 renderAsList: false

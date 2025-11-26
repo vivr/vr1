@@ -1,6 +1,5 @@
 ---
-title: Learning Python - Methods
-shortTitle: Methods
+title: Methods
 date: 2025-11-22
 order: 15
 ---

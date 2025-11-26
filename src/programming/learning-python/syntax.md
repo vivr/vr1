@@ -1,6 +1,5 @@
 ---
-title: Learning Python - Syntax
-shortTitle: Syntax
+title: Syntax
 date: 2025-11-18
 order: 2
 ---

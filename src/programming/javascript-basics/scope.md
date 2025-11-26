@@ -1,6 +1,5 @@
 ---
-title: JS Basics - Scope
-shortTitle: Scope
+title: Scope
 date: 2023-10-28
 order: 12
 ---

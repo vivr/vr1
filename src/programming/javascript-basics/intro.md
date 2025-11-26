@@ -1,6 +1,5 @@
 ---
-title: JS Basics - Intro
-shortTitle: Intro
+title: Intro
 date: 2023-10-28
 order: 1
 ---

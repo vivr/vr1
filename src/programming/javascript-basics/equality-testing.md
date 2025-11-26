@@ -1,6 +1,5 @@
 ---
-title: JS Basics - Equality Testing
-shortTitle: Equality Testing
+title: Equality Testing
 date: 2023-10-28
 order: 11
 ---

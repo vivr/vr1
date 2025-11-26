@@ -1,6 +1,5 @@
 ---
-title: Astro Site – Gallery and Lightbox
-shortTitle: Gallery and Lightbox
+title: Gallery and Lightbox
 date: 2025-11-25
 order: 3
 ---

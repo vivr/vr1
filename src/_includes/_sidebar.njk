@@ -34,7 +34,6 @@
 
 <ul class="sidebar-list">
   {% for entry in navPages %}
-    {% set label = entry.data.shortTitle or entry.data.title %}
     {% set isActive = entry.inputPath == page.inputPath %}
 
     <li class="sidebar-item{% if isActive %} sidebar-item--active{% endif %}">
@@ -42,12 +41,11 @@
         href="{{ entry.url }}"
         {% if isActive %}class="active" aria-current="page"{% endif %}
       >
-        {{ label }}
+        {{ entry.data.title }}
       </a>
     </li>
   {% endfor %}
 </ul>
-
 
   </div>
 </aside>

@@ -1,6 +1,5 @@
 ---
-title: ML Basics - Decision Trees
-shortTitle: Decision Trees
+title: Decision Trees
 date: 2024-01-25
 order: 5
 ---

@@ -1,6 +1,5 @@
 ---
-title: Learning Python - Match and Case
-shortTitle: Match and Case
+title: Match and Case
 date: 2025-11-22
 order: 10
 ---

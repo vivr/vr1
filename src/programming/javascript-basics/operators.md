@@ -1,6 +1,5 @@
 ---
-title: JS Basics - Operators
-shortTitle: Operators
+title: Operators
 date: 2023-10-28
 order: 4
 ---

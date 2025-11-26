@@ -1,6 +1,5 @@
 ---
-title: JS Basics - Functions
-shortTitle: Functions
+title: Functions
 date: 2023-10-28
 order: 9
 ---

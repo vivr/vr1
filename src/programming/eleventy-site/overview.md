@@ -1,6 +1,5 @@
 ---
-title: Eleventy Site – Overview
-shortTitle: Overview
+title: Overview
 date: 2025-11-21
 order: 1
 ---

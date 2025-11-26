@@ -1,6 +1,5 @@
 ---
-title: Learning Python - Functions
-shortTitle: Functions
+title: Functions
 date: 2025-11-18
 order: 7
 ---

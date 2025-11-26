@@ -1,6 +1,5 @@
 ---
-title: ML Basics - Intro
-shortTitle: Intro
+title: Intro
 date: 2024-01-25
 order: 1
 ---

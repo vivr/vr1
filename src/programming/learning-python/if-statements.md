@@ -1,6 +1,5 @@
 ---
-title: Learning Python - If Statements
-shortTitle: If Statements
+title: If Statements
 date: 2025-11-22
 order: 9
 ---

@@ -1,6 +1,5 @@
 ---
-title: Learning Python - Maths
-shortTitle: Maths
+title: Math
 date: 2025-11-18
 order: 5
 ---

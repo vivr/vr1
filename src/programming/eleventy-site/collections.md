@@ -1,6 +1,5 @@
 ---
-title: Eleventy Site – Collections
-shortTitle: Collections
+title: Collections
 date: 2025-11-21
 order: 3
 renderAsList: false

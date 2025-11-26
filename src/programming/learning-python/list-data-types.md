@@ -1,6 +1,5 @@
 ---
-title: Learning Python - List Data Type
-shortTitle: List Data Type
+title: List Data Type
 date: 2025-11-22
 order: 8
 ---

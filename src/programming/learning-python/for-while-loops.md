@@ -1,6 +1,5 @@
 ---
-title: Learning Python - For and While Loops
-shortTitle: For and While Loops
+title: For and While Loops
 date: 2025-11-22
 order: 13
 ---

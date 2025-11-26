@@ -1,6 +1,5 @@
 ---
-title: Learning Python - Slicing
-shortTitle: Slicing
+title: Slicing
 date: 2025-11-22
 order: 12
 ---

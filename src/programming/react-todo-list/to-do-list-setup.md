@@ -1,6 +1,5 @@
 ---
-title: React Todo List - Setup
-shortTitle: Setup
+title: Setup
 date: 2024-11-04
 order: 2
 ---

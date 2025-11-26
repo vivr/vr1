@@ -1,6 +1,5 @@
 ---
-title: Learning Python - Formatting
-shortTitle: Formatting
+title: Formatting
 date: 2025-11-22
 order: 11
 ---

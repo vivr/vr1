@@ -1,6 +1,5 @@
 ---
-title: JS Basics - Expressions and Statements
-shortTitle: Expressions and Statements
+title: Expressions and Statements
 date: 2023-10-28
 order: 6
 ---

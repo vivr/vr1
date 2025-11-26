@@ -1,6 +1,5 @@
 ---
-title: JS Basics - Decisions
-shortTitle: Decisions
+title: Decisions
 date: 2023-10-28
 order: 7
 ---

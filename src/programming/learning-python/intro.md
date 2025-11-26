@@ -1,6 +1,5 @@
 ---
-title: Learning Python - Intro
-shortTitle: Intro
+title: Intro
 date: 2025-11-18
 order: 1
 ---

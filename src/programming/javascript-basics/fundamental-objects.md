@@ -1,6 +1,5 @@
 ---
-title: JS Basics - Fundamental Objects
-shortTitle: Fundamental Objects
+title: Fundamental Objects
 date: 2023-10-28
 order: 3
 ---

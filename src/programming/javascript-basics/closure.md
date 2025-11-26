@@ -1,6 +1,5 @@
 ---
-title: JS Basics - Closure
-shortTitle: Closure
+title: Closure
 date: 2023-10-28
 order: 17
 ---

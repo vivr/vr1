@@ -1,6 +1,5 @@
 ---
-title: React Todo List - Intro
-shortTitle: Intro
+title: Intro
 date: 2024-11-04
 order: 1
 ---

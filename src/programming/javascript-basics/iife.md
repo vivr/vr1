@@ -1,6 +1,5 @@
 ---
-title: JS Basics - IIFE
-shortTitle: IIFE
+title: IIFE
 date: 2023-10-28
 order: 15
 ---

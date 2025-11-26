@@ -1,6 +1,5 @@
 ---
-title: JS Basics - Values
-shortTitle: Values
+title: Values
 date: 2023-10-28
 order: 2
 ---

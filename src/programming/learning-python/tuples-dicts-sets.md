@@ -1,6 +1,5 @@
 ---
-title: Learning Python - Tuples, Dictionaries and Sets
-shortTitle: Tuples, Dictionaries and Sets
+title: Tuples, Dictionaries and Sets
 date: 2025-11-22
 order: 14
 ---
@@ -118,7 +117,7 @@ scores = set([10, 10, 20, 30])
 # Result: {10, 20, 30}
 ```
 
-#### Sets are useful when:
+#### Sets are useful when
 
 - You want only unique items  
 - You need fast membership checks  

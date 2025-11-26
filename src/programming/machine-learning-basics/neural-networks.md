@@ -1,6 +1,5 @@
 ---
-title: ML Basics – Neural Networks
-shortTitle: Neural Nets
+title: Neural Networks
 date: 2024-01-25
 order: 4
 ---

@@ -1,6 +1,5 @@
 ---
-title: Eleventy Site – Folder Structure
-shortTitle: Folders
+title: Folder Structure
 date: 2025-11-21
 order: 2
 ---

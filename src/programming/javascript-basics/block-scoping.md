@@ -1,6 +1,5 @@
 ---
-title: JS Basics - Block Scoping
-shortTitle: Block Scoping
+title: Block Scoping
 date: 2023-10-28
 order: 16
 ---

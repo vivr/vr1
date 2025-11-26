@@ -1,6 +1,5 @@
 ---
-title: Astro Site – Astro vs Eleventy
-shortTitle: Astro vs Eleventy
+title: Astro vs Eleventy
 date: 2025-11-25
 order: 4
 ---

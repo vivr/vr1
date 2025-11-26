@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    {% include '_meta.njk' %}
+  </head>
+  <body>
+    <a href="#main-content" class="visually-hidden">Skip to main content</a>
+
+    <main class="content-grid">
+      {% include '_header.njk' %}
+
+      <div id="main-content" class="card">
+        {{ content | safe }}
+      </div>
+    </main>
+
+    {% include '_contact-modal.njk' %}
+  </body>
+</html>

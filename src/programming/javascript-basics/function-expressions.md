@@ -1,6 +1,5 @@
 ---
-title: JS Basics - Function Expressions
-shortTitle: Function Expressions
+title: Function Expressions
 date: 2023-10-28
 order: 14
 ---

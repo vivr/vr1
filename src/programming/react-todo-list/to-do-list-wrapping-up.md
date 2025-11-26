@@ -1,6 +1,5 @@
 ---
-title: React Todo List - Wrapping Up
-shortTitle: Wrapping Up
+title: Wrapping Up
 date: 2024-11-04
 order: 5
 ---

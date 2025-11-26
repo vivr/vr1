@@ -1,6 +1,5 @@
 ---
-title: Learning Python - Strings
-shortTitle: Strings
+title: Strings
 date: 2025-11-18
 order: 6
 ---

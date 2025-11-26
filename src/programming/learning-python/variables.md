@@ -1,6 +1,5 @@
 ---
-title: Learning Python - Variables
-shortTitle: Variables
+title: Variables
 date: 2025-11-18
 order: 4
 ---

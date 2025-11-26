@@ -1,6 +1,5 @@
 ---
-title: JS Basics - Coercion
-shortTitle: Coercion
+title: Coercion
 date: 2023-10-28
 order: 10
 ---

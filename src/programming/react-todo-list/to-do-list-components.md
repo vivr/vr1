@@ -1,6 +1,5 @@
 ---
-title: React Todo List - Components
-shortTitle: Components
+title: Components
 date: 2024-11-04
 order: 4
 ---

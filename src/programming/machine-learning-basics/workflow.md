@@ -1,6 +1,5 @@
 ---
-title: ML Basics – Workflow
-shortTitle: Workflow
+title: Workflow
 date: 2024-01-25
 order: 3
 ---

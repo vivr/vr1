@@ -1,6 +1,5 @@
 ---
-title: JS Basics - Loops
-shortTitle: Loops
+title: Loops
 date: 2023-10-28
 order: 8
 ---

@@ -1,6 +1,5 @@
 ---
-title: ML Basics – Python Tools
-shortTitle: Python Tools
+title: Python Tools
 date: 2024-01-25
 order: 6
 ---

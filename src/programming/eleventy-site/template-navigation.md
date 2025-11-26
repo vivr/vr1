@@ -1,6 +1,5 @@
 ---
-title: Eleventy Site – Templates & Navigation
-shortTitle: Templates
+title: Templates
 date: 2025-11-21
 order: 5
 renderAsList: false

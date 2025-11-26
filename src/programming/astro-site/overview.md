@@ -1,6 +1,5 @@
 ---
-title: Astro Site – Overview
-shortTitle: Overview
+title: Overview
 date: 2025-11-25
 order: 1
 ---

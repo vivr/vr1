@@ -1,6 +1,5 @@
 ---
-title: Eleventy Site – Eleventy Config
-shortTitle: Config
+title: Config
 date: 2025-11-21
 order: 6
 renderAsList: false

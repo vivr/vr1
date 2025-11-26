@@ -1,6 +1,5 @@
 ---
-title: JS Basics - Variables
-shortTitle: Variables
+title: Variables
 date: 2023-10-28
 order: 5
 ---

@@ -1,6 +1,5 @@
 ---
-title: React Todo List - App Main
-shortTitle: App Main
+title: App Main
 date: 2024-11-04
 order: 3
 ---

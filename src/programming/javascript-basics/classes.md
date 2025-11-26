@@ -1,6 +1,5 @@
 ---
-title: JS Basics - Classes
-shortTitle: Classes
+title: Classes
 date: 2023-10-28
 order: 19
 ---

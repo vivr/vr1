@@ -1,9 +1,43 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+
+{# Get URL safely #}
+{% set url = page.url or '' %}
+
+{# Is this somewhere under /programming/? #}
+{% set isProgrammingPage = url and url.startsWith('/programming/') %}
+
+{# Default: no collection name #}
+{% set collectionName = "" %}
+
+{% if isProgrammingPage and url != '/programming/' %}
+  {# Split URL into parts, e.g. "/programming/learning-python/oop-classes/" #}
+  {% set parts = url.split('/') %}
+  {# parts example: ["", "programming", "learning-python", "oop-classes", ""] #}
+  {% if parts | length > 2 and parts[2] %}
+    {% set collectionSlug = parts[2] %}
+    {# Turn "learning-python" into "Learning python" #}
+    {% set collectionName = collectionSlug | replace('-', ' ') | capitalize %}
+  {% endif %}
+{% endif %}
+
 <title>
-{{ title }} | {{ meta.siteName }}
+  {# 1) Main programming page: just use the page title #}
+  {% if isProgrammingPage and url == '/programming/' %}
+    {{ title }} | {{ meta.siteName }}
+
+  {# 2) Programming collection pages: "Collection Name - Page Title" #}
+  {% elif isProgrammingPage and collectionName %}
+    {{ collectionName }} - {{ title }} | {{ meta.siteName }}
+
+  {# 3) Fallback: normal pages #}
+  {% else %}
+    {{ title }} | {{ meta.siteName }}
+  {% endif %}
 </title>
+
 <meta name="description" content="{{ meta.siteDescription }}"/>
+
 <link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png">
 <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32x32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16x16.png">

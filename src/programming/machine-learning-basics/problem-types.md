@@ -1,6 +1,5 @@
 ---
-title: ML Basics – Types of Problems
-shortTitle: Problem Types
+title: Types of Problems
 date: 2024-01-25
 order: 2
 ---

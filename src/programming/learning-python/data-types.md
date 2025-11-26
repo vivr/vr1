@@ -1,6 +1,5 @@
 ---
-title: Learning Python - Data Types
-shortTitle: Data Types
+title: Data Types
 date: 2025-11-18
 order: 3
 ---

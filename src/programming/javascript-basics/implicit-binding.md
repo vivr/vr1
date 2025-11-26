@@ -1,6 +1,5 @@
 ---
-title: JS Basics - Implicit Binding
-shortTitle: Implicit Binding
+title: Implicit Binding
 date: 2023-10-28
 order: 18
 ---
