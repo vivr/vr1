@@ -1,0 +1,5 @@
+{
+  "layout": "collection.njk",
+  "tags": ["astro-site", "posts"],
+  "image": "/assets/programming/astro.webp"
+}
